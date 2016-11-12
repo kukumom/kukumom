@@ -12,7 +12,6 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-
 <title>본격! 게시판 - 게시글 조회</title>
 
 </head>
