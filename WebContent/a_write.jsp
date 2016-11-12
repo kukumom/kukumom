@@ -55,7 +55,7 @@
 		날짜 :<input type="text" name="regdate" /><br /> <input type="submit" />
 	</form>
 
-
+123
 
 </body>
 </html>
