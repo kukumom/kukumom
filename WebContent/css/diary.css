@@ -1,0 +1,79 @@
+body{
+font-size: 15px;
+font-family: 'Open Sans', sans-serif;
+color: #4A4A4A ;
+text-align: center;
+/*background-color:#FBEFF4;*/
+}
+
+.wrap {
+width:600px;
+height:610px;
+background:#FFF;
+margin:20px auto;
+padding: 10px;
+}
+
+/*==================================================
+* Effect 8
+* ===============================================*/
+.effect8
+{
+ position:relative;
+-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect8:before, .effect8:after
+{
+content:"";
+position:absolute;
+z-index:-1;
+-webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+-moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+box-shadow:0 0 20px rgba(0,0,0,0.8);
+top:10px;
+bottom:10px;
+left:0;
+right:0;
+-moz-border-radius:100px / 10px;
+border-radius:100px / 10px;
+}
+.effect8:after
+{
+right:10px;
+left:auto;
+-webkit-transform:skew(8deg) rotate(3deg);
+  -moz-transform:skew(8deg) rotate(3deg);
+   -ms-transform:skew(8deg) rotate(3deg);
+    -o-transform:skew(8deg) rotate(3deg);
+       transform:skew(8deg) rotate(3deg);
+}
+
+.wrap img {
+width: 82%;
+height: 200px;
+margin-top: 10px;
+}
+
+p{
+margin-top: 15px;
+text-align: center;
+}
+
+h1{
+font-size: 20px;
+font-weight: bold;
+margin-top: 5px;
+text-shadow: #DB7093;
+}
+
+/* a{
+text-decoration: none;
+color: #4A4A4A !important;
+} */
+
+/* a:hover{
+text-decoration: underline;
+color: #6B6B6B !important ;
+} */

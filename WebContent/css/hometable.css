@@ -1,0 +1,134 @@
+/* .table1 {
+	font: 85% "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS",
+		sans-serif;
+	padding: 0;
+	margin: 0;
+	border-collapse: collapse;
+	color: #333;
+	background: #F3F5F7;
+}
+
+.table1 a {
+	color: #3A4856;
+	text-decoration: none;
+	border-bottom: 1px solid #C6C8CB;
+}
+
+.table1 a:visited {
+	color: #777;
+}
+
+.table1 a:hover {
+	color: #000;
+}
+
+.table1 caption {
+	text-align: left;
+	text-transform: uppercase;
+	padding-bottom: 10px;
+	font: 200% "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS",
+		sans-serif;
+}
+
+.table1 thead th {
+	background: #d6b9af;
+	padding: 15px 10px;
+	color: #fff;
+	text-align: left;
+	font-weight: normal;
+}
+
+.table1 tbody, .table1 thead {
+	border-left: 1px solid #EAECEE;
+	border-right: 1px solid #EAECEE;
+}
+
+.table1 tbody {
+	border-bottom: 1px solid #EAECEE;
+}
+
+.table1 tbody td, .table1 tbody th {
+	padding: 10px;
+	background: url("td_back.gif") repeat-x;
+	text-align: left;
+}
+
+.table tbody tr {
+	background: #F3F5F7;
+}
+
+.table1 tbody tr.odd {
+	background: #F0F2F4;
+}
+
+.table1 tbody  tr:hover {
+	background: #EAECEE;
+	color: #111;
+}
+
+.table1 tfoot td, .table1 tfoot th, .table1 tfoot tr {
+	text-align: left;
+	font: 120% "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS",
+		sans-serif;
+	text-transform: uppercase;
+	background: #fff;
+	padding: 10px;
+} */
+
+
+
+/* 
+	Cusco Sky table styles
+	written by Braulio Soncco http://www.buayacorp.com
+*/
+
+table, th, td {
+	border: 1px solid #D4E0EE;
+	border-collapse: collapse;
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	color: #555;
+}
+
+caption {
+	font-size: 150%;
+	font-weight: bold;
+	margin: 5px;
+}
+
+td, th {
+	padding: 4px;
+}
+
+thead th {
+	text-align: center;
+	background: #c0c0c0;
+	color: #ffffff;
+	font-size: 100% !important;
+}
+
+tbody th {
+	font-weight: bold;
+}
+
+tbody tr { background: #FCFDFE; }
+
+tbody tr.odd { background: #F7F9FC; }
+
+table a:link {
+	color: #718ABE;
+	text-decoration: none;
+}
+
+table a:visited {
+	color: #718ABE;
+	text-decoration: none;
+}
+
+table a:hover {
+	color: #718ABE;
+	text-decoration: underline !important;
+}
+
+tfoot th, tfoot td {
+	font-size: 85%;
+}

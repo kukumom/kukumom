@@ -1,0 +1,21 @@
+  td {
+      text-decoration: none;
+      padding: 27px;
+  }
+  
+  font {
+      text-decoration: none;
+      line-height: 130%;
+  }
+  
+  A:link,
+  A:active,
+  A:visited {
+      text-decoration: none;
+      color: '#333333';
+  }
+  
+  A:hover {
+      text-decoration: none;
+      color: 'ff9900'
+  }
