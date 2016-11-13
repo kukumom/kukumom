@@ -21,7 +21,7 @@
 
 	try {
 
-		String driverName = "oracle.jdbc.driver.OracleDriver";
+		String driverName = "com.mysql.jdbc.Driver";
 
 		String url = "jdbc:oracle:thin:@localhost:1521:XE";
 
