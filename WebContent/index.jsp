@@ -41,8 +41,9 @@
 
         e.printStackTrace();
 
+    } finally {
+    	conn.close();
     }
-
 %>
 </body>
 </html>
