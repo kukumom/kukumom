@@ -11,7 +11,7 @@
    String sql = null;
 
    try {
-      Class.forName("oracle.jdbc.driver.OracleDriver");
+      Class.forName("com.mysql.jdbc.Driver");
       con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
    } catch (SQLException e) {
       out.println(e);

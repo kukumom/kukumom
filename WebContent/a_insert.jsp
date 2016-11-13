@@ -32,7 +32,7 @@
 
 	try {
 
-		String driverName = "oracle.jdbc.driver.OracleDriver"; //데이터베이스에 접속하기위한 드라이버를 로드합니다.
+		String driverName = "com.mysql.jdbc.Driver"; //데이터베이스에 접속하기위한 드라이버를 로드합니다.
 
 		String url = "jdbc:oracle:thin:@localhost:1521:XE"; //접속 URL정보와 포트번호(oracle포트), sid(oracle버전)
 
