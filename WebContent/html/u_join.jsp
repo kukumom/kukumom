@@ -22,7 +22,7 @@
 
  try{
   Class.forName("com.mysql.jdbc.Driver");
-  String url = "jdbc:oracle:thin:@localhost:1521:xe";
+  String url = "jdbc:mysql://kukumom.c3hzxu2bf5no.ap-northeast-2.rds.amazonaws.com:33061/kukumom";
   Connection con = DriverManager.getConnection(url,"system","1234");
   Statement stat = con.createStatement();
  // String query = "INSERT INTO usrinfo(userid, userpw, username, userbirth, usertel, userzip, useradd, userccc, useragr)  VALUES('"+user_id+"','"+user_pw+"','"+user_name+"','"+user_birth_year+user_birth_month+"','"+user_tel+"','"+user_zip+"','"+user_add+"','"+user_ccc+"','"+user_agr+"')";

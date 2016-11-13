@@ -24,7 +24,7 @@
  
         String driverName = "com.mysql.jdbc.Driver"; 
  
-        String url = "jdbc:oracle:thin:@localhost:1521:XE";
+        String url = "jdbc:mysql://kukumom.c3hzxu2bf5no.ap-northeast-2.rds.amazonaws.com:33061/kukumom";
  
       
  

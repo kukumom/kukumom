@@ -44,7 +44,7 @@
 
 		Class.forName(driverName);
 
-		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "1234"); // getCo... : 계정정보 url, id, pw
+		Connection con = DriverManager.getConnection("jdbc:mysql://kukumom.c3hzxu2bf5no.ap-northeast-2.rds.amazonaws.com:33061/kukumom", "system", "1234"); // getCo... : 계정정보 url, id, pw
 
 		out.println("Oracle 데이터베이스 db에 성공적으로 접속했습니다");
 

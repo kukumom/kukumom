@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.sql.*"%>
 <%
-   String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
+   String DB_URL = "jdbc:mysql://kukumom.c3hzxu2bf5no.ap-northeast-2.rds.amazonaws.com:33061/kukumom";
 
    String DB_USER = "system"; // DB USER명
    String DB_PASSWORD = "1234"; // 패스워드
