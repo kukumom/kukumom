@@ -1,1 +1,6 @@
 /build/
+/.idea/
+/.settings/
+/.classpath/
+/.project/
+/kukumom.iml/
