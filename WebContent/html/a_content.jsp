@@ -30,7 +30,7 @@
 
 		Class.forName(driverName);
 
-		Connection con = DriverManager.getConnection(url, "system", "1234");
+		Connection con = DriverManager.getConnection(url, "root", "!1Qwe123");
 
 		out.println("Oracle Database Connection Success.");
 

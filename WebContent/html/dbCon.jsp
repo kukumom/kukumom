@@ -2,8 +2,8 @@
 <%
    String DB_URL = "jdbc:mysql://kukumom.c3hzxu2bf5no.ap-northeast-2.rds.amazonaws.com:33061/kukumom";
 
-   String DB_USER = "system"; // DB USER명
-   String DB_PASSWORD = "1234"; // 패스워드
+   String DB_USER = "root"; // DB USER명
+   String DB_PASSWORD = "!1Qwe123"; // DB password��
 
    Connection con = null;
    Statement stmt = null;

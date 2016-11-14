@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="UTF-8"%>
+	 <%@ include file="dbCon.jsp"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +9,20 @@
 <link rel="stylesheet" type="text/css" href="../css/table.css">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
 <link rel="stylesheet" type="text/css" href="../css/u_style.css">
+
+ <%
+	try {
+		/*성장일기*/
+		Statement stmt1 = con.createStatement();
+		
+		String sql1 = "select hosname,hosinfo,hosadd,hostel from HOSINFO";
+
+		ResultSet rs1 = null;
+		rs1 = stmt1.executeQuery(sql1);
+
+%>
 </head>
 <body>
-	<center>
 		<div class="container" align="center">
 		<div class="topWrap">
 		<div class="login" align="right">
@@ -86,6 +98,7 @@
 						</tr>
 					</thead>
 					<tbody>
+					<!-- 
 						<tr>
 							<td><input type="radio" name="choice" value="choice"></td>
 							<td>샤이닝스타</td>
@@ -107,6 +120,22 @@
 							<td>성동구 휘경동 248-3번지 2층</td>
 							<td>02-1579-1633</td>
 						</tr>
+						 -->
+						 <%
+							while (rs1.next()) {
+									out.print("<tr>");
+									
+						%>
+						<td><input type="radio" vlaue="choice"></td>					
+						<td><%=rs1.getString("hosname")%></td>
+						<td><%=rs1.getString("hosinfo")%></td>		
+						<td><%=rs1.getString("hosadd")%></td>					    
+						<td><%=rs1.getString("hostel")%></td>
+						
+						<%
+							out.print("</tr>");
+								}
+						%> 
 					</tbody>
 				</table>
 				<p>
@@ -115,6 +144,19 @@
 				</p>
 			</div>
 			</div>
-	</center>
+			 <%
+		con.close();
+
+		} catch (Exception e) {
+
+			out.println("DB연결에 문제 발생 <hr>");
+
+			out.println(e.getMessage());
+
+			e.printStackTrace();
+
+		}
+      %>
+
 </body>
 </html>

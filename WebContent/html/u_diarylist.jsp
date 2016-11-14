@@ -1,6 +1,6 @@
 <%@ page language="java"  contentType="text/html;  charset=EUC-KR"
 	pageEncoding="UTF-8"%>
-	<%-- <%@ include file="dbCon.jsp"%> --%>
+	 <%@ include file="dbCon.jsp"%> 
 <!DOCTYPE html>
 <html lang='ko'>
 <head>
@@ -8,21 +8,33 @@
 <title>성장일기 조회</title>
 <link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
-<link rel="stylesheet" text="text/css" href="../css/search.css">
+<link rel="stylesheet" type="text/css" href="../css/search.css">
 <link rel="stylesheet" type="text/css" href="../css/u_style.css?ver=1">
-</head>
-<%-- <%
+
+ <%
 	try {
 		/*성장일기*/
 		Statement stmt1 = con.createStatement();
 		
-		String sql1 = "select d_date,d_content,uproad,hght,weight from usrdiary order by d_date desc";
+		String sql1 = "select A.d_date, B.petname, A.d_content, A.hght, A.weight from USRDIARY A join USRPET B where A.petcode=B.petcode";
+
 		ResultSet rs1 = null;
 		rs1 = stmt1.executeQuery(sql1);
 
 %>
- --%>
-<center>
+<div class="cont-right">
+			<script language="javascript">
+				function showConfirm() {
+					if (confirm("삭제하시겠습니까?")) {
+						alert("삭제되었습니다.")
+					} else {
+						alert("취소되었습니다.")
+					}
+				}
+			</script>
+			</head>
+			
+			<body>
 	<div class="container" align="center">
 		<div class="topWrap">
 		<div class="login" align="right">
@@ -84,22 +96,12 @@
 						<td><a href="u_findid.jsp" class="findButton">ID찾기</a></td>
 						<td><a href="u_findpass.jsp" class="findButton">PW찾기</a></td>
 				</table>
-			</div>-->
-		<div class="cont-right">
-			<script language="javascript">
-				function showConfirm() {
-					if (confirm("삭제하시겠습니까?")) {
-						alert("삭제되었습니다.")
-					} else {
-						alert("취소되었습니다.")
-					}
-				}
-			</script>
-			</head>
-			<body>
-				<center>
-					<p>
+			</div>
+			-->
+		
+	 			  
 					<h2>지난 성장일기를 확인해보세요!</h2>
+					<section>
 					<select name="searchoice">
 						<option value="petname">애완명</option>
 						<option value="text">꾸꾸</option>
@@ -108,23 +110,22 @@
 
 					</select> <input type="date" name="날짜"> <input type="text"
 						placeholder="내용 입력">&nbsp;&nbsp;<input type="button" class="btn1" value="검 색">
-
-
-
-					</p>
-
+					</section>
+	
 					<table border="1" class="table1">
 						<thead>
 							<tr>
 								<th>선택</th>
 								<th>날짜</th>
-								<th>애완동물</th>
+								<th>애완명</th>
 								<th>내용</th>
 								<th>신장</th>
 								<th>체중</th>
 							</tr>
 						</thead>
-						<tbody>
+	 		
+	 				<tbody>
+	 				<!-- 
 							<tr>
 								<td><input type="checkbox" name="choice" value="choice"></td>
 								<td>2016.07.21</td>
@@ -166,28 +167,27 @@
 								<td>3cm</td>
 								<td>0.80kg</td>
 							</tr>
+							-->
 							
-							<%-- <%
+						<%
 							while (rs1.next()) {
 									out.print("<tr>");
 									
 						%>
-						<td><input type="radio" vlaue="choice"></td>
-					
-						<td><%=rs1.getString("d_date")%></td>
-						<td><a href="u_diarydetail.jsp"><%=rs1.getString("d_content")%></a></td>
-					    
-						<td><%=rs1.getString("hght")%></td>
-						<td><%=rs1.getString("weight")%></td>
+						<td><input type="radio" vlaue="choice"></td>					
+						<td><%=rs1.getString("A.d_date")%></td>
+						<td><%=rs1.getString("B.petname")%></td>		
+						<td><a href="u_diarydetail.jsp"><%=rs1.getString("A.d_content")%></a></td>					    
+						<td><%=rs1.getString("A.hght")%></td>
+						<td><%=rs1.getString("A.weight")%></td>
 						<%
 							out.print("</tr>");
 								}
-						%> --%>
+						%> 
 						</tbody>
 					</table>
 					<br>
-					<p>
-
+					<p>	
 						&nbsp;&nbsp;&nbsp;&nbsp; <a href="u_diaryregist.jsp"> <input
 							type="button" name="add" class="btn1" value="     추   가     "></a>
 						&nbsp;&nbsp;&nbsp;&nbsp; <a href="u_diarymodify.jsp"> <input
@@ -195,21 +195,21 @@
 						<input type="button" name="delete" class="btn1" value="    삭    제    " onclick="showConfirm();" />
 							
 					</p>
-				</center>
 		</div>
 		</div>
-		<%-- <%
+		 <%
 		con.close();
 
 		} catch (Exception e) {
 
-			out.println("Oracle Database Connection Something Problem. <hr>");
+			out.println("DB연결에 문제 발생 <hr>");
 
 			out.println(e.getMessage());
 
 			e.printStackTrace();
 
 		}
-	%> --%>
+		
+	%> 
 		</body>
 </html>
