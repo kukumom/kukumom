@@ -102,7 +102,7 @@
 		</tr>
 	</table>
 
-	<a href="a_delete.jsp?userid=<%=rs.getString("userid")%>">게시글삭제</a>
+	<a href="a_delete.jsp?userid=<%=rs.getString(">게시글삭제</a>
 
 	<a href="a_index.jsp">목록으로</a>
 
