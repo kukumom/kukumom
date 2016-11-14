@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="UTF-8"%>
+	<%@ include file="dbCon.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,27 @@
 <link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
 <link rel="stylesheet" type="text/css" href="../css/u_style.css">
+<%
+	try {
+		/*QnA*/
+		Statement stmt1 = con.createStatement();
+		
+		String sql1 = "select B.hosname, C.petname, A.q_content, A.q_date from USRQNA A left join HOSINFO B on A.hoscode=B.hoscode left join USRPET C on A.petcode=C.petcode";
+
+		ResultSet rs1 = null;
+		rs1 = stmt1.executeQuery(sql1);
+
+%>
+<div class="cont-right">
+			<script language="javascript">
+				function showConfirm() {
+					if (confirm("삭제하시겠습니까?")) {
+						alert("삭제되었습니다.")
+					} else {
+						alert("취소되었습니다.")
+					}
+				}
+			</script>
 </head>
 
 <script language="javascript">
@@ -21,7 +43,7 @@
 </script>
 </head>
 <body>
-	<center>
+
 		<div class="container" align="center">
 		<div class="topWrap">
 		<div class="login" align="right">
@@ -94,8 +116,7 @@
 						<option value="1112">두유</option>
 						<option value="1113">멍멍이</option>
 					</select> <input type="text" name="hossearch"
-						placeholder="찾고자 하는 병원을 입력해주세요"> <input type="button"
-						value="검색">
+						placeholder="찾고자 하는 병원을 입력해주세요"> <input type="button" value="검색">
 				</p>
 				<table border="1" class="table1">
 					<thead>
@@ -108,6 +129,7 @@
 						</tr>
 					</thead>
 					<tbody>
+					<!-- 
 						<tr>
 							<td><input type="checkbox" name="choice" value="qnadelete"></td>
 							<td>그랜드동물병원</td>
@@ -129,6 +151,22 @@
 							<td>수술 후 봉합한 부위가 벌어졌습니다ㅠㅠ(2)</td>
 							<td>2016.07.25</td>
 						</tr>
+						 -->
+								<%
+							while (rs1.next()) {
+									out.print("<tr>");
+									
+						%>
+						<td><input type="radio" vlaue="choice"></td>					
+						<td><%=rs1.getString("B.hosname")%></td>
+						<td><%=rs1.getString("C.petname")%></td>		
+						<td><a href="u_qnadetail.jsp"><%=rs1.getString("A.q_content")%></a></td>					    
+						<td><%=rs1.getString("A.q_date")%></td>
+			
+						<%
+							out.print("</tr>");
+								}
+						%>   
 					</tbody>
 				</table>
 				<p>
@@ -137,6 +175,20 @@
 				</p>
 			</div>
 			</div>
-	</center>
+			 <%
+		con.close();
+
+		} catch (Exception e) {
+
+			out.println("DB연결에 문제 발생 <hr>");
+
+			out.println(e.getMessage());
+
+			e.printStackTrace();
+
+		}
+		
+	%> 
+	
 </body>
 </html>

@@ -8,7 +8,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <%
-	int idx = 1;
 
 	String userid = request.getParameter("userid");
 
@@ -38,17 +37,17 @@
 
 		Class.forName(driverName);
 
-		Connection con = DriverManager.getConnection(url, "system", "1234"); // getCo... : 계정정보 url, id, pw
+		Connection con = DriverManager.getConnection(url, "root", "!1Qwe123"); // getCo... : 계정정보 url, id, pw
 
 		out.println("Oracle 데이터베이스 db에 성공적으로 접속했습니다");
 
 		Statement stmt = con.createStatement(); // SQL 쿼리를 날리기위한 Statement 객체 생성
 
-		String sql = "INSERT INTO board "+
+		String sql = "INSERT INTO u_diaryregist "+
 				 
-           "(userid, userpw, username) "+
+           "(userid, petcode, d_date, d_content, uproad, hght, weight ) "+
  
-           "VALUES (board, '"+userid+"', '"+userpw+"', "+username+"')";
+           "VALUES (u_diaryregist, '"+petcode+"', '"+d_date+"', "+username+"')";
 
 		stmt.executeUpdate(sql);
 
