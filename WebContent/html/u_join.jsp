@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
  String user_birth_day  = request.getParameter("user_birth_day");
  String user_birth  = request.getParameter("user_birth_year"+"user_birth_month"+"user_birth_day");
  String pet  = request.getParameter("pet");
-//POST·Î Input.html·ÎºÎÅÍ ÀÔ·Â¹ŞÀº ³»¿ëÀ» º¯¼öÈ­
+//POSTë¡œ Input.htmlë¡œë¶€í„° ì…ë ¥ë°›ì€ ë‚´ìš©ì„ ë³€ìˆ˜í™”
 
  try{
   Class.forName("com.mysql.jdbc.Driver");
@@ -26,7 +26,7 @@
   Connection con = DriverManager.getConnection(url,"system","1234");
   Statement stat = con.createStatement();
  // String query = "INSERT INTO usrinfo(userid, userpw, username, userbirth, usertel, userzip, useradd, userccc, useragr)  VALUES('"+user_id+"','"+user_pw+"','"+user_name+"','"+user_birth_year+user_birth_month+"','"+user_tel+"','"+user_zip+"','"+user_add+"','"+user_ccc+"','"+user_agr+"')";
-//INSERT into member(id,name,pwd,email) VALUES ('id','name','pwd','email') Äõ¸®¹®
+//INSERT into member(id,name,pwd,email) VALUES ('id','name','pwd','email') ì¿¼ë¦¬ë¬¸
   //stat.executeUpdate(query);
   stat.close();
   con.close();

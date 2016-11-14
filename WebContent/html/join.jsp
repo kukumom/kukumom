@@ -1,18 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
  /* -- join.jsp --
- * inputÀ¸·ÎºÎÅÍ ³Ñ¾î¿Â µ¥ÀÌÅ¸µéÀ» º¯¼öÈ­ ÈÄ¿¡
- * µ¥ÀÌÅ¸º£ÀÌ½º·Î Äõ¸®¹®À» º¸³½´Ù.
- * ±× ÀÌÈÄ output.jsp¿¡¼­ µ¥ÀÌÅÍº£ÀÌ½º¿¡ Ãß°¡µÈ
- * È¸¿øµéÀÇ Á¤º¸¸¦ Ãâ·ÂÇÑ´Ù.
+ * inputìœ¼ë¡œë¶€í„° ë„˜ì–´ì˜¨ ë°ì´íƒ€ë“¤ì„ ë³€ìˆ˜í™” í›„ì—
+ * ë°ì´íƒ€ë² ì´ìŠ¤ë¡œ ì¿¼ë¦¬ë¬¸ì„ ë³´ë‚¸ë‹¤.
+ * ê·¸ ì´í›„ output.jspì—ì„œ ë°ì´í„°ë² ì´ìŠ¤ì— ì¶”ê°€ëœ
+ * íšŒì›ë“¤ì˜ ì •ë³´ë¥¼ ì¶œë ¥í•œë‹¤.
  */
 
 <%@ page contentType="text/html;charset=utf-8" import="java.sql.*" %>
@@ -22,7 +22,7 @@
 
  String pw =     request.getParameter("userpw");
 
-//POST·Î Input.html·ÎºÎÅÍ ÀÔ·Â¹ŞÀº ³»¿ëÀ» º¯¼öÈ­
+//POSTë¡œ Input.htmlë¡œë¶€í„° ì…ë ¥ë°›ì€ ë‚´ìš©ì„ ë³€ìˆ˜í™”
 
  try{
   Class.forName("com.mysql.jdbc.Driver");
@@ -30,7 +30,7 @@
   Connection con = DriverManager.getConnection(url,"system","1234");
   Statement stat = con.createStatement();
   String query = "INSERT INTO usrinfo(userid, userpw)  VALUES('"+id+"','"+pw+"')";
-//INSERT into member(id,name,pwd,email) VALUES ('id','name','pwd','email') Äõ¸®¹®
+//INSERT into member(id,name,pwd,email) VALUES ('id','name','pwd','email') ì¿¼ë¦¬ë¬¸
   stat.executeUpdate(query);
   stat.close();
   con.close();

@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang='ko'>
 
 <head>
 <meta charset="utf-8" />
-<title>²Ù²Ù¸¾</title>
+<title>ê¾¸ê¾¸ë§˜</title>
 <link rel="stylesheet" type="text/css" href="../css/u_style.css">
 <link rel="stylesheet" type="text/css" href="../css/table.css">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
@@ -19,9 +19,9 @@
 		<div class="container" align="center">
 		<div class="topWrap">
 		<div class="login" align="right">
-				<a href="u_memcont.jsp" class="findButton">È¸¿ø°¡ÀÔ</a>
-				<a href="u_findid.jsp" class="findButton">IDÃ£±â</a>
-				<a href="u_findpass.jsp" class="findButton">PWÃ£±â</a>
+				<a href="u_memcont.jsp" class="findButton">íšŒì›ê°€ìž…</a>
+				<a href="u_findid.jsp" class="findButton">IDì°¾ê¸°</a>
+				<a href="u_findpass.jsp" class="findButton">PWì°¾ê¸°</a>
 				<span >ID
 				<input type="text" style="width: 100px;" /></span>
 				<span  >PW
@@ -40,25 +40,25 @@
 					<li><a href="u_home.jsp">Home</a></li>
 					<li class='active sub'><a href='#'>MY PAGE</a>
 						<ul>
-							<li class='sub'><a href="u_memmod.jsp">³»Á¤º¸</a></li>
-							<li class='sub'><a href="u_petlist.jsp">¾Ö¿Ïµ¿¹° °ü¸®</a></li>
-							<li class='sub'><a href="u_memhos.jsp">MYº´¿ø</a></li>
+							<li class='sub'><a href="u_memmod.jsp">ë‚´ì •ë³´</a></li>
+							<li class='sub'><a href="u_petlist.jsp">ì• ì™„ë™ë¬¼ ê´€ë¦¬</a></li>
+							<li class='sub'><a href="u_memhos.jsp">MYë³‘ì›</a></li>
 						</ul></li>
-					<li class='active sub'><a href="'#'">º´¿ø¼­ºñ½º</a>
+					<li class='active sub'><a href="'#'">ë³‘ì›ì„œë¹„ìŠ¤</a>
 						<ul>
-							<li class='sub'><a href="U_hossearch.jsp">º´¿ø°Ë»ö</a></li>
-							<li class='sub'><a href="u_Examlist.jsp">Áø·á³»¿ªÁ¶È¸</a></li>
-							<li class="sub"><a href="u_qnaquary.jsp">1:1 ¹®ÀÇÇÏ±â</a></li>
-							<li class='sub'><a href="u_qnalist.jsp">1:1 ¹®ÀÇ³»¿ª</a></li>
+							<li class='sub'><a href="U_hossearch.jsp">ë³‘ì›ê²€ìƒ‰</a></li>
+							<li class='sub'><a href="u_Examlist.jsp">ì§„ë£Œë‚´ì—­ì¡°íšŒ</a></li>
+							<li class="sub"><a href="u_qnaquary.jsp">1:1 ë¬¸ì˜í•˜ê¸°</a></li>
+							<li class='sub'><a href="u_qnalist.jsp">1:1 ë¬¸ì˜ë‚´ì—­</a></li>
 						</ul></li>
-					<li><a href="u_calendar.jsp">ÀÏÁ¤°ü¸®</a></li>
-					<li class='last'><a href="u_diarylist.jsp">¼ºÀåÀÏ±â</a></li>
+					<li><a href="u_calendar.jsp">ì¼ì •ê´€ë¦¬</a></li>
+					<li class='last'><a href="u_diarylist.jsp">ì„±ìž¥ì¼ê¸°</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="cont">
 			<!-- <div class="cont-left">
-				ÀÔ·Â
+				ìž…ë ¥
 				<table>
 					<tr>
 						<th>ID</th>
@@ -70,12 +70,12 @@
 						<td><input type="password" style="width: 100px;" /></td>
 					</tr>
 				</table>
-				¹öÆ°
+				ë²„íŠ¼
 				<table>
 					<tr>
-						<td><a href="u_memcont.jsp" class="findButton">È¸¿ø°¡ÀÔ</a></td>
-						<td><a href="u_findid.jsp" class="findButton">IDÃ£±â</a></td>
-						<td><a href="u_findpass.jsp" class="findButton">PWÃ£±â</a></td>
+						<td><a href="u_memcont.jsp" class="findButton">íšŒì›ê°€ìž…</a></td>
+						<td><a href="u_findid.jsp" class="findButton">IDì°¾ê¸°</a></td>
+						<td><a href="u_findpass.jsp" class="findButton">PWì°¾ê¸°</a></td>
 				</table>
 			</div>-->
 			<div class="cont-right" >
@@ -85,38 +85,38 @@
 					</div>
 					<table class="table1" border="1" align="center"  style="font-size:15px;">
 						<tr>
-							<th>±â°£ ¼±ÅÃ</th>
+							<th>ê¸°ê°„ ì„ íƒ</th>
 							<td class="left"><input type="date">~ <input
 								type="date"></td>
 						</tr>
 						<tr>
-							<th>½Ã°£</th>
+							<th>ì‹œê°„</th>
 							<td class="left"><input type="time"></td>
 						</tr>
 						<tr>
-							<th>±¸ºÐ</th>
-							<td class="left"><input type="radio" name="schediv">Áø·á
-								<input type="radio" name="schediv">¹Ì¿ë <input
-								type="radio" name="schediv">±âÅ¸</td>
+							<th>êµ¬ë¶„</th>
+							<td class="left"><input type="radio" name="schediv">ì§„ë£Œ
+								<input type="radio" name="schediv">ë¯¸ìš© <input
+								type="radio" name="schediv">ê¸°íƒ€</td>
 						</tr>
 						<tr>
-							<th>³»¿ë</th>
+							<th>ë‚´ìš©</th>
 							<td class="left"><textarea cols="60" rows="5"></textarea></td>
 						</tr>
 						<tr>
-							<th>¾Ë¸²</th>
+							<th>ì•Œë¦¼</th>
 							<td class="left"><select>
-									<option>¾Ë¸²¾øÀ½</option>
-									<option>10ºÐÀü</option>
-									<option>1½Ã°£Àü</option>
-									<option>ÇÏ·çÀü</option>
+									<option>ì•Œë¦¼ì—†ìŒ</option>
+									<option>10ë¶„ì „</option>
+									<option>1ì‹œê°„ì „</option>
+									<option>í•˜ë£¨ì „</option>
 							</select></td>
 						</tr>
 					</table>
 					<p class="btn" align="center">
-						<input type="button" class="btn1" value="ÀúÀå"> <a
+						<input type="button" class="btn1" value="ì €ìž¥"> <a
 							href="u_callist.jsp"> <input type="button" class="btn1"
-							value="Ãë¼Ò">
+							value="ì·¨ì†Œ">
 					</p>
 
 				</div>

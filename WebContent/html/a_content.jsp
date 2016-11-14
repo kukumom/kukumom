@@ -1,7 +1,7 @@
 <%@page import="java.util.regex.Pattern"%>
 
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <%@ page import="java.sql.*"%>
 
@@ -11,9 +11,9 @@
 
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>����! �Խ��� - �Խñ� ��ȸ</title>
+<title>본격! 게시판 - 게시글 조회</title>
 
 </head>
 
@@ -50,26 +50,26 @@
 
 <body>
 
-	<h1>�Խñ� ��ȸ</h1>
+	<h1>게시글 조회</h1>
 
 	<table border="1">
-		<!-- border�� �׵θ��� ǥ���ϴ� �Ӽ��Դϴ�. -->
+		<!-- border은 테두리를 표시하는 속성입니다. -->
 
 		<tr>
 
-			<th>��ȣ</th>
+			<th>번호</th>
 
 			<td><%=rs.getString("idx")%></td>
 
-			<th>�ۼ���</th>
+			<th>작성자</th>
 
 			<td><%=rs.getString("writer")%></td>
 
-			<th>��¥</th>
+			<th>날짜</th>
 
 			<td><%=rs.getString("regdate")%></td>
 
-			<th>��ȸ��</th>
+			<th>조회수</th>
 
 			<td><%=rs.getString("count")%></td>
 
@@ -77,8 +77,8 @@
 
 		<tr>
 
-			<th colspan="2">����</th>
-			<!-- colspan�� �ິ�� �Ӽ��Դϴ�. -->
+			<th colspan="2">제목</th>
+			<!-- colspan은 행병합 속성입니다. -->
 
 			<td colspan="6"><%=rs.getString("title")%></td>
 
@@ -86,7 +86,7 @@
 
 		<tr>
 
-			<th colspan="2">����</th>
+			<th colspan="2">내용</th>
 
 			<td colspan="6"><%=rs.getString("content")%></td>
 
@@ -94,9 +94,9 @@
 
 	</table>
 
-	<a href="a_delete.jsp?idx=<%=rs.getString("idx")%>">�Խñۻ���</a>
+	<a href="a_delete.jsp?idx=<%=rs.getString("idx")%>">게시글삭제</a>
 
-	<a href="a_index.jsp">�������</a>
+	<a href="a_index.jsp">목록으로</a>
 
 	<%
 		}

@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>¿œ¡§ µÓ∑œ«œ±‚</title>
+    <title>ÏùºÏ†ï Îì±Î°ùÌïòÍ∏∞</title>
     <meta name="description" content="An interactive getting started guide for Brackets.">
      </head>
 
@@ -18,44 +18,44 @@
                 <h3>2016-07-07</h3> </div>
             <table border="1" align="center">
                 <tr>
-                    <th>±‚∞£ º±≈√</th>
+                    <th>Í∏∞Í∞Ñ ÏÑ†ÌÉù</th>
                     <td class="left">
                         <input type="date">~
                         <input type="date"> </td>
                 </tr>
                 <tr>
-                    <th>Ω√∞£</th>
+                    <th>ÏãúÍ∞Ñ</th>
                     <td class="left">
                         <input type="time"> </td>
                 </tr>
                 <tr>
-                    <th>±∏∫–</th>
+                    <th>Íµ¨Î∂Ñ</th>
                     <td class="left">
-                        <input type="radio" name="schediv">¡¯∑·
-                        <input type="radio" name="schediv">∫¥ø¯
-                        <input type="radio" name="schediv">±‚≈∏</td>
+                        <input type="radio" name="schediv">ÏßÑÎ£å
+                        <input type="radio" name="schediv">Î≥ëÏõê
+                        <input type="radio" name="schediv">Í∏∞ÌÉÄ</td>
                 </tr>
                 <tr>
-                    <th>≥ªøÎ</th>
+                    <th>ÎÇ¥Ïö©</th>
                     <td class="left">
                         <textarea cols="100" rows="5"></textarea>
                     </td>
                 </tr>
                 <tr>
-                    <th>æÀ∏≤</th>
+                    <th>ÏïåÎ¶º</th>
                     <td class="left">
                         <select>
-                            <option>æÀ∏≤æ¯¿Ω</option>
-                            <option>10∫–¿¸</option>
-                            <option>1Ω√∞£¿¸</option>
-                            <option>«œ∑Á¿¸</option>
+                            <option>ÏïåÎ¶ºÏóÜÏùå</option>
+                            <option>10Î∂ÑÏ†Ñ</option>
+                            <option>1ÏãúÍ∞ÑÏ†Ñ</option>
+                            <option>ÌïòÎ£®Ï†Ñ</option>
                         </select>
                     </td>
                 </tr>
             </table>
             <p class="btn" align="center">
-                <input type="button" value="¿˙¿Â">
-                <input type="button" value="√Îº“">
+                <input type="button" value="Ï†ÄÏû•">
+                <input type="button" value="Ï∑®ÏÜå">
             </p>
         </section>
     </div>
