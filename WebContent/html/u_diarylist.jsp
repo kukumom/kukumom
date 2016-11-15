@@ -1,5 +1,7 @@
 <%@ page language="java"  contentType="text/html;  charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ page import="java.util.*,java.text.*"%>
+	<%@page import="java.sql.*"%>
 	 <%@ include file="dbCon.jsp"%> 
 <!DOCTYPE html>
 <html lang='ko'>
@@ -34,7 +36,7 @@
 			</script>
 			</head>
 			
-			<body>
+	<body>
 	<div class="container" align="center">
 		<div class="topWrap">
 		<div class="login" align="right">
@@ -198,7 +200,6 @@
 		</div>
 		</div>
 		 <%
-		con.close();
 
 		} catch (Exception e) {
 
@@ -208,6 +209,8 @@
 
 			e.printStackTrace();
 
+		}finally {
+			con.close();
 		}
 		
 	%> 

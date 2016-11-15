@@ -96,14 +96,17 @@
 						<td><a href="u_findpass.jsp" class="findButton">PW찾기</a></td>
 				</table>
 			</div>-->
+			
+			 <form name="reg01" action="u_diaryinsert.jsp" method="get">
+			 
+			
 			<div class="cont-right">
 				<div class="wrap effect8">
 					<h1>오늘의 일기를 작성해주세요~^^</h1>
 					<br>
 					<p>
 						날짜선택:&nbsp;<input type="date" name="date">&nbsp;&nbsp;&nbsp;동물선택:&nbsp;
-						<select
-							name="petchoice">
+						<select name="petchoice">
 							<option value="1111">꾸꾸</option>
 							<option value="1112">두유</option>
 							<option value="1113">멍멍이</option>
@@ -111,16 +114,15 @@
 					</p>
 					<br>
 					<p>
-						<textarea name="text" rows="5" cols="80" placeholder="일기를 작성해주세요"></textarea>
+						<textarea name="d_content" rows="5" cols="80" placeholder="일기를 작성해주세요"></textarea>
 					</p>
 					<p>
 					<h5>★애완동물의 사진을 올려주세요★</h5>
 				
 					
-					<form id="form1" runat="server">
+					<!-- <form id="form1" runat="server"> -->
 						<input type='file' id="imgInp"  class="btn1"/> <img id="blah" src="#" alt="your image" />
-					</form>
-
+					<!-- </form> -->
 					</p>
 
 					<p>
@@ -131,12 +133,14 @@
 				</div>
 				<p>
 					<input type="submit" name="save" class="btn1" value="  저  장  "
-						onclick="alert('저장 되었습니다.')"> <a href="u_diarylist.jsp"><input
+						onclick="alert('저장 되었습니다.')"> <input
 						type="button" name="cancel" class="btn1" value="  취  소  "
 						onclick="alert('취소되었습니다.')"></a>
 				</p>
 				<br>
 			</div>
+			 </form>
 			</div>
+			
 </body>
 </html>
