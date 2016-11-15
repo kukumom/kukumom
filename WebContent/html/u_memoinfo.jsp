@@ -7,11 +7,9 @@
     <meta charset="utf-8" />
     <title>꾸꾸맘</title>
     <link rel="stylesheet" type="text/css" href="../css/u_style.css"> </head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="http://malsup.github.com/jquery.cycle2.js"></script>
-
+	<link rel="stylesheet" type="text/css" href="../css/button.css">
 <body>
-    <center>
+    
         <div class="container" align="center">
 		<div class="topWrap">
 		<div class="login" align="right">
@@ -82,28 +80,36 @@
             <tr>
                 <th>아이디</th>
                 <td>
-                    <input type="text" name="user_id" /> </td>
+                    <input type="text" name="USERID" /> </td>
             </tr>
             <tr>
                 <th>비밀번호</th>
                 <td>
-                    <input type="password" name="user_pw" /> </td>
+                    <input type="password" name="USERPW" /> </td>
             </tr>
             <tr>
                 <th>비밀번호 확인</th>
                 <td>
-                    <input type="text" name="user_pw2" /> </td>
+                    <input type="text"  /> </td>
             </tr>
             <tr>
                 <th>이름</th>
                 <td>
-                    <input type="text" name="user_name" /> </td>
+                    <input type="text" name="USERNAME" /> </td>
             </tr>
             <tr>
                 <th>생년월일</th>
                 <td>
-                    <select name="user_birth_year">
-                        <option value="1990" selected>1990</option>
+                <% 
+                /* String year1=year.valueOf(year);
+                String month1=month.valueOf(month);
+                String day1=day.valueOf(day);
+                 */
+                
+                
+                String USERBIRTH= year+month+day; %>
+                    <select name="year" >
+                        <option name= value="1990" selected>1990</option>
                         <option value="1991" selected>1991</option>
                         <option value="1992" selected>1992</option>
                         <option value="1993" selected>1993</option>
@@ -116,7 +122,7 @@
                         <option value="2003" selected>2003</option>
                         <option value="2004" selected>2004</option>
                     </select>년
-                    <select name="user_birth_month">
+                    <select name="month">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -130,7 +136,7 @@
                         <option value="11">11</option>
                         <option value="12">12</option>
                     </select>월
-                    <select name="user_birth_day">
+                    <select name="day">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -181,21 +187,26 @@
                     <input type="radio" name="pet" value="N" onclick="LayerView()">No </td>
             </tr>
             
-        <!-- </table>
-        Yes일때 보여줌
+        </table>
+       
+        
+        
         <script>
-            function LayerView() {
-                var checkValue = $("input[type:radio][name=pet]:checked").val();
-                if (checkValue == "Y") {
-                    petinfo.style.visibility = "visible";
-                }
-                else if (checkValue == "N") {
-                    petinfo.style.visibility = "hidden";
-                }
-            }
+        function LayerView() {
+           var checkValue = $("input[type:radio][name=pet]:checked").val();
+           if (checkValue == "Y") {
+              /* petinfo.style.visibility = "visible"; */
+              
+           }
+           else if (checkValue == "N") {
+              /* petinfo.style.visibility = "hidden"; */
+              
+           }
+        }
         </script>
-        <table id="petinfo" style="visibility:hidden;"> -->
+        <table id="petinfo">  
             <tr>
+            
                 <th>애완명 :</th>
                 <td>
                     <input type="text"> </td>
@@ -221,19 +232,16 @@
                 <td>
                     <input type="radio" name="pets">암컷
                     <input type="radio" name="pets">수컷 </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <input type="submit" name="submit" value="다음단계로" />
-                    <input type="reset" name="reset" value="취소" /> </td>
-            </tr>
+            </tr> 
         </table>
+        <input type="submit" class="btn1" name="submit" value="다음단계로" />
+        <input type="reset" class="btn1" name="reset" value="취소" />
         </form>
-            </div>
         </div>
-    </center>
+        </div>
+    
     <footer> </footer>
+
     </div>
 </body>
 

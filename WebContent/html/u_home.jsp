@@ -151,7 +151,7 @@ try {
 					<tbody>
 						<% 
 						/*스케줄*/
-						String sql = "select calstime,calcate,calcont from usrschedule";
+						String sql = "select calstime,calcate,calcont from USRSCHEDULE";
 						Statement stmt = conn.createStatement();
 						ResultSet rs = null;
 						rs = stmt.executeQuery(sql);

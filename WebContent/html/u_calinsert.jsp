@@ -49,7 +49,7 @@
 		conn.commit();
 		
 	} catch (SQLException e) {
-		out.println("<script> alert('노농'); hidtory.back(); </script>");
+		/* out.println("<script> alert('노농'); hidtory.back(); </script>"); */
 		e.printStackTrace();
 %>
 <body>
