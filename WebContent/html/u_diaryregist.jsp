@@ -105,7 +105,7 @@
 					<h1>오늘의 일기를 작성해주세요~^^</h1>
 					<br>
 					<p>
-						날짜선택:&nbsp;<input type="date" name="date">&nbsp;&nbsp;&nbsp;동물선택:&nbsp;
+						날짜선택:&nbsp;<input type="date" name="D_DATE">&nbsp;&nbsp;&nbsp;동물선택:&nbsp;
 						<select name="petchoice">
 							<option value="1111">꾸꾸</option>
 							<option value="1112">두유</option>
@@ -114,21 +114,21 @@
 					</p>
 					<br>
 					<p>
-						<textarea name="d_content" rows="5" cols="80" placeholder="일기를 작성해주세요"></textarea>
+						<textarea name="D_CONTENT" rows="5" cols="80" placeholder="일기를 작성해주세요"></textarea>
 					</p>
 					<p>
 					<h5>★애완동물의 사진을 올려주세요★</h5>
 				
 					
 					<!-- <form id="form1" runat="server"> -->
-						<input type='file' id="imgInp"  class="btn1"/> <img id="blah" src="#" alt="your image" />
+						<input type='file' id="imgInp"  class="btn1" name="UPROAD"/> <img id="blah" src="#" alt="your image" />
 					<!-- </form> -->
 					</p>
 
 					<p>
-						신장:&nbsp;<input type="number" min="0" max="900" name="cm">&nbsp;cm
+						신장:&nbsp;<input type="number" min="0" max="900" name="HGHT">&nbsp;cm
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 체중:&nbsp;<input
-							type="number" min="0" max="99" name="kg">&nbsp;kg
+							type="number" min="0" max="99" name="WEIGHT">&nbsp;kg
 					</p>
 				</div>
 				<p>
