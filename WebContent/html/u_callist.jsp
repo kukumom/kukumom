@@ -124,10 +124,10 @@ System.out.print("CALCONT"); */
 				</table>
 			</div> -->
 			<div class="cont-right">
-
+				
 				<div class="list">
 					<div align="center" style="padding-top: 1%;">
-						<h3>2016-11-11</h3>
+						<h3>2016-11-18</h3>
 					</div>
 					<!--테이블-->
 					<table class="table1" align="center">

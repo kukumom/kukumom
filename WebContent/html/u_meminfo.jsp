@@ -171,8 +171,9 @@
 					<tr>
 						<th>애완동물 유무 :</th>
 						<td><input type="radio" name="pet" value="Y"
-							onclick="LayerView()">Yes <input type="radio" name="pet"
-							value="N" onclick="LayerView()">No</td>
+							onclick="LayerView();">Yes 
+							<input type="radio" name="pet"
+							value="N" onclick="LayerView();">No</td>
 					</tr>
 					<tr>
 						<td></td>
@@ -185,7 +186,7 @@
 
 				<!--Yes일때 보여줌-->
 				<script>
-					function LayerView() {
+					 function LayerView() {
 						var checkValue = $(
 								"input[type:radio][name=pet]:checked").val();
 						if (checkValue == "Y") {
@@ -193,7 +194,15 @@
 						} else if (checkValue == "N") {
 							petinfo.style.visibility = "hidden";
 						}
-					}
+					} 
+					/* function LayerView(){
+						var checkValue = $('input:radio[name=pet]').is(':checked');
+						if (checkValue.equels("true")) {
+							petinfo.style.visibility = "visible";
+						} else if (checkValue.equels("false")) {
+							petinfo.style.visibility = "hidden";
+						}
+					} */
 				</script>
 				<table id="petinfo" style="visibility: hidden;">
 					<tr>
