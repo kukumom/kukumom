@@ -200,7 +200,6 @@
 		</div>
 		</div>
 		 <%
-		con.close();
 
 		} catch (Exception e) {
 
