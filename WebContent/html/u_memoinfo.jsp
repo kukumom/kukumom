@@ -75,7 +75,9 @@
 				</table>
 			</div>-->
             <div class="cont-right">
-               <table>
+            
+            <form action="" name="" >
+            <table>
             <br>
             <tr>
                 <th>아이디</th>
@@ -178,14 +180,9 @@
                     <input type="radio" name="pet" value="Y" onclick="LayerView()">Yes
                     <input type="radio" name="pet" value="N" onclick="LayerView()">No </td>
             </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <input type="submit" name="submit" value="다음단계로" />
-                    <input type="reset" name="reset" value="취소" /> </td>
-            </tr>
-        </table>
-        <!--Yes일때 보여줌-->
+            
+        <!-- </table>
+        Yes일때 보여줌
         <script>
             function LayerView() {
                 var checkValue = $("input[type:radio][name=pet]:checked").val();
@@ -197,7 +194,7 @@
                 }
             }
         </script>
-        <table id="petinfo" style="visibility:hidden;">
+        <table id="petinfo" style="visibility:hidden;"> -->
             <tr>
                 <th>애완명 :</th>
                 <td>
@@ -225,7 +222,14 @@
                     <input type="radio" name="pets">암컷
                     <input type="radio" name="pets">수컷 </td>
             </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="submit" value="다음단계로" />
+                    <input type="reset" name="reset" value="취소" /> </td>
+            </tr>
         </table>
+        </form>
             </div>
         </div>
     </center>

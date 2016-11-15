@@ -32,7 +32,7 @@
  
         Connection con = DriverManager.getConnection(url,"system","1234");
  
-        out.println("Oracle Database Connection Success.");
+        out.println("Database Connection Success.");
  
       
  
@@ -46,7 +46,7 @@
  
     }catch (Exception e) {
  
-        out.println("Oracle Database Connection Something Problem. <hr>");
+        out.println("Database Connection Something Problem. <hr>");
  
         out.println(e.getMessage());
  
