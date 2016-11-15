@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
  
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
  
 <%@ page import="java.sql.*" %>  
  
@@ -10,9 +10,9 @@
  
 <head>
  
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  
-<title>º»°İ! °Ô½ÃÆÇ - °Ô½Ã±Û »èÁ¦</title>    
+<title>ë³¸ê²©! ê²Œì‹œíŒ - ê²Œì‹œê¸€ ì‚­ì œ</title>    
  
 </head>
  
@@ -38,7 +38,7 @@
  
         Statement stmt = con.createStatement();        
  
-        String sql = "delete from board where idx = " + idx ;   // »èÁ¦ Äõ¸®ÀÔ´Ï´Ù.
+        String sql = "delete from board where idx = " + idx ;   // ì‚­ì œ ì¿¼ë¦¬ì…ë‹ˆë‹¤.
  
         stmt.executeQuery(sql);
  
@@ -58,9 +58,9 @@
  
 <script>
  
-    alert("°Ô½Ã±ÛÀÌ »èÁ¦µÇ¾ú½À´Ï´Ù");  // °Ô½Ã±ÛÀÌ »èÁ¦µÇ¾ú´Ù´Â °æ°íÃ¢À» ¶ç¿öÁÖ°í
+    alert("ê²Œì‹œê¸€ì´ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤");  // ê²Œì‹œê¸€ì´ ì‚­ì œë˜ì—ˆë‹¤ëŠ” ê²½ê³ ì°½ì„ ë„ì›Œì£¼ê³ 
  
-    location.href="a_index.jsp";          // ¸®½ºÆ®ÆäÀÌÁö·Î ÀÌµ¿ÇÕ´Ï´Ù.
+    location.href="a_index.jsp";          // ë¦¬ìŠ¤íŠ¸í˜ì´ì§€ë¡œ ì´ë™í•©ë‹ˆë‹¤.
  
 </script>
  

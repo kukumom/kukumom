@@ -101,6 +101,15 @@
 					<tr>
 						<th>생년월일</th>
 						<td><select name="user_birth_year">
+								<option value="1981" selected>1981</option>
+								<option value="1982" selected>1982</option>
+								<option value="1983" selected>1983</option>
+								<option value="1984" selected>1984</option>
+								<option value="1985" selected>1985</option>
+								<option value="1986" selected>1986</option>
+								<option value="1987" selected>1987</option>
+								<option value="1988" selected>1988</option>
+								<option value="1989" selected>1989</option>
 								<option value="1990" selected>1990</option>
 								<option value="1991" selected>1991</option>
 								<option value="1992" selected>1992</option>

@@ -7,20 +7,16 @@
 <meta charset="utf-8" />
 <title>꾸꾸맘</title>
 <link rel="stylesheet" type="text/css" href="../css/u_style.css">
-<link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
+<link rel="stylesheet" type="text/css" href="../css/table.css">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
+<link rel="stylesheet" type="text/css" href="../css/diary.css">
+
 </head>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="http://malsup.github.com/jquery.cycle2.js"></script>
-<script type="text/javascript">
-	function move(url) {
-		location.href = url;
-	}
-</script>
 
 <body>
-	<div class="container" align="center">
+
+	<center>
+		<div class="container" align="center">
 		<div class="topWrap">
 		<div class="login" align="right">
 				<a href="u_memcont.jsp" class="findButton">회원가입</a>
@@ -82,71 +78,52 @@
 						<td><a href="u_findpass.jsp" class="findButton">PW찾기</a></td>
 				</table>
 			</div>-->
-			<div class="cont-right">
-				<p>
-					병원선택 : <select name="hoschoice">
-						<option value="petname">병원선택</option>
-						<option value="text">내용</option>
-					애완동물선택 : </select> <select name="petchoice">
-						<option value="petname">펫선택</option>
-						<option value="text">내용</option>
-					</select>
-				</p>
-				<table border style="" class="table1">
-					<thead>
+			<div class="cont-right" >
+				<div class="wrap effect8">
+					<div align="center" style="padding-top: 4.3%;">
+						<h3>2016-10-26</h3>
+					</div>
+					<table class="table1" border="1" align="center"  style="font-size:15px;">
 						<tr>
-							<th width=15%>날짜</th>
-							<th width=20%>병원명</th>
-							<th width=10%>애완명</th>
-							<th width=40%>내용</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<tr>
-
-							<td>2016.08.30</td>
-							<td>그랜드동물병원</td>
-							<td>꾸꾸</td>
-							<td>경과체크</td>
+							<th>기간 선택</th>
+							<td class="left"><input type="date">~ <input
+								type="date"></td>
 						</tr>
 						<tr>
-
-							<td>2016.07.30</td>
-							<td>그랜드동물병원</td>
-							<td>꾸꾸</td>
-							<td><a href="u_Examlist_detail.jsp">건강검진</td>
+							<th>시간</th>
+							<td class="left"><input type="time"></td>
 						</tr>
 						<tr>
-
-							<td>2016.06.01</td>
-							<td>소망동물병원</td>
-							<td>두유</td>
-							<td>정기검진2차</td>
+							<th>구분</th>
+							<td class="left"><input type="radio" name="schediv">진료
+								<input type="radio" name="schediv">미용 <input
+								type="radio" name="schediv">기타</td>
 						</tr>
 						<tr>
-
-							<td>2016.03.01</td>
-							<td>소망동물병원</td>
-							<td>도치</td>
-							<td>정기검진1차</td>
+							<th>내용</th>
+							<td class="left"><textarea cols="60" rows="5"></textarea></td>
 						</tr>
 						<tr>
-
-							<td>2016.01.30</td>
-							<td>행복동물병원</td>
-							<td>꾸꾸</td>
-							<td>예방접종1차</td>
+							<th>알림</th>
+							<td class="left"><select>
+									<option>알림없음</option>
+									<option>10분전</option>
+									<option>1시간전</option>
+									<option>하루전</option>
+							</select></td>
 						</tr>
-					</tbody>
+					</table>
+					<p class="btn" align="center">
+						<input type="button" class="btn1" value="저장"> <a
+							href="u_callist.jsp"> <input type="button" class="btn1"
+							value="취소">
+					</p>
 
-
-				</table>
+				</div>
 			</div>
 		</div>
 	</center>
 	<footer> </footer>
-	</div>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <!DOCTYPE html>
 <html>
 
@@ -12,18 +12,18 @@
 <body>
     <div>
         <center>
-            <h2><p>�����ڵ� ã��</p></h2> </center>
+            <h2><p>병워코드 찾기</p></h2> </center>
     </div>
     <div class="" align="center">
         <table>
             <br>
             <tr>
-                <th>�����̸� </th>
+                <th>병원이름 </th>
                 <td>
                     <input type="text" name="user_name" /> </td>
             </tr>
             <tr>
-                <th>��ǥ ��ȣ </th>
+                <th>대표 번호 </th>
                 <td>
                     <select>
                         <option>010</option>
@@ -34,8 +34,8 @@
             </tr>
         </table>
         <p>
-            <input type="submit" name="submit" value="ã��" />
-            <input type="reset" name="reset" value="���" /> </p>
+            <input type="submit" name="submit" value="찾기" />
+            <input type="reset" name="reset" value="취소" /> </p>
     </div>
 </body>
 

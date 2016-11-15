@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	 <%@ include file="dbCon.jsp"%> 
 <!DOCTYPE html>
@@ -145,8 +145,6 @@
 			</div>
 			</div>
 			 <%
-		con.close();
-
 		} catch (Exception e) {
 
 			out.println("DB연결에 문제 발생 <hr>");
@@ -155,6 +153,10 @@
 
 			e.printStackTrace();
 
+		} finally{
+			if (con != null && !con.isClosed()) {
+			con.close();
+			}
 		}
       %>
 
