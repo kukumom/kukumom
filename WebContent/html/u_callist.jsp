@@ -11,38 +11,9 @@
 <link rel="stylesheet" type="text/css" href="../css/u_style.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
-<script>
 
-
-/* System.out.print("USERID");
-System.out.print("CALSDATE");
-System.out.print("CALSTIME");
-System.out.print("CALCONT"); */
-</script>
 </head>
-<%-- <%
 
-
-	try {
-
-		String driverName = "com.mysql.jdbc.Driver";
-
-		String url = "jdbc:mysql://kukumom.c3hzxu2bf5no.ap-northeast-2.rds.amazonaws.com:33061/kukumom";
-
-		Class.forName(driverName);
-
-		Connection con = DriverManager.getConnection(url, "system", "1234");
-
-		/*  out.println("Oracle Database Connection Success.");  */
-
-		/*스케줄*/
-		String sql = "select calsdate,calcate,calcont from usrschedule where userid='kukumom2' order by calsdate desc";
-		Statement stmt = con.createStatement();
-		ResultSet rs = null;
-		rs = stmt.executeQuery(sql);
-
-		
-%> --%>
 <%
 	Connection conn = null; // null로 초기화 한다.
 	try {
@@ -55,7 +26,7 @@ System.out.print("CALCONT"); */
 		conn = DriverManager.getConnection(url, id, pw); // DriverManager 객체로부터 Connection 객체를 얻어온다.
 		/* out.println("제대로 연결되었습니다."); // 커넥션이 제대로 연결되면 수행된다. */
 		
-		String sql = "select calsdate,calcate,calcont from USRSCHEDULE order by calsdate desc";
+		String sql = "select calstime,caledtime,calcate,calcont from USRSCHEDULE order by calsdate desc";
 		Statement stmt = conn.createStatement();
 		
 		rs = stmt.executeQuery(sql);
@@ -133,8 +104,9 @@ System.out.print("CALCONT"); */
 					<table class="table1" align="center">
 						<colgroup>
 							<col width="10%" />
-							<col width="20%" />
-							<col width="20%" />
+							<col width="15%" />
+							<col width="15%" />
+							<col width="10%" />
 							<col width="50%" />
 						</colgroup>
 						<thead>
@@ -143,7 +115,8 @@ System.out.print("CALCONT"); */
 							</tr>
 							<tr>
 								<th>선택</th>
-								<th>일자시간</th>
+								<th>시작시간</th>
+								<th>종료시간</th>
 								<th>구분</th>
 								<th>내용</th>
 							</tr>
@@ -154,7 +127,8 @@ System.out.print("CALCONT"); */
 									out.print("<tr>");
 						%>
 							<td><input type="radio"></td>
-							<td><%=rs.getString("CALSDATE")%></td>
+							<td><%=rs.getString("calstime")%></td>
+							<td><%=rs.getString("caledtime")%></td>
 							<td><%=rs.getString("calcate")%></td>
 							<td><%=rs.getString("calcont")%></td>
 
