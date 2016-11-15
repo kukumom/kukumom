@@ -31,7 +31,7 @@ try {
 		Class.forName("com.mysql.jdbc.Driver"); // 데이터베이스와 연동하기 위해 DriverManager에 등록한다.
 		conn = DriverManager.getConnection(url, id, pw); // DriverManager 객체로부터 Connection 객체를 얻어온다.
 		
-		out.println("Oracle Database Connection Success.");  	
+		out.println("Database Connection Success.");
 %>
 
 
@@ -254,7 +254,7 @@ try {
 
 	} catch (Exception e) {
 
-		out.println("Oracle Database Connection Something Problem. <hr>");
+		out.println("Database Connection Something Problem. <hr>");
 
 		out.println(e.getMessage());
 

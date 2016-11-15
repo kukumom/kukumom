@@ -171,7 +171,7 @@
 
 		} catch (Exception e) {
 
-			out.println("Oracle Database Connection Something Problem. <hr>");
+			out.println("Database Connection Something Problem. <hr>");
 
 			out.println(e.getMessage());
 
@@ -185,7 +185,7 @@
 	<%
 			} catch (Exception e) {
 
-				out.println("Oracle Database Connection Something Problem. <hr>");
+				out.println("Database Connection Something Problem. <hr>");
 
 				out.println(e.getMessage());
 

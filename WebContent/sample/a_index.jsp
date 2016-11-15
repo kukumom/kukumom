@@ -30,7 +30,7 @@
  
         Class.forName(driverName);
         Connection con = DriverManager.getConnection(url,"system","1234");
-        out.println("Oracle Database Connection Success.");
+        out.println("Database Connection Success.");
  
         Statement stmt = con.createStatement();        
         String sql = "select userid, userpw, username from board order by userid desc";
@@ -88,7 +88,7 @@
  
     }catch (Exception e) {
  
-        out.println("Oracle Database Connection Something Problem. <hr>");
+        out.println("Database Connection Something Problem. <hr>");
  
         out.println(e.getMessage());
  
