@@ -200,7 +200,7 @@
 		</div>
 		</div>
 		 <%
-	
+
 		} catch (Exception e) {
 
 			out.println("DB연결에 문제 발생 <hr>");
