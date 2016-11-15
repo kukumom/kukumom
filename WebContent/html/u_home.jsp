@@ -101,7 +101,7 @@ try {
 						 <%
 						 /*병원목록*/
 							Statement stmt2 = conn.createStatement();
-							String sql2 = "select a.hosname,a.hostel from hosinfo a join usrmyhos b where a.hoscode=b.hoscode and b.userid='kukumom2'";
+							String sql2 = "select a.hosname,a.hostel from HOSINFO a join USRMYHOS b where a.hoscode=b.hoscode and b.userid='kukumom2'";
 							ResultSet rs2 = null;
 							rs2 = stmt2.executeQuery(sql2);
 						 
@@ -203,7 +203,7 @@ try {
 						<%
 						/*성장일기*/
 						Statement stmt1 = conn.createStatement();
-						String sql1 = "select d_date,d_content,hght,weight from usrdiary where userid='kukumom2' order by d_date desc";
+						String sql1 = "select d_date,d_content,hght,weight from USRDIARY where userid='kukumom2' order by d_date desc";
 						ResultSet rs1 = null;
 						rs1 = stmt1.executeQuery(sql1);
 						
