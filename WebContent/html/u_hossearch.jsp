@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -78,23 +79,30 @@
 					<h2>병원 검색</h2>
 					<br> <br>
 					<p>
-						<input type="checkbox" name="kind"> 병원명 :
+						<!-- <input type="checkbox" name="kind"> --> 병원명 :
 						<textarea name="text" rows="1" cols="26"></textarea>
 					</p>
 					<p>
-						<input type="checkbox" name="kind"> 지역별 : <select
+						<!-- <input type="checkbox" id="local" name="kind"> --> 지역별 : <select
 							name="city">
+							
+					<select> 		
 							<option value="1">서 울 특 별 시</option>
 							<option value="2">경 기 도</option>
 							<option value="3">인 천 광 역 시</option>
 							<option value="4">강 원 도</option>
 							<option value="5">제 주 도</option>
-						</select> <select name="borough">
-							<option value="1">성 동 구</option>
-							<option value="2">중 구</option>
-							<option value="3">중 랑 구</option>
-							<option value="3">동 대 문 구</option>
-							<option value="3">은 평 구</option>
+						
+						<%if (local.value==1){
+						      value='01';
+						      value='02';		  
+						}%>
+						
+							<option value="01">성 동 구</option>
+							<option value="02">중 구</option>
+							<option value="03">중 랑 구</option>
+							<option value="04">동 대 문 구</option>
+							<option value="05">은 평 구</option>
 						</select>
 					</p>
 					<br>

@@ -110,7 +110,7 @@
 						<option value="text">두유</option>
 						<option value="text">도치</option>
 
-					</select> <input type="date" name="날짜"> <input type="text"
+					</select> <input type="date" name="닐짜"> <input type="text"
 						placeholder="내용 입력">&nbsp;&nbsp;<input type="button" class="btn1" value="검 색">
 					</section>
 	
@@ -209,9 +209,11 @@
 
 			e.printStackTrace();
 
-		}finally {
-			con.close();
-		}
+		} finally {
+    		if (con != null && !con.isClosed()) {
+     	         con.close();
+    	}
+ 	 }
 		
 	%> 
 		</body>

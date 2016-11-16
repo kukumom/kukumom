@@ -5,7 +5,6 @@
 <html>
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <title>성장일기 등록</title>
 </head>
@@ -44,16 +43,17 @@
       pstmt.executeUpdate();
       conn.commit();
       
-   } catch (SQLException e) {
-      e.printStackTrace();
+   
 %>
 <body>
    <%
    } catch (Exception e) {
-	   
-      out.println(" 데이터베이스 접속에 문제가 있습니다. <hr>");
-      out.println(e.getMessage());
-      e.printStackTrace();
+
+		out.println("DB연결에 문제 발생 <hr>");
+
+		out.println(e.getMessage());
+
+		e.printStackTrace();
 
    }finally{
         out.print("<script>location.href='u_diarylist.jsp';</script>");
