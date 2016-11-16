@@ -8,6 +8,7 @@
 <style>
 body{
 	background-color: #fff;
+	color: #353535;
 }
 
 #container{
@@ -90,7 +91,7 @@ body{
 			<a href="u_findid.jsp" class="find">ID찾기</a>
 			<a href="u_findpass.jsp" class="find">PW찾기</a>
 			<a href="u_memcont.jsp" class="find">회원가입</a><br/>
-			<input type="button" value="로그인" class="login"/>
+			<a href="#" class="login">Login</a>
 		</div>
 		<div id="cont2">
 			<h3>보호자 로그인</h3>
@@ -99,7 +100,7 @@ body{
 			<a href="u_findid.jsp" class="find">ID찾기</a>
 			<a href="u_findpass.jsp" class="find">PW찾기</a>
 			<a href="u_memcont.jsp" class="find">회원가입</a><br/>
-			<input type="button" value="로그인" class="login"/>
+			<a href="u_home.jsp" class="login">Login</a>
 		</div>
 	</div>
 

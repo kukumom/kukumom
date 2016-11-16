@@ -21,16 +21,7 @@
 <div class="container" align="center">
 		<div class="container" align="center">
 		<div class="topWrap">
-		<div class="login" align="right">
-				<a href="u_memcont.jsp" class="findButton">회원가입</a>
-				<a href="u_findid.jsp" class="findButton">ID찾기</a>
-				<a href="u_findpass.jsp" class="findButton">PW찾기</a>
-				<span >ID
-				<input type="text" style="width: 100px;" /></span>
-				<span  >PW
-				<input type="password" style="width: 100px;" /></span>
-				<a href="#" class="logButton">LOGIN</a>
-			</div>
+		
 			<div class="logo">
 				<p style="display: inline;">
 					<img  src="../image/logo.png" width="180" height="150" />
