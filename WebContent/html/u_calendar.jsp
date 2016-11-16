@@ -85,8 +85,7 @@ var monthName = new Array("1월", "2월", "3월", "4월", "5월", "6월", "7월"
             }
             calStr += "<a href='u_callist.jsp'>" //날짜에~~링크설정
             calStr += dayCount++ // 날짜
-
-                calStr += "</a>"
+			calStr += "</a>"
             if (dayCount == nowd) {
                 calStr += "</b>" // 오늘 날짜일때 글자 진하게
             } else {

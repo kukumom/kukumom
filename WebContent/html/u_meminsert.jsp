@@ -15,8 +15,8 @@
 	String USERID = request.getParameter("USERID");
 	String USRPW = request.getParameter("USRPW");
 	String USRNAME = request.getParameter("USRNAME");
-	String USERBIRTH = request.getParameter("USRBIRTH");
-	String USERTEL = request.getParameter("USRTEL");
+	String USRBIRTH = request.getParameter("USRBIRTH");
+	String USRTEL = request.getParameter("USRTEL");
 	/* String USERZIP = request.getParameter("USRZIP");
 	String USERADD = request.getParameter("USERADD"); */
 	

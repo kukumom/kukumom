@@ -36,7 +36,6 @@
       pstmt.setString(6, Q_CONTENT);
 
       pstmt.executeUpdate();
-      conn.commit();
       
   
 %>
@@ -51,6 +50,7 @@
 		e.printStackTrace();
 
   }finally{
+	  conn.close();
        out.print("<script>location.href='u_qnalist.jsp';</script>");
    }
    %>
