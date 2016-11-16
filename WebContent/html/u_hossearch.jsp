@@ -1,6 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,21 +10,12 @@
 <link rel="stylesheet" type="text/css" href="../css/button.css">
 <link rel="stylesheet" type="text/css" href="../css/u_style.css">
 <link rel="stylesheet" type="text/css" href="../css/diary.css">
+
 </head>
 <body>
 	<center>
 		<div class="container" align="center">
 		<div class="topWrap">
-		<div class="login" align="right">
-				<a href="u_memcont.jsp" class="findButton">회원가입</a>
-				<a href="u_findid.jsp" class="findButton">ID찾기</a>
-				<a href="u_findpass.jsp" class="findButton">PW찾기</a>
-				<span >ID
-				<input type="text" style="width: 100px;" /></span>
-				<span  >PW
-				<input type="password" style="width: 100px;" /></span>
-				<a href="#" class="logButton">LOGIN</a>
-			</div>
 			<div class="logo">
 				<p style="display: inline;">
 					<img  src="../image/logo.png" width="180" height="150" />
@@ -79,31 +71,39 @@
 					<h2>병원 검색</h2>
 					<br> <br>
 					<p>
-						<!-- <input type="checkbox" name="kind"> --> 병원명 :
-						<textarea name="text" rows="1" cols="26"></textarea>
+						<!-- <input type="checkbox" name="kind"> --> 병원명 : <textarea name="text" rows="1" cols="26"></textarea>
+						
 					</p>
 					<p>
-						<!-- <input type="checkbox" id="local" name="kind"> --> 지역별 : <select
-							name="city">
+						<!-- <input type="checkbox" id="local" name="kind"> --> 지역별 : <select name="city">
 							
-					<select> 		
+						
 							<option value="1">서 울 특 별 시</option>
 							<option value="2">경 기 도</option>
 							<option value="3">인 천 광 역 시</option>
 							<option value="4">강 원 도</option>
 							<option value="5">제 주 도</option>
+							</select> 
 						
-						<%if (local.value==1){
-						      value='01';
-						      value='02';		  
-						}%>
 						
+						<select name="borough">
 							<option value="01">성 동 구</option>
 							<option value="02">중 구</option>
 							<option value="03">중 랑 구</option>
 							<option value="04">동 대 문 구</option>
 							<option value="05">은 평 구</option>
 						</select>
+						
+						<%if (local.value==1){
+						     int 
+						      value='01';
+						      value='02';
+						      value='03';
+						      value='04';
+						      value='05';
+						      value='06';
+						}%>
+						
 					</p>
 					<br>
 					<p>
