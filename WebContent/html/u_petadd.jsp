@@ -31,37 +31,34 @@
 
 </head>
 <body>
+		<center>
 		<div class="container" align="center">
-		<div class="topWrap">
-		
-			<div class="logo">
-				<p style="display: inline;">
-					<img  src="../image/logo.png" width="180" height="150" />
-				</p>
-			</div>
-			
-			
-			<div class='menu'>
-				<ul>
-					<li><a href="u_home.jsp">Home</a></li>
-					<li class='active sub'><a href='#'>MY PAGE</a>
-						<ul>
-							<li class='sub'><a href="u_memmod.jsp">내정보</a></li>
-							<li class='sub'><a href="u_petlist.jsp">애완동물 관리</a></li>
-							<li class='sub'><a href="u_memhos.jsp">MY병원</a></li>
-						</ul></li>
-					<li class='active sub'><a href="'#'">병원서비스</a>
-						<ul>
-							<li class='sub'><a href="u_hossearch.jsp">병원검색</a></li>
-							<li class='sub'><a href="u_Examlist.jsp">진료내역조회</a></li>
-							<li class="sub"><a href="u_qnaquary.jsp">1:1 문의하기</a></li>
-							<li class='sub'><a href="u_qnalist.jsp">1:1 문의내역</a></li>
-						</ul></li>
-					<li><a href="u_calendar.jsp">일정관리</a></li>
-					<li class='last'><a href="u_diarylist.jsp">성장일기</a></li>
-				</ul>
-			</div>
-		</div>
+		 <div id = "topbar"></div>
+	<div id = "header">	
+     <img src="..\image\hlogo.png" id="logo" width="310" height="130">
+     <div class='menu'>
+	 <ul>
+	  <li><a href="u_home.jsp">Home</a></li>
+	  <li class='active sub'><a href='#'>MY PAGE</a>
+		<ul>
+		 <li class='sub'><a href="u_memmod.jsp">내정보</a></li>
+		 <li class='sub'><a href="u_petlist.jsp">애완동물 관리</a></li>
+		 <li class='sub'><a href="u_memhos.jsp">MY병원</a></li>
+	 	</ul>
+	  </li>
+	  <li class='active sub'><a href="'#'">병원서비스</a>
+		<ul>
+		 <li class='sub'><a href="u_hossearch.jsp">병원검색</a></li>
+		 <li class='sub'><a href="u_Examlist.jsp">진료내역조회</a></li>
+		 <li class="sub"><a href="u_qnaquary.jsp">1:1 문의하기</a></li>
+		 <li class='sub'><a href="u_qnalist.jsp">1:1 문의내역</a></li>
+		</ul>
+	  </li>
+	  <li><a href="u_calendar.jsp">일정관리</a></li>
+	  <li class='last'><a href="u_diarylist.jsp">성장일기</a></li>
+	</ul>
+   </div>
+  </div>
 		<div class="cont">
 			<!-- <div class="cont-left">
 				입력
@@ -85,12 +82,11 @@
 				</table>
 			</div>-->
 		
+		<div class="cont-right">
+				<div class="wrap effect8">
       <form name="reg01" action="u_petinsert.jsp" method="get">
-						
-			<div class="cont-right">
-			<div class="wrap effect8">
 					<h3>등록할 애완동물의 정보를 입력해주세요!</h3>
-				</div>
+				
 				<br><br><br><br>
 				<table align="center">
 					<tr>
@@ -120,7 +116,7 @@
 					</tr>
 					<tr>
 						<th>생년월일 :</th>
-						<td><input type="date" name="PETBIRTH" value="2016-11-16"></td>
+						<td><input type="date" name="PETBIRTH" value="2016-11-18"></td>
 					</tr>
 					<tr>
 						<th>성별 :</th>
@@ -134,11 +130,15 @@
 					<input type="submit" value="저    장" class="btn1"/>
 					<input type="reset" value="취     소" class="btn1"/>
 				</p>
+				</form>
 			</div>
-			</form>
+			</div>
 		</div>
+		</div>
+	</center>
+
+	<footer> </footer>
 	
-	</div>
 		
 </body>
 </html>

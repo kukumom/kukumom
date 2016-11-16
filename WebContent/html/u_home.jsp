@@ -214,7 +214,7 @@ try {
 						<%
 						/*성장일기*/
 						Statement stmt1 = conn.createStatement();
-						String sql1 = "select d_date,d_content,hght,weight from USRDIARY where userid='kukumom' order by d_date desc";
+						String sql1 = "select d_date,d_content,hght,weight from USRDIARY where petcode='p00000001' order by d_date desc";
 						ResultSet rs1 = null;
 						rs1 = stmt1.executeQuery(sql1);
 						
