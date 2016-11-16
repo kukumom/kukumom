@@ -31,17 +31,6 @@
 				}
 			</script>
 </head>
-
-<script language="javascript">
-	function showConfirm() {
-		if (confirm("삭제하시겠습니까?")) {
-			alert("삭제되었습니다.")
-		} else {
-			alert("취소되었습니다.")
-		}
-	}
-</script>
-</head>
 <body>
 
 		<div class="container" align="center">
@@ -74,7 +63,7 @@
 						</ul></li>
 					<li class='active sub'><a href="'#'">병원서비스</a>
 						<ul>
-							<li class='sub'><a href="U_hossearch.jsp">병원검색</a></li>
+							<li class='sub'><a href="u_hossearch.jsp">병원검색</a></li>
 							<li class='sub'><a href="u_Examlist.jsp">진료내역조회</a></li>
 							<li class="sub"><a href="u_qnaquary.jsp">1:1 문의하기</a></li>
 							<li class='sub'><a href="u_qnalist.jsp">1:1 문의내역</a></li>
@@ -176,7 +165,7 @@
 			</div>
 			</div>
 			 <%
-		con.close();
+		
 
 		} catch (Exception e) {
 
@@ -185,6 +174,11 @@
 			out.println(e.getMessage());
 
 			e.printStackTrace();
+			
+		} finally {
+    		if (con != null && !con.isClosed()) {
+     	         con.close();
+    	}
 
 		}
 		

@@ -133,7 +133,8 @@
 				</div>
 				<p>
 					<input type="submit" name="save" class="btn1" value="  저  장  "
-						onclick="alert('저장 되었습니다.')"> <input
+						
+"> <input
 						type="button" name="cancel" class="btn1" value="  취  소  "
 						onclick="alert('취소되었습니다.')"></a>
 				</p>

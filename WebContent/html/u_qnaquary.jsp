@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ include file="dbCon.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +10,30 @@
 <link rel="stylesheet" type="text/css" href="../css/button.css">
 <link rel="stylesheet" type="text/css" href="../css/u_style.css">
 <link rel="stylesheet" type="text/css" href="../css/diary.css">
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#imgInp").on('change', function() {
+			readURL(this);
+		});
+	});
+
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+
+			reader.onload = function(e) {
+				$('#blah').attr('src', e.target.result);
+			}
+
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+</script>
 </head>
 <body>
-	<center>
+	
 		<div class="container" align="center">
 		<div class="topWrap">
 		<div class="login" align="right">
@@ -42,7 +64,7 @@
 						</ul></li>
 					<li class='active sub'><a href="'#'">병원서비스</a>
 						<ul>
-							<li class='sub'><a href="U_hossearch.jsp">병원검색</a></li>
+							<li class='sub'><a href="u_hossearch.jsp">병원검색</a></li>
 							<li class='sub'><a href="u_Examlist.jsp">진료내역조회</a></li>
 							<li class="sub"><a href="u_qnaquary.jsp">1:1 문의하기</a></li>
 							<li class='sub'><a href="u_qnalist.jsp">1:1 문의내역</a></li>
@@ -74,6 +96,9 @@
 						<td><a href="u_findpass.jsp" class="findButton">PW찾기</a></td>
 				</table>
 			</div>-->
+			
+			 <form name="reg01" action="u_qnainsert.jsp" method="get">
+			 
 			<div class="cont-right">
 			<div class="wrap effect8">
 				<h1>1:1 문의하기</h1>
@@ -96,17 +121,17 @@
 					</tr>
 					<tr>
 						<td><strong>제목</strong></td>
-						<td><textarea name="head" rows="1" cols="50"></textarea></td>
+						<td><textarea name="Q_TITLE" rows="1" cols="50"></textarea></td>
 					</tr>
 					<tr>
 						<td><strong>내용</strong></td>
-						<td><textarea name="text" rows="5" cols="50"></textarea></td>
+						<td><textarea name="Q_CONTENT" rows="5" cols="50"></textarea></td>
 					</tr>
 				</table>
-				<input type="submit" name="quary" class="btn1" value="문의하기">
+				<input type="submit" name="save" class="btn1" value="문의하기" onclick="alert('문의가 완료되었습니다.')">
 			</div>
 			</div>
 			</div>
-	</center>
+	
 </body>
 </html>
