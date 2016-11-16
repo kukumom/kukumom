@@ -1,14 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ page import="java.util.*,java.text.*"%>
+	<%@page import="java.sql.*"%>
+	 <%@ include file="dbCon.jsp"%> 
 <!doctype html>
 <html lang='ko'>
 
 <head>
 <meta charset="utf-8" />
-<title>꾸꾸맘</title>
+<title>진료 방문 내역</title>
 <link rel="stylesheet" type="text/css" href="../css/u_style.css">
 <link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
+<%
+	try {
+		/*성장일기*/
+		Statement stmt1 = con.createStatement();
+		
+		String sql1 = "select A.E_DATE, B.HOSNAME, C.PETNAME, A.E_CONTENT FROM USREXAM A LEFT JOIN HOSINFO B ON A.HOSCODE=B.HOSCODE LEFT JOIN USRPET C ON A.PETCODE=C.PETCODE";
+		ResultSet rs1 = null;
+		rs1 = stmt1.executeQuery(sql1);
+
+%>
+
 </head>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -41,7 +55,7 @@
 						</ul></li>
 					<li class='active sub'><a href="'#'">병원서비스</a>
 						<ul>
-							<li class='sub'><a href="U_hossearch.jsp">병원검색</a></li>
+							<li class='sub'><a href="u_hossearch.jsp">병원검색</a></li>
 							<li class='sub'><a href="u_Examlist.jsp">진료내역조회</a></li>
 							<li class="sub"><a href="u_qnaquary.jsp">1:1 문의하기</a></li>
 							<li class='sub'><a href="u_qnalist.jsp">1:1 문의내역</a></li>
@@ -74,15 +88,30 @@
 				</table>
 			</div>-->
 			<div class="cont-right">
-			<br/><br/><br/><br/>
+
+			<br>
+			<br>
+			
+
 				<p>
-					병원선택 : <select name="hoschoice">
-						<option value="petname">병원선택</option>
-						<option value="text">내용</option>
-					애완동물선택 : </select> <select name="petchoice">
-						<option value="petname">펫선택</option>
-						<option value="text">내용</option>
+					병원선택 : <select name="hosname">
+					<option></option>
+					<option></option>
+					<option></option>
+					<option></option>
+					<option></option>
 					</select>
+					     
+					    	
+					애완동물선택 :  <select name="petname">
+					<option></option>
+					<option></option>
+					<option></option>
+					<option></option>
+					<option></option>
+					</select>
+						
+					
 				</p>
 				<table border style="" class="table1">
 					<thead>
@@ -95,7 +124,8 @@
 					</thead>
 
 					<tbody>
-						<tr>
+					
+						<!-- <tr>
 
 							<td>2016.08.30</td>
 							<td>그랜드동물병원</td>
@@ -129,14 +159,48 @@
 							<td>행복동물병원</td>
 							<td>꾸꾸</td>
 							<td>예방접종1차</td>
-						</tr>
+						</tr> -->
+							
+						<%
+							while (rs1.next()) {
+									out.print("<tr>");
+									
+						%>
+										
+						<td><%=rs1.getString("A.E_DATE")%></td>
+						<td><%=rs1.getString("B.HOSNAME")%></td>		
+						<td><%=rs1.getString("C.PETNAME")%></td>					    
+						<td><%=rs1.getString("A.E_CONTENT")%></td>
+						
+						<%
+							out.print("</tr>");
+								}
+						%>   
 					</tbody>
 
 
 				</table>
 			</div>
 		</div>
-	</center>
+	<%
+		
+
+		} catch (Exception e) {
+
+			out.println("DB연결에 문제 발생 <hr>");
+
+			out.println(e.getMessage());
+
+			e.printStackTrace();
+			
+		} finally {
+    		if (con != null && !con.isClosed()) {
+     	         con.close();
+    	}
+
+		}
+		
+	%> 
 	<footer> </footer>
 	</div>
 </body>
