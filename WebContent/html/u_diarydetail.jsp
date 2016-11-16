@@ -28,37 +28,33 @@
 </head>
 <body>
 	
-			<div class="container" align="center">
-		<div class="topWrap">
-		
-			<div class="logo">
-				<p style="display: inline;">
-					<img  src="../image/logo.png" width="180" height="150" />
-				</p>
-			</div>
-			
-			
-			<div class='menu'>
-				<ul>
-					<li><a href="u_home.jsp">Home</a></li>
-					<li class='active sub'><a href='#'>MY PAGE</a>
-						<ul>
-							<li class='sub'><a href="u_memmod.jsp">내정보</a></li>
-							<li class='sub'><a href="u_petlist.jsp">애완동물 관리</a></li>
-							<li class='sub'><a href="u_memhos.jsp">MY병원</a></li>
-						</ul></li>
-					<li class='active sub'><a href="'#'">병원서비스</a>
-						<ul>
-							<li class='sub'><a href="u_hossearch.jsp">병원검색</a></li>
-							<li class='sub'><a href="u_Examlist.jsp">진료내역조회</a></li>
-							<li class="sub"><a href="u_qnaquary.jsp">1:1 문의하기</a></li>
-							<li class='sub'><a href="u_qnalist.jsp">1:1 문의내역</a></li>
-						</ul></li>
-					<li><a href="u_calendar.jsp">일정관리</a></li>
-					<li class='last'><a href="u_diarylist.jsp">성장일기</a></li>
-				</ul>
-			</div>
-		</div>
+	<div class="container" align="center">
+		 <div id = "topbar"></div>
+	<div id = "header">	
+     <img src="..\image\hlogo.png" id="logo" width="310" height="130">
+     <div class='menu'>
+	 <ul>
+	  <li><a href="u_home.jsp">Home</a></li>
+	  <li class='active sub'><a href='#'>MY PAGE</a>
+		<ul>
+		 <li class='sub'><a href="u_memmod.jsp">내정보</a></li>
+		 <li class='sub'><a href="u_petlist.jsp">애완동물 관리</a></li>
+		 <li class='sub'><a href="u_memhos.jsp">MY병원</a></li>
+	 	</ul>
+	  </li>
+	  <li class='active sub'><a href="'#'">병원서비스</a>
+		<ul>
+		 <li class='sub'><a href="u_hossearch.jsp">병원검색</a></li>
+		 <li class='sub'><a href="u_Examlist.jsp">진료내역조회</a></li>
+		 <li class="sub"><a href="u_qnaquary.jsp">1:1 문의하기</a></li>
+		 <li class='sub'><a href="u_qnalist.jsp">1:1 문의내역</a></li>
+		</ul>
+	  </li>
+	  <li><a href="u_calendar.jsp">일정관리</a></li>
+	  <li class='last'><a href="u_diarylist.jsp">성장일기</a></li>
+	</ul>
+   </div>
+  </div>
 				<!-- <div class="cont-left">
 				입력
 				<table>

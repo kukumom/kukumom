@@ -114,7 +114,10 @@
 			</div>
 		</div>
 	</center>
-	<footer> </footer>
+	<div id="footer">Blog is powered by <a href="#"	onclick="window.open(this.href); 
+					return false" title="Daum 바로가기" style="text-decoration: none">건강하조</a>
+					 / Designed by <a href="#" title="Tistory 바로가기" style="text-decoration: none">꾸꾸맘</a>
+	</div>
 </body>
 
 </html>

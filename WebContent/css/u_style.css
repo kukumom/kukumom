@@ -11,52 +11,13 @@ html {
 }
 
 #footer {
-	margin-top: -1em;
-	height: 1em
-}
-/*로그인버튼*/
-.logButton {
-	background-color: #C0C0C0;
-	display: inline-block;
-	cursor: pointer;
-	color: #ffffff;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-	padding: 1px 10px;
-	text-decoration: none;
-	text-shadow: 2px 2px 3px #778899;
-}
-
-.logButton:hover {
-	background-color: #778899;
-}
-
-.logButton:active {
-	position: relative;
-	top: 1px;
-}
-/*가입&찾기버튼*/
-.findButton {
-	background-color:;
-	display: inline-block;
-	cursor: pointer;
-	color: #000;
-	font-family: Arial;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 5px 5px;
-	text-decoration: none;
-	text-shadow: 2px 2px 3px #778899;
-}
-
-.findButton:hover {
-	background-color:;
-}
-
-.findButton:active {
-	position: relative;
-	top: 1px;
+	width:100%;
+	float:left;
+	background-color: #efcee1;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    padding: 0px 15px;
 }
 
 body {
@@ -65,7 +26,7 @@ body {
 	height: 100%;
 	text-align: center; vertical-align : middle;
 	padding: px;
-	background: #FDF8F9;
+	background: #fff;
 	font-family: Helvetica, sans-serif;
 	vertical-align: middle;
 	font-size: 17px;
@@ -78,29 +39,43 @@ body {
 	
 }
 
-.topWrap {
-	width: 80%;
-	height: 20%;
-}
-/* .logo{
-	float: left;
-	margin: 0px auto;
-	width: 60%;
-} */
-.login {
-	background-color: ;
-	
-} 
-.login span{
-	font-family:arial;
-	
+#bar {
+   color:#000;
+   margin: 0px -5px;
+   font-family:nanum;
+   font-size:12px;
+   font-weight:bold;
+   text-decoration:none;
+   text-shadow:2px 2px 3px #778899;
 }
 
+#vtbar {
+   margin: 15px;
+}
 
-.menu {
-	position: relative;
-	height: 44px;
-	background: #2b2f3a;
+#header {
+   background-color: #fff;
+   position: relative;
+   width: 100%;
+   height: 150px;
+   line-height: 150px;
+}
+
+#logo{
+   margin-left: 10px;
+   display: inline-block;
+   position: left;
+   padding-top:1%;
+   float:left;
+}
+
+#topbar {
+   background-color: #efcee1;
+   height: 44px;
+   text-align: right;
+   position: relative;
+   line-height: 44px;
+   padding: 0px 15px;
 }
 
 .cont {
@@ -110,234 +85,241 @@ body {
 }
 
 
-/* .cont-left {
-    width: 20%;
-    height: 70%;
-    padding-top: 10px;
-    background-color: #FBEFF4;
-    float: left;
-} */
+.menu {
+   top:0px;
+   left :330px;
+   width: 70%;
+   height: 50px;
+   padding-top: 70px;
+   position: absolute;
+   background: #ffffff;
+   float: right;
+   display: inline-block;
+   
+}
 
-/* .cont-right {
-    width: 75%;
-    height: 70%;
-    background-color: ;
-    float: left;
-} */
-/*硫붾돱�뒪���씪*/
 .menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 10;
-    line-height: 1;
-    font-size:10px;
+   list-style: none;
+   padding: 0;
+   line-height: 1;
+   text-align: right;
 }
 
-.menu > ul {
-    position: relative;
-    display: block;
-    background: #a59390;
-    width: 100%;
-    z-index: 500;
+.menu>ul {
+   position: relative;
+   display: block;
+   background: #ffffff;
+   width: 100%;
+/*    z-index: 500; */
+
 }
 
-.menu:after,
-.menu > ul:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
+.menu:after, .menu>ul:after {
+   content: ".";
+   display: block;
+   clear: both;
+   visibility: hidden;
+   line-height: 0;
+   height: 0;
 }
 
-.menu.align-right > ul > li {
-    float: right;
+.menu.align-right>ul>li {
+   float: right;
 }
 
 .menu.align-center ul {
-    text-align: center;
+   text-align: center;
 }
 
 .menu.align-center ul ul {
-    text-align: left;
+   text-align: left;
 }
 
-.menu > ul > li {
-    display: inline-block;
-    position: relative;
-    margin: 0;
-    padding: 0;
+.menu>ul>li {
+   display: inline-block;
+   position: relative;
+   margin: 0;
+   padding: 0;
 }
 
-.menu > ul > #menu-button {
-    display: none;
+.menu>ul>#menu-button {
+   display: none;
 }
 
 .menu ul li a {
-    display: block;
-    font-family: Helvetica, sans-serif;
-    text-decoration: none;
+   display: block;
+   font-family: nanum;
+   text-decoration: none;
 }
 
-.menu > ul > li > a {
-    font-size: 14px;
-    font-weight: bold;
-    padding: 15px 20px;
-    color: #fff;
-    text-transform: uppercase;
-    -webkit-transition: color 0.25s ease-out;
-    -moz-transition: color 0.25s ease-out;
-    -ms-transition: color 0.25s ease-out;
-    -o-transition: color 0.25s ease-out;
-    transition: color 0.25s ease-out;
+.menu>ul>li>a {
+   font-size: 14px;
+   font-weight: bold;
+   padding: 15px 30px;
+   color: #000000;
+   text-transform: uppercase;
+   -webkit-transition: color 0.25s ease-out;
+   -moz-transition: color 0.25s ease-out;
+   -ms-transition: color 0.25s ease-out;
+   -o-transition: color 0.25s ease-out;
+   transition: color 0.25s ease-out;
 }
 
-.menu > ul > li.sub > a {
-    padding-right: 32px;
+.menu>ul>li.sub>a {
+   padding-right: 32px;
 }
 
-.menu > ul > li:hover > a {
-    color: #ffffff;
+.menu>ul>li:hover>a {
+   color: #efcee1;
 }
 
 .menu li.sub::after {
-    display: block;
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
+   display: block;
+   content: "";
+   position: absolute;
+   width: 0;
+   height: 0;
 }
 
-.menu > ul > li.sub::after {
-    right: 10px;
-    top: 20px;
-    border: 5px solid transparent;
-    border-top-color: #FDF8F9;
+.menu>ul>li.sub::after {
+   right: 10px;
+   top: 20px;
+   border: 5px solid transparent;
+   border-top-color: #efcee1;
 }
 
-.menu > ul > li:hover::after {
-    border-top-color: #ffffff;
+.menu>ul>li:hover::after {
+   border-top-color: #ffffff;
 }
 
 .menu ul ul {
-    position: absolute;
-    left: -9999px;
-    top: 70px;
-    opacity: 0;
-    -webkit-transition: opacity .3s ease, top .25s ease;
-    -moz-transition: opacity .3s ease, top .25s ease;
-    -ms-transition: opacity .3s ease, top .25s ease;
-    -o-transition: opacity .3s ease, top .25s ease;
-    transition: opacity .3s ease, top .25s ease;
-    z-index: 1000;
+   position: absolute;
+   left: -9999px;
+   top: 70px;
+   opacity: 0;
+   -webkit-transition: opacity .3s ease, top .25s ease;
+   -moz-transition: opacity .3s ease, top .25s ease;
+   -ms-transition: opacity .3s ease, top .25s ease;
+   -o-transition: opacity .3s ease, top .25s ease;
+   transition: opacity .3s ease, top .25s ease;
+   z-index: 1000;
 }
 
 .menu ul ul ul {
-    top: 37px;
-    padding-left: 5px;
+   top: 37px;
+   padding-left: 5px;
 }
 
 .menu ul ul li {
-    position: relative;
+   position: relative;
+   text-align: center;
 }
 
-.menu > ul > li:hover > ul {
-    left: auto;
-    top: 44px;
-    opacity: 1;
+.menu>ul>li:hover>ul {
+   left: auto;
+   top: 44px;
+   opacity: 1;
 }
 
-.menu.align-right > ul > li:hover > ul {
-    left: auto;
-    right: 0;
-    opacity: 1;
+.menu.align-right>ul>li:hover>ul {
+   left: auto;
+   right: 0;
+   opacity: 1;
 }
 
-.menu ul ul li:hover > ul {
-    left: 170px;
-    top: 0;
-    opacity: 1;
+.menu ul ul li:hover>ul {
+   left: 170px;
+   top: 0;
+   opacity: 1;
 }
 
-.menu.align-right ul ul li:hover > ul {
-    left: auto;
-    right: 170px;
-    top: 0;
-    opacity: 1;
-    padding-right: 5px;
+.menu.align-right ul ul li:hover>ul {
+   left: auto;
+   right: 170px;
+   top: 0;
+   opacity: 1;
+   padding-right: 5px;
 }
 
+/*하위메뉴 네모난부분*/
 .menu ul ul li a {
-    width: 130px;
-    border-bottom: 1px solid #eeeeee;
-    padding: 10px 20px;
-    font-size: 12px;
-    color: #444444;
-    background: #ffffff;
-    -webkit-transition: all .35s ease;
-    -moz-transition: all .35s ease;
-    -ms-transition: all .35s ease;
-    -o-transition: all .35s ease;
-    transition: all .35s ease;
+   width: 130px;
+   border-bottom: 1px solid #eeeeee;
+   padding: 10px 20px;
+   font-size: 13px;
+   color: #444444;
+   background: #cccccc;
+   -webkit-transition: all .35s ease;
+   -moz-transition: all .35s ease;
+   -ms-transition: all .35s ease;
+   -o-transition: all .35s ease;
+   transition: all .35s ease;
 }
 
 .menu.align-right ul ul li a {
-    text-align: right;
+   text-align: right;
+}
+    
+.menu ul ul li:hover>a {
+   background: #efcee1;
+   color: #8c9195;
 }
 
-.menu ul ul li:hover > a {
-    background: #f2f2f2;
-    color: #8c9195;
+.menu ul ul li:last-child>a, .menu ul ul li.last>a {
+   border-bottom: 0;
 }
 
-.menu ul ul li:last-child > a,
-.menu ul ul li.last > a {
-    border-bottom: 0;
+/*하위메뉴 삼각형*/
+.menu>ul>li>ul::after {
+   content: '';
+   border: 6px solid transparent;
+   width: 0;
+   height: 0;
+   border-bottom-color: #cccccc;
+   position: absolute;
+   top: -12px;
+   left: 30px;
 }
 
-.menu > ul > li > ul::after {
-    content: '';
-    border: 6px solid transparent;
-    width: 0;
-    height: 0;
-    border-bottom-color: #ffffff;
-    position: absolute;
-    top: -12px;
-    left: 30px;
+.menu>ul>li>ul.hover::after {
+   content: '';
+   border: 6px solid transparent;
+   width: 0;
+   height: 0;
+   border-bottom-color: #efcee1;
+   position: absolute;
+   top: -12px;
+   left: 30px;
 }
 
-.menu.align-right > ul > li > ul::after {
-    left: auto;
-    right: 30px;
+.menu.align-right>ul>li>ul::after {
+   left: auto;
+   right: 30px;
 }
-
-
 
 .menu.align-right ul ul li.sub::after {
-    border-left-color: transparent;
-    border-right-color: #9ea2a5;
-    right: auto;
-    left: 10px;
+   border-left-color: transparent;
+   border-right-color: #9ea2a5;
+   right: auto;
+   left: 10px;
 }
 
 .menu ul ul li.sub:hover::after {
-    border-left-color: #ffffff;
-    right: -5px;
-    -webkit-transform: rotateY(180deg);
-    -ms-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-    transform: rotateY(180deg);
+   border-left-color: #fff;
+   right: -5px;
+   -webkit-transform: rotateY(180deg);
+   -ms-transform: rotateY(180deg);
+   -moz-transform: rotateY(180deg);
+   -o-transform: rotateY(180deg);
+   transform: rotateY(180deg);
 }
 
 .menu.align-right ul ul li.sub:hover::after {
-    border-right-color: #ffffff;
-    border-left-color: transparent;
-    left: -5px;
-    -webkit-transform: rotateY(180deg);
-    -ms-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-}
+   border-right-color: #fff;
+   border-left-color: transparent;
+   left: -5px;
+   -webkit-transform: rotateY(180deg);
+   -ms-transform: rotateY(180deg);
+   -moz-transform: rotateY(180deg);
+   -o-transform: rotateY(180deg);
+   transform: rotateY(180deg);
