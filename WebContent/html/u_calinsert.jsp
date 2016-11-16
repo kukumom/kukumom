@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> 5bb64113259d38d11807eee21c0647cdd1041dc5
+
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.util.*,java.text.*"%>
 <%@page import="java.sql.*"%>
@@ -10,10 +8,7 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<<<<<<< HEAD
-=======
 
->>>>>>> 5bb64113259d38d11807eee21c0647cdd1041dc5
 <title>Insert title here</title>
 </head>
 

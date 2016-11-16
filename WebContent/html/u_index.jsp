@@ -1,31 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style>
+body{
+	background-color: #fff;
+}
+
 #container{
-	padding:20%;
+	background-color: #e0f1ff;
+	width: 500px;
+	height: 450px;
+	margin-left: 30%;
+	margin-top: 15%;
+	
 }
 #cont1{
 	float:left;
+	padding-right:3%;
+	padding-left:5%;
 }
-.text{
-	width: 150px;
+#cont2{
+	float:left;
+}
+
+.txtbox{
+	width: 200px;
 	height: 30px;
+	font-size: 20px;
+	margin-bottom: 5px;
 }
-	/*로그인버튼*/
+/*로그인버튼*/
 .login {
 	background-color: #C0C0C0;
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
 	font-family: Arial;
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: bold;
-	padding: 1px 10px;
+	padding: 10px 70px;
 	text-decoration: none;
 	text-shadow: 2px 2px 3px #778899;
 }
@@ -39,13 +56,13 @@
 	top: 1px;
 }
 /*가입&찾기버튼*/
-.find{
+.find {
 	background-color:;
 	display: inline-block;
 	cursor: pointer;
 	color: #000;
 	font-family: Arial;
-	font-size: 12px;
+	font-size: 15px;
 	font-weight: bold;
 	padding: 5px 5px;
 	text-decoration: none;
@@ -63,23 +80,29 @@
 </style>
 </head>
 <body>
-	<div id="container">
+	<div id="container" align="center">
+	<image src="../image/logo.png" style="width:100px; height:100px;">
+	<h2>꾸꾸맘에 오신걸 환영합니다!</h2>
 		<div id="cont1">
 			<h3>병원 로그인</h3>
-			<input type="text" class="text"/><br/>
-			<input type="text" class="text"/><br/>
-			<input type="button" value="아이디 찾기" class="find"/>
-			<input type="button" value="비밀번호 찾기" class="find"/><br/>
+			<input type="text" class="txtbox" placeholder="아이디"/><br/>
+			<input type="text" class="txtbox" placeholder="비밀번호"/><br/>
+			<a href="u_findid.jsp" class="find">ID찾기</a>
+			<a href="u_findpass.jsp" class="find">PW찾기</a>
+			<a href="u_memcont.jsp" class="find">회원가입</a><br/>
 			<input type="button" value="로그인" class="login"/>
 		</div>
 		<div id="cont2">
 			<h3>보호자 로그인</h3>
-			<input type="text" class="text"/><br/>
-			<input type="text" class="text"/><br/>
-			<input type="button" value="아이디 찾기" class="find"/>
-			<input type="button" value="비밀번호 찾기" class="find"/><br/>
+			<input type="text" class="txtbox" placeholder="아이디"/><br/>
+			<input type="text" class="txtbox" placeholder="비밀번호"/><br/>
+			<a href="u_findid.jsp" class="find">ID찾기</a>
+			<a href="u_findpass.jsp" class="find">PW찾기</a>
+			<a href="u_memcont.jsp" class="find">회원가입</a><br/>
 			<input type="button" value="로그인" class="login"/>
 		</div>
 	</div>
+
+	
 </body>
 </html>

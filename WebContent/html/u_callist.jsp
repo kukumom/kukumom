@@ -95,14 +95,10 @@
 				</table>
 			</div> -->
 			<div class="cont-right">
-				
-				<div class="list">
-					<div align="center" style="padding-top: 1%;">
-						<h3>2016-11-18</h3>
-					</div>
-					<!--테이블-->
-					<table class="table1" align="center">
-						<colgroup>
+				<h3>2016-11-18</h3>
+				<!--테이블-->
+				<table class="table1" align="center">
+					<colgroup>
 							<col width="10%" />
 							<col width="15%" />
 							<col width="15%" />
@@ -110,9 +106,7 @@
 							<col width="50%" />
 						</colgroup>
 						<thead>
-							<tr>
-								<th colspan="3">지난 일정</th>
-							</tr>
+							
 							<tr>
 								<th>선택</th>
 								<th>시작시간</th>
@@ -150,7 +144,7 @@
 							</tr> -->
 						</tbody>
 					</table>
-				</div>
+				
 				<br>
 				<div align="center">
 					<a href="u_calregst.jsp" class="btn1">추가</a> <a href="#"

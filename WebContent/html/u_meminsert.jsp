@@ -44,8 +44,8 @@
 		pstmt.setString(1, USERID);
 		pstmt.setString(2, USRPW);
 		pstmt.setString(3, USRNAME);
-		pstmt.setString(4, USRBIRTH);
-		pstmt.setString(5, USRTEL);
+		/* pstmt.setString(4, USRBIRTH);
+		pstmt.setString(5, USRTEL); */
 
 		pstmt.executeUpdate();
 		

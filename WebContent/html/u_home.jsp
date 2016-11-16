@@ -31,7 +31,7 @@ try {
 		Class.forName("com.mysql.jdbc.Driver"); // 데이터베이스와 연동하기 위해 DriverManager에 등록한다.
 		conn = DriverManager.getConnection(url, id, pw); // DriverManager 객체로부터 Connection 객체를 얻어온다.
 		
-		out.println("Database Connection Success.");
+		/* out.println("Database Connection Success."); */
 %>
 
 
@@ -81,7 +81,7 @@ try {
 				<img src="../image/puppy04.png" / width="100%" height="100%">
 			</div>
 			<div class="cont_2">
-				<table class="table1" align="center">
+				<table class="table1" align="center" style="padding-left:2%;">
 					<colgroup>
 						<col width="50%" />
 						<col width="50%" />
@@ -134,16 +134,18 @@ try {
 			<div class="cont_3">
 				<table class="table1" align="center">
 					<colgroup>
-						<col width="20%" />
-						<col width="20%" />
-						<col width="60%" />
+						<col width="30%" />
+						<col width="15%" />
+						<col width="15%" />
+						<col width="40%" />
 					</colgroup>
 					<thead>
 						<tr>
-							<th colspan="3">지난 일정</th>
+							<th colspan="4">지난 일정</th>
 						</tr>
 						<tr>
-							<th>일자시간</th>
+							<th>날짜</th>
+							<th>시간</th>
 							<th>구분</th>
 							<th>내용</th>
 						</tr>
@@ -151,7 +153,7 @@ try {
 					<tbody>
 						<% 
 						/*스케줄*/
-						String sql = "select calstime,calcate,calcont from USRSCHEDULE";
+						String sql = "select calsdate,calstime,calcate,calcont from USRSCHEDULE";
 						Statement stmt = conn.createStatement();
 						ResultSet rs = null;
 						rs = stmt.executeQuery(sql);
@@ -159,6 +161,7 @@ try {
 						while (rs.next()) {
 								out.print("<tr>");
 						%>
+						<td><%=rs.getString("calsdate")%></td>
 						<td><%=rs.getString("calstime")%></td>
 						<td><%=rs.getString("calcate")%></td>
 						<td><%=rs.getString("calcont")%></td>

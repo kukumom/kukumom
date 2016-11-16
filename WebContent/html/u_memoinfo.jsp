@@ -107,7 +107,7 @@
                  */
                 
                 
-                String USERBIRTH= year+month+day; %>
+               /*  String USERBIRTH= year+month+day; */ %>
                     <select name="year" >
                         <option name= value="1990" selected>1990</option>
                         <option value="1991" selected>1991</option>
