@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ include file="dbCon.jsp"%>
+<%@ include file="dbCon.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,90 +12,119 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <%
 	try {
+
 		/*QnA list*/
-		Statement stmt1 = con.createStatement();
+
+		String key_pet = request.getParameter("key_pet");
+		String key_hos = request.getParameter("key_hos");
 		
-		String sql1 = "select B.hosname, C.petname, A.q_content, A.q_date from USRQNA A left join HOSINFO B on A.hoscode=B.hoscode left join USRPET C on A.petcode=C.petcode";
+		/*QnA*/
 
+		Statement stmt1 = con.createStatement();
+		sql =" SELECT B.hosname, C.petname, A.q_content, A.q_date"
+			+" FROM USRQNA A"
+			+" LEFT JOIN HOSINFO B ON A.hoscode=B.hoscode"
+			+" LEFT JOIN USRPET C ON A.petcode=C.petcode"
+			+" WHERE 1=1";
+		
+		if (key_pet != null) {
+			sql+=" AND C.petcode LIKE '%"+key_pet+"%'";
+		}
+		if (key_hos != null) {
+			sql+=" AND B.hosname LIKE '%"+key_hos+"%'";
+		}
+		sql+=" ORDER BY A.q_date DESC";
 		ResultSet rs1 = null;
-		rs1 = stmt1.executeQuery(sql1);
-
+		rs1 = stmt1.executeQuery(sql);
 %>
-<div class="cont-right">
-			<script language="javascript">
-				function showConfirm() {
-					if (confirm("삭제하시겠습니까?")) {
-						alert("삭제되었습니다.")
-					} else {
-						alert("취소되었습니다.")
-					}
-				}
-			</script>
+<script>
+	function change_search_pet(thisForm, thisElement) {
+		thisForm.submit();
+	}
+	
+	function click_search_hos(thisForm, thisElement) {
+		thisForm.submit();
+	}
+	
+	function init_search (thisForm) {
+		thisForm.key_pet.value = "";
+		thisForm.key_hos.value = "";
+		thisForm.submit();
+	}
+	
+	function showConfirm() {
+		if (confirm("삭제하시겠습니까?")) {
+			alert("삭제되었습니다.")
+		} else {
+			alert("취소되었습니다.")
+		}
+	}
+	
+	$(document).ready(function(){
+		var key_pet = "<%=key_pet%>";
+		var key_hos = "<%=key_hos%>";
+		if (key_pet != "null") {
+			if (key_pet) {
+				document.search_form.key_pet.value = key_pet;
+			}
+		}
+		if (key_hos != "null") {
+			if (key_hos) {
+				document.search_form.key_hos.value = key_hos;
+			}
+		}
+	});
+</script>
 </head>
 <body>
 
-		<div class="container" align="center">
-		 <div id = "topbar"></div>
-	<div id = "header">	
-     <img src="..\image\hlogo.png" id="logo" width="310" height="130">
-     <div class='menu'>
-	 <ul>
-	  <li><a href="u_home.jsp">Home</a></li>
-	  <li class='active sub'><a href='#'>MY PAGE</a>
-		<ul>
-		 <li class='sub'><a href="u_memmod.jsp">내정보</a></li>
-		 <li class='sub'><a href="u_petlist.jsp">애완동물 관리</a></li>
-		 <li class='sub'><a href="u_memhos.jsp">MY병원</a></li>
-	 	</ul>
-	  </li>
-	  <li class='active sub'><a href="'#'">병원서비스</a>
-		<ul>
-		 <li class='sub'><a href="u_hossearch.jsp">병원검색</a></li>
-		 <li class='sub'><a href="u_Examlist.jsp">진료내역조회</a></li>
-		 <li class="sub"><a href="u_qnaquary.jsp">1:1 문의하기</a></li>
-		 <li class='sub'><a href="u_qnalist.jsp">1:1 문의내역</a></li>
-		</ul>
-	  </li>
-	  <li><a href="u_calendar.jsp">일정관리</a></li>
-	  <li class='last'><a href="u_diarylist.jsp">성장일기</a></li>
-	</ul>
-   </div>
-  </div>
+	<div class="container" align="center">
+		<div id="topbar"></div>
+		<div id="header">
+			<img src="..\image\hlogo.png" id="logo" width="310" height="130">
+			<div class='menu'>
+				<ul>
+					<li><a href="u_home.jsp">Home</a></li>
+					<li class='active sub'><a href='#'>MY PAGE</a>
+						<ul>
+							<li class='sub'><a href="u_memmod.jsp">내정보</a></li>
+							<li class='sub'><a href="u_petlist.jsp">애완동물 관리</a></li>
+							<li class='sub'><a href="u_memhos.jsp">MY병원</a></li>
+						</ul></li>
+					<li class='active sub'><a href="'#'">병원서비스</a>
+						<ul>
+							<li class='sub'><a href="u_hossearch.jsp">병원검색</a></li>
+							<li class='sub'><a href="u_Examlist.jsp">진료내역조회</a></li>
+							<li class="sub"><a href="u_qnaquary.jsp">1:1 문의하기</a></li>
+							<li class='sub'><a href="u_qnalist.jsp">1:1 문의내역</a></li>
+						</ul></li>
+					<li><a href="u_calendar.jsp">일정관리</a></li>
+					<li class='last'><a href="u_diarylist.jsp">성장일기</a></li>
+				</ul>
+			</div>
+		</div>
 		<div class="cont">
-			<!-- <div class="cont-left">
-				입력
-				<table>
-					<tr>
-						<th>ID</th>
-						<td><input type="text" style="width: 100px;" /></td>
-						<td rowspan="2"><a href="#" class="logButton">Login</a></td>
-					</tr>
-					<tr>
-						<th>PW</th>
-						<td><input type="password" style="width: 100px;" /></td>
-					</tr>
-				</table>
-				버튼
-				<table>
-					<tr>
-						<td><a href="u_memcont.jsp" class="findButton">회원가입</a></td>
-						<td><a href="u_findid.jsp" class="findButton">ID찾기</a></td>
-						<td><a href="u_findpass.jsp" class="findButton">PW찾기</a></td>
-				</table>
-			</div>-->
 			<div class="cont-right">
-				<p>
 				<h1>문의 목록</h1>
-				</p>
-				<p>
-					<select name="petchoice">
-						<option value="1111">꾸꾸</option>
-						<option value="1112">두유</option>
-						<option value="1113">멍멍이</option>
-					</select> <input type="text" name="hossearch"
-						placeholder="찾고자 하는 병원을 입력해주세요"> <input type="button" value="검색">
-				</p>
+				<form name="search_form" method="get">
+					<select name="key_pet" onchange="change_search_pet(this.form, this)">
+						<option value="">선택</option>
+						<option value="p00000001">멍멍이</option>
+						<option value="p00000002">두유</option>
+						<option value="p00000003">고양이이</option>
+					</select> 
+					<input type="text" name="key_hos" placeholder="찾고자 하는 병원을 입력해주세요"> 
+					<input type="button" onclick="click_search_hos(this.form)" value="검색">
+					<input type="button" onclick="init_search(this.form)" value="초기화">
+				</form>
 				<table border="1" class="table1">
+					<colgroup>
+						<col width="20">
+						<col width="200">
+						<col width="150">
+						<col width="">
+						<col width="110">
+					</colgroup>
 					<thead>
 						<tr>
 							<th>선택</th>
@@ -106,71 +135,38 @@
 						</tr>
 					</thead>
 					<tbody>
-					<!-- 
-						<tr>
-							<td><input type="checkbox" name="choice" value="qnadelete"></td>
-							<td>그랜드동물병원</td>
-							<td>꾸꾸</td>
-							<td><a href="u_qnadetail.jsp">배변처리는 어떻게 해야하나요?</a></td>
-							<td>2016.07.11</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" name="choice" value="qnadelete"></td>
-							<td>샤이닝스타 동물병원</td>
-							<td>두유</td>
-							<td>배변 색이 이상해요(2)</td>
-							<td>2016.07.20</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" name="choice" value="qnadelete"></td>
-							<td>그랜드동물병원</td>
-							<td>만세</td>
-							<td>수술 후 봉합한 부위가 벌어졌습니다ㅠㅠ(2)</td>
-							<td>2016.07.25</td>
-						</tr>
-						 -->
-								<%
-							while (rs1.next()) {
-									out.print("<tr>");
-									
-						%>
-						<td><input type="radio" vlaue="choice"></td>					
-						<td><%=rs1.getString("B.hosname")%></td>
-						<td><%=rs1.getString("C.petname")%></td>		
-						<td><a href="u_qnadetail.jsp"><%=rs1.getString("A.q_content")%></a></td>					    
-						<td><%=rs1.getString("A.q_date")%></td>
-			
 						<%
-							out.print("</tr>");
-								}
-						%>   
+							while (rs1.next()) {
+						%>
+						<tr>
+							<td><input type="radio" value="choice"></td>
+							<td><%=rs1.getString("B.hosname")%></td>
+							<td><%=rs1.getString("C.petname")%></td>
+							<td><a href="u_qnadetail.jsp"><%=rs1.getString("A.q_content")%></a></td>
+							<td><%=rs1.getString("A.q_date")%></td>
+						</tr>
+						<%
+							}
+						%>
 					</tbody>
 				</table>
 				<p>
 					<input type="button" name="delete" class="btn1" value="삭제"
-						onclick="showConfirm();" />
+						onclick="change_search_pet()" />
 				</p>
 			</div>
-			</div>
-			 <%
-		
-
-		} catch (Exception e) {
-
-			out.println("DB연결에 문제 발생 <hr>");
-
-			out.println(e.getMessage());
-
-			e.printStackTrace();
-			
-		} finally {
-    		if (con != null && !con.isClosed()) {
-     	         con.close();
-    	}
-
-		}
-		
-	%> 
-	
+		</div>
+		<%
+			} catch (Exception e) {
+				out.println("DB연결에 문제 발생 <hr>");
+				out.println(e.getMessage());
+				e.printStackTrace();
+			} finally {
+				if (con != null && !con.isClosed()) {
+					con.close();
+				}
+			}
+		%>
+	</div>
 </body>
 </html>
