@@ -3,12 +3,12 @@
 <%
 	if (con != null && !con.isClosed()) {
 		try {
-			String petcode = request.getParameter("PETCODE");
-			System.out.println(petcode);
+			String hoscode = request.getParameter("HOSCODE");
+			System.out.println(hoscode);
 			PreparedStatement pstmt = null;
-			sql = "DELETE FROM USRQNA WHERE PETCODE = ?";
+			sql = "DELETE FROM USRMYHOS WHERE HOSCODE = ?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, petcode);
+			pstmt.setString(1, hoscode);
 			pstmt.executeUpdate();
 %>
 <script>
@@ -27,5 +27,5 @@ alert("삭제 완료 하였습니다.");
 	}
 %>
 <script>
-location.href = 'u_qnalist.jsp';
+location.href = 'u_hossearchlist.jsp';
 </script>

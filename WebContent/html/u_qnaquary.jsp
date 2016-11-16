@@ -92,18 +92,20 @@
 				<table border="3" class="table1"  style="font-size:17px;">
 					<tr>
 						<td><strong>병원선택</strong></td>
-						<td><select name="hoschoice">
-								<option value="1111">그랜드동물병원</option>
-								<option value="1112">샤이니스타동물병원</option>
-								<option value="1113">미래병원</option>
+						<td><select name="HOSNAME">								
+								<option value="h00001">평화와 생명동물병원</option>
+								<option value="h00002">서울대학교 동물병원</option>
+								<option value="h00003">한양동물메디컬센터</option>
+								<option value="h00004">오렌지 동물병원</option>
+								<option value="h00005">이윤세 동물병원</option>
 						</select></td>
 					</tr>
 					<tr>
 						<td><strong>애완명</strong></td>
-						<td><select name="petchoice">
-								<option value="1111">꾸꾸</option>
-								<option value="1112">두유</option>
-								<option value="1113">멍멍이</option>
+						<td><select name="PETNAME">
+								<option value="꾸꾸">꾸꾸</option>
+								<option value="두유">두유</option>
+								<option value="멍멍이">멍멍이</option>
 						</select></td>
 					</tr>
 					<tr>

@@ -75,6 +75,13 @@
 			<div class="cont-right">
 				<h2>병원 조회 리스트</h2>
 				<table border="1" class="table1">
+				<colgroup>
+						<col width="8%" />
+						<col width="20%" />
+						<col width="27%" />
+						<col width="15%" />
+						<col width="30%" />
+					</colgroup>
 					<thead>
 						<tr>
 							<th>선택</th>
