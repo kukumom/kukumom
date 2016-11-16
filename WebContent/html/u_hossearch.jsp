@@ -94,16 +94,6 @@
 							<option value="05">은 평 구</option>
 						</select>
 						
-						<%if (local.value==1){
-						     int 
-						      value='01';
-						      value='02';
-						      value='03';
-						      value='04';
-						      value='05';
-						      value='06';
-						}%>
-						
 					</p>
 					<br>
 					<p>

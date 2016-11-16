@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ page import="java.util.*,java.text.*"%>
+	<%@page import="java.sql.*"%>
+	 <%@ include file="dbCon.jsp"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,9 +11,32 @@
 <link rel="stylesheet" type="text/css" href="../css/u_style.css?ver=3">
 <link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
 <link rel="stylesheet" text="text/csss" href="../css/button.css">
+ <%
+	try {
+		/*성장일기*/
+		Statement stmt1 = con.createStatement();
+		
+		String sql1 = "select PETCATE, PETKIND, PETNAME, PETGENDER, PETBIRTH FROM USRPET WHERE USERID='kukumom'";
+
+		ResultSet rs1 = null;
+		rs1 = stmt1.executeQuery(sql1);
+
+%>
+<div class="cont-right">
+			<script language="javascript">
+				function showConfirm() {
+					if (confirm("삭제하시겠습니까?")) {
+						alert("삭제되었습니다.")
+					} else {
+						alert("취소되었습니다.")
+					}
+				}
+			</script>
+			</head>
+
 </head>
 <body>
-	<center>
+	
 		<div class="container" align="center">
 		<div class="topWrap">
 		
@@ -77,7 +103,8 @@
 						</colgroup>
 						<thead>
 							<tr>
-								<th>선택</th>
+								<th>선택</th>								
+								<th> 종 </th>
 								<th>종류</th>
 								<th>이름</th>
 								<th>성별</th>
@@ -85,7 +112,8 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
+							
+							<!-- <tr>
 								<td><input type="radio" name="pet"></td>
 								<td>고양이</td>
 								<td class="left">미미</td>
@@ -98,7 +126,24 @@
 								<td class="left">꾸꾸</td>
 								<td>수컷</td>
 								<td>2016.07.14</td>
-							</tr>
+							</tr> -->
+							
+							<%
+							while (rs1.next()) {
+									out.print("<tr>");
+									
+						%>
+						<td><input type="radio" vlaue="choice"></td>	
+						<td><%=rs1.getString("PETCATE")%></td>					
+						<td><%=rs1.getString("PETKIND")%></td>							
+						<td><%=rs1.getString("PETNAME")%></a></td>					    
+						<td><%=rs1.getString("PETGENDER")%></td>
+						<td><%=rs1.getString("PETBIRTH")%></td>
+						<%
+							out.print("</tr>");
+								}
+						%> 						
+							
 						</tbody>
 					</table>
 					<p>
@@ -107,10 +152,26 @@
 						&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn1">삭     제</a>
 						
 					</p>
-				</center>
+				
 			</div>
 		</div>
-	</center>
+ <%
+
+		} catch (Exception e) {
+
+			out.println("DB연결에 문제 발생 <hr>");
+
+			out.println(e.getMessage());
+
+			e.printStackTrace();
+
+		} finally {
+    		if (con != null && !con.isClosed()) {
+     	         con.close();
+    	}
+ 	 }
+		
+	%> 
 	<footer> </footer>
 	</div>
 </body>
