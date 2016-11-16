@@ -53,27 +53,7 @@
 			</div>
 		</div>
 		<div class="cont">
-			<!-- <div class="cont-left">
-				입력
-				<table>
-					<tr>
-						<th>ID</th>
-						<td><input type="text" style="width: 100px;" /></td>
-						<td rowspan="2"><a href="#" class="logButton">Login</a></td>
-					</tr>
-					<tr>
-						<th>PW</th>
-						<td><input type="password" style="width: 100px;" /></td>
-					</tr>
-				</table>
-				버튼
-				<table>
-					<tr>
-						<td><a href="u_memcont.jsp" class="findButton">회원가입</a></td>
-						<td><a href="u_findid.jsp" class="findButton">ID찾기</a></td>
-						<td><a href="u_findpass.jsp" class="findButton">PW찾기</a></td>
-				</table>
-			</div>-->
+			<br/><br/>
 			<div class="cont-right">
 				<img src="../image/yyak.PNG" style="width: 100px;" /><img
 					src="../image/arrow.PNG"> <img src="../image/ginfo.PNG"

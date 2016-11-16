@@ -88,8 +88,9 @@
 				</table>
 			</div> -->
 			<div class="cont-right">
+				<br/><br/><br/>
 				<h3>2016-11-18</h3>
-				<!--테이블-->
+				
 				<table class="table1" align="center">
 					<colgroup>
 							<col width="10%" />

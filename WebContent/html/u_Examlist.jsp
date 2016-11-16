@@ -74,6 +74,7 @@
 				</table>
 			</div>-->
 			<div class="cont-right">
+			<br/><br/><br/><br/>
 				<p>
 					병원선택 : <select name="hoschoice">
 						<option value="petname">병원선택</option>

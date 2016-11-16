@@ -46,30 +46,10 @@
 		</div>
 	</div>
 	      <div class="cont">
-	          <!-- <div class="cont-left">
-			입력
-			<table>
-				<tr>
-					<th>ID</th>
-					<td><input type="text" style="width: 100px;" /></td>
-					<td rowspan="2"><a href="#" class="logButton">Login</a></td>
-				</tr>
-				<tr>
-					<th>PW</th>
-					<td><input type="password" style="width: 100px;" /></td>
-				</tr>
-			</table>
-			버튼
-			<table>
-				<tr>
-					<td><a href="u_memcont.jsp" class="findButton">회원가입</a></td>
-					<td><a href="u_findid.jsp" class="findButton">ID찾기</a></td>
-					<td><a href="u_findpass.jsp" class="findButton">PW찾기</a></td>
-			</table>
-		</div>-->
-	         <!--  <div class="cont-right"> -->
+	          
+	          <div class="cont-right">
 	             
-	              <h3>2016-07-07</h3> 
+	              <h3>2016-11-18</h3> 
 	              
 	              <!-- ---------------------------------------------------->
 	              
@@ -125,7 +105,7 @@
 				
 	           	</form>
 	           <!-- ---------------------------------------------------->
-	          <!-- </div> -->
+	          </div>
 	</div>
     </div>
     </div>

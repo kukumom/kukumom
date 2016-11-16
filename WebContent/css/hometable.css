@@ -1,4 +1,4 @@
-/* .table1 {
+ .table1 {
 	font: 85% "Lucida Grande", "Lucida Sans Unicode", "Trebuchet MS",
 		sans-serif;
 	padding: 0;
@@ -73,7 +73,7 @@
 	text-transform: uppercase;
 	background: #fff;
 	padding: 10px;
-} */
+} 
 
 
 
@@ -82,7 +82,7 @@
 	written by Braulio Soncco http://www.buayacorp.com
 */
 
-table, th, td {
+/* table, th, td {
 	border: 1px solid #D4E0EE;
 	border-collapse: collapse;
 	font-family: "Trebuchet MS", Arial, sans-serif;
@@ -131,4 +131,4 @@ table a:hover {
 
 tfoot th, tfoot td {
 	font-size: 85%;
-}
+} */

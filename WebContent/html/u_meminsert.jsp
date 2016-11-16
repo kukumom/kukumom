@@ -37,26 +37,26 @@
 	
 	try {
 		conn = DriverManager.getConnection("jdbc:mysql://kukumom.c3hzxu2bf5no.ap-northeast-2.rds.amazonaws.com:33061/kukumom", "root", "!1Qwe123");
-		pstmt = conn.prepareStatement("insert into USRSCHEDULE (PETCODE, USRPW,USRNAME,USRBIRTH,USRTEL) " + 
-				                      " values(?,?,?,?,?) ");
+		pstmt = conn.prepareStatement("insert into USRINFO (USERID, USRPW,USRNAME,USRBIRTH,USRTEL,USERCCC,USSERAGR) " + 
+				                      " values(?,?,?,?,?,0000,'Y') ");
 		/* pstmt = conn.prepareStatement("insert into USRSCHEDULE (USERID, CALSDATE,CALEDDATE,CALSTIME,CALEDTIME,CALCATE,CALCONT,CALAL) values('kukumon2','20160101','20160102','1255','1355','jin','yeyyeye~','10') "); */
 		
-		pstmt.setString(1, USERID);
+		pstmt.setString(1, "kukumom");
 		pstmt.setString(2, USRPW);
 		pstmt.setString(3, USRNAME);
-		/* pstmt.setString(4, USRBIRTH);
-		pstmt.setString(5, USRTEL); */
+		pstmt.setString(4, USRBIRTH);
+		pstmt.setString(5, USRTEL);
 
 		pstmt.executeUpdate();
 		
 		
 		
-		pstmt1 = conn.prepareStatement("insert into USRSCHEDULE (PETCODE, USERID,PETNAME,PETCATE,PETKIND,PETBIRTH,PETGENDER) " + 
+		pstmt1 = conn.prepareStatement("insert into USRPET (PETCODE, USERID,PETNAME,PETCATE,PETKIND,PETBIRTH,PETGENDER) " + 
                 " values(?,?,?,?,?,?,?) ");
 		/* pstmt = conn.prepareStatement("insert into USRSCHEDULE (USERID, CALSDATE,CALEDDATE,CALSTIME,CALEDTIME,CALCATE,CALCONT,CALAL) values('kukumon2','20160101','20160102','1255','1355','jin','yeyyeye~','10') "); */
 
 		pstmt1.setString(1, PETCODE);
-		pstmt1.setString(2, USERID);
+		pstmt1.setString(2, "kukumom");
 		pstmt1.setString(3, PETNAME);
 		pstmt1.setString(4, PETCATE);
 		pstmt1.setString(5, PETKIND);
