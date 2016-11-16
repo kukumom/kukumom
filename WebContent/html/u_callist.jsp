@@ -136,9 +136,12 @@
 				
 				<br>
 				<div align="center">
-					<a href="u_calregst.jsp" class="btn1">추가</a> <a href="#"
-						class="btn1">삭제</a>
+					<a href="u_calregst.jsp" class="btn1">추가</a> 
+					<a href="#"	class="btn1" onclick="cal_del();">삭제</a>
 				</div>
+				<form name="cal_del_form" id="calDelForm" action="u_petdel.jsp" method="get">
+					<input type="hidden" name="PETCODE" id="PETCODE_ID">
+				</form>
 				<%-- <% 
 				System.out.print("USERID");
 				System.out.print("CALSDATE");

@@ -13,10 +13,15 @@
 
 <%
 	String USERID = request.getParameter("USERID");
-	String USRPW = request.getParameter("USRPW");
-	String USRNAME = request.getParameter("USRNAME");
-	String USRBIRTH = request.getParameter("USRBIRTH");
-	String USRTEL = request.getParameter("USRTEL");
+	String USERPW = request.getParameter("USERPW");
+	String USERNAME = request.getParameter("USERNAME");
+	String USERBIRTH = request.getParameter("USERBIRTH");
+	
+	String tel_fs=request.getParameter("tel_fs");
+	String tel_md=request.getParameter("tel_md");
+	String tel_la=request.getParameter("tel_la");
+	
+	String USERTEL = tel_fs + tel_md + tel_la;
 	/* String USERZIP = request.getParameter("USRZIP");
 	String USERADD = request.getParameter("USERADD"); */
 	
@@ -37,15 +42,15 @@
 	
 	try {
 		conn = DriverManager.getConnection("jdbc:mysql://kukumom.c3hzxu2bf5no.ap-northeast-2.rds.amazonaws.com:33061/kukumom", "root", "!1Qwe123");
-		pstmt = conn.prepareStatement("insert into USRINFO (USERID, USRPW,USRNAME,USRBIRTH,USRTEL,USERCCC,USSERAGR) " + 
+		pstmt = conn.prepareStatement("insert into USRINFO (USERID, USERPW,USERNAME,USERBIRTH,USERTEL,USERCCC,USERAGR) " + 
 				                      " values(?,?,?,?,?,0000,'Y') ");
 		/* pstmt = conn.prepareStatement("insert into USRSCHEDULE (USERID, CALSDATE,CALEDDATE,CALSTIME,CALEDTIME,CALCATE,CALCONT,CALAL) values('kukumon2','20160101','20160102','1255','1355','jin','yeyyeye~','10') "); */
 		
-		pstmt.setString(1, "kukumom");
-		pstmt.setString(2, USRPW);
-		pstmt.setString(3, USRNAME);
-		pstmt.setString(4, USRBIRTH);
-		pstmt.setString(5, USRTEL);
+		pstmt.setString(1, USERID);
+		pstmt.setString(2, USERPW);
+		pstmt.setString(3, USERNAME);
+		pstmt.setString(4, USERBIRTH);
+		pstmt.setString(5, USERTEL);
 
 		pstmt.executeUpdate();
 		
@@ -56,7 +61,7 @@
 		/* pstmt = conn.prepareStatement("insert into USRSCHEDULE (USERID, CALSDATE,CALEDDATE,CALSTIME,CALEDTIME,CALCATE,CALCONT,CALAL) values('kukumon2','20160101','20160102','1255','1355','jin','yeyyeye~','10') "); */
 
 		pstmt1.setString(1, PETCODE);
-		pstmt1.setString(2, "kukumom");
+		pstmt1.setString(2, USERID);
 		pstmt1.setString(3, PETNAME);
 		pstmt1.setString(4, PETCATE);
 		pstmt1.setString(5, PETKIND);
@@ -80,7 +85,7 @@
 		e.printStackTrace();
 
 	}finally{
-        out.print("<script>location.href='u_callist.jsp';</script>");
+        out.print("<script>location.href='u_index.jsp';</script>");
     }
 	%>
 		

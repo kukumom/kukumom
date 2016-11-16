@@ -159,9 +159,9 @@
 					<a href="u_petmod.jsp" class="btn1" style="color: fff;">수 정</a>&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="#" onclick="pet_del();" class="btn1">삭 제</a>
 				</p>
-<form name="pet_del_form" id="petDelForm" action="u_petdel.jsp" method="get">
-	<input type="hidden" name="PETCODE" id="PETCODE_ID">
-</form>
+		<form name="pet_del_form" id="petDelForm" action="u_petdel.jsp" method="get">
+			<input type="hidden" name="PETCODE" id="PETCODE_ID">
+		</form>
 			</div>
 		</div>
 		<%
