@@ -11,7 +11,21 @@
 <link rel="stylesheet" type="text/css" href="../css/u_style.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
-
+<script language="javascript">
+	function cal_del() {
+		if (confirm("삭제하시겠습니까?")) {
+			var CALCONT = $('input[name=CALCONT]:checked', '#calListForm').val();
+			if (CALCONT) {
+				document.getElementById("CAL_CONT").value = CALCONT;
+				document.getElementById("calDelForm").submit();
+			} else {
+				alert("삭제할 펫을 선택해 주세요");
+			}
+		} else {
+			alert("삭제를 취소 했습니다.");
+		}
+	}
+</script>
 </head>
 
 <%
@@ -85,7 +99,7 @@
 			<div class="cont-right">
 				<br/><br/><br/>
 				<h3>2016-11-18</h3>
-				
+				<form name="listForm" id="calListForm">
 				<table class="table1" align="center">
 					<colgroup>
 							<col width="10%" />
@@ -109,28 +123,17 @@
 							while (rs.next()) {
 									out.print("<tr>");
 						%>
-							<td><input type="radio"></td>
-							<td><%=rs.getString("calstime")%></td>
-							<td><%=rs.getString("caledtime")%></td>
-							<td><%=rs.getString("calcate")%></td>
-							<td><%=rs.getString("calcont")%></td>
+							<td><input type="radio" name="CALCONT"></td>
+							<td><%=rs.getString("CALSTIME")%></td>
+							<td><%=rs.getString("CALEDTIME")%></td>
+							<td><%=rs.getString("CALCATE")%></td>
+							<td><%=rs.getString("CALCONT")%></td>
 
 							<%
 							out.print("</tr>");
 							}
 						%>
-							<!-- <tr>
-								<td><input type="radio" name="schedule"></td>
-								<td>10:00 AM</td>
-								<td>병원</td>
-								<td><a href="#">꾸꾸 건강검진</a></td>
-							</tr>
-							<tr>
-								<td><input type="radio" name="schedule"></td>
-								<td>11:00 AM</td>
-								<td>미용</td>
-								<td><a href="#">꾸꾸 제이펫 미용예약</a></td>
-							</tr> -->
+							
 						</tbody>
 					</table>
 				
@@ -139,9 +142,7 @@
 					<a href="u_calregst.jsp" class="btn1">추가</a> 
 					<a href="#"	class="btn1" onclick="cal_del();">삭제</a>
 				</div>
-				<form name="cal_del_form" id="calDelForm" action="u_petdel.jsp" method="get">
-					<input type="hidden" name="PETCODE" id="PETCODE_ID">
-				</form>
+				
 				<%-- <% 
 				System.out.print("USERID");
 				System.out.print("CALSDATE");
@@ -149,23 +150,13 @@
 				System.out.print("CALCONT");
 				%> --%>
 				
-				
+				</form>
 			</div>
 		</div>
-		<%-- <%
-		con.close();
-
-		} catch (Exception e) {
-
-			out.println("Database Connection Something Problem. <hr>");
-
-			out.println(e.getMessage());
-
-			e.printStackTrace();
-
-		}
-	%> --%>
 		
+		<form name="cal_del_form" id="calDelForm" action="u_caldel.jsp" method="get">
+					<input type="hidden" name="CALSCONT" id="CAL_CONT">
+				</form>
 		<div id="footer">Blog is powered by <a href="#"	onclick="window.open(this.href); 
 					return false" title="Daum 바로가기" style="text-decoration: none">건강하조</a>
 					 / Designed by <a href="#" title="Tistory 바로가기" style="text-decoration: none">꾸꾸맘</a>
