@@ -16,7 +16,7 @@
 		Statement stmt1 = con.createStatement();
 		
 		/* 2개 JOIN - 성장일기와 펫정보*/
-		String sql1 = "select A.D_DATE, B.PETNAME, A.D_CONTENT, A.UPROAD, A.HGHT, A.WEIGHT FROM USRDIARY A JOIN USRPET B ON A.PETCODE=B.PETCODE WHERE B.PETCODE='P00000007'";
+		String sql1 = "select A.d_date, B.petname, A.d_content, A.uproad, A.hght, A.weight FROM USRDIARY A JOIN USRPET B ON A.petcode=B.petcode WHERE A.userid='kukumom10'";
 		/* "select A.Q_TITLE, B.USERNAME, C.PETNAME, A.Q_DATE, A.Q_CONTENT FROM USRQNA A LEFT JOIN USRINFO B ON A.USERID=B.USERID LEFT JOIN USRPET C ON A.PETCODE=C.PETCODE where A.USERID= 'kukumom1'"; */
 		
 		

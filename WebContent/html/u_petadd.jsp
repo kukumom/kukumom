@@ -96,15 +96,14 @@
 				<table align="center">
 					<tr>
 						<th>애완명 :</th>
-						<td><input type="text" name="PETNAME" value="명명이1"></td>
+						<td><input type="text" name="PETNAME" value="멍멍이"></td>
 					</tr>
 					<tr>
 						<th >동물 종류 :</th>
 						<td><select name="PETCATE">
 								<option value="개" selected="selected">개</option>
 								<option value="고양이">고양이</option>
-								<option value="햄스터">햄스터</option>
-								<option value="고슴도치">고슴도치</option>
+								<option value="기타">기타</option>
 						</select></td>
 						
 						<th>동물 품종 :</th>
@@ -113,6 +112,11 @@
 								<option value="치와와">치와와</option>
 								<option value="진돗개">진돗개</option>
 								<option value="말티즈">말티즈</option>
+								<option value="페르시안">페르시안</option>
+								<option value="고슴도치">고슴도치</option>
+								<option value="햄스터">햄스터</option>
+								<option value="도마뱀">도마뱀</option>
+								<option value="너구리">너구리</option>
 						</select></td>
 					</tr>
 					<tr>
@@ -128,8 +132,8 @@
 				</table>
 
 				<p>
-					<input type="submit" />
-					<input type="reset" />
+					<input type="submit" value="저    장" class="btn1"/>
+					<input type="reset" value="취     소" class="btn1"/>
 				</p>
 			</div>
 			</form>

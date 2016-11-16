@@ -93,10 +93,10 @@
 					<br>
 					<p>
 						날짜선택:&nbsp;<input type="date" name="D_DATE">&nbsp;&nbsp;&nbsp;동물선택:&nbsp;
-						<select name="petchoice">
-							<option value="1111">꾸꾸</option>
-							<option value="1112">두유</option>
-							<option value="1113">멍멍이</option>
+						<select name="petchoice" selected="selected">
+							<option value="꾸꾸">꾸꾸</option>
+							<option value="두유">두유</option>
+							<option value="멍멍이">멍멍이</option>
 						</select>
 					</p>
 					<br>
@@ -119,11 +119,8 @@
 					</p>
 				</div>
 				<p>
-					<input type="submit" name="save" class="btn1" value="  저  장  "
-						
-"> <input
-						type="button" name="cancel" class="btn1" value="  취  소  "
-						onclick="alert('취소되었습니다.')"></a>
+					<input type="submit" class="btn1" value="  저   장  "">
+					<input type="button" class="btn1" value="  취   소  " onclick="alert('취소되었습니다.')"></a>				
 				</p>
 				<br>
 			</div>

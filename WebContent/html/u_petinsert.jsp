@@ -31,14 +31,11 @@
 	StringBuffer sql = new StringBuffer();
 
 	try {
-		conn = DriverManager.getConnection(
-				"jdbc:mysql://kukumom.c3hzxu2bf5no.ap-northeast-2.rds.amazonaws.com:33061/kukumom", "root",
-				"!1Qwe123");
-		pstmt = conn.prepareStatement(
-				"insert into USRPET (PETCODE, USERID, PETNAME, PETCATE, PETKIND, PETBIRTH, PETGENDER) "
+		conn = DriverManager.getConnection("jdbc:mysql://kukumom.c3hzxu2bf5no.ap-northeast-2.rds.amazonaws.com:33061/kukumom", "root", "!1Qwe123");
+		pstmt = conn.prepareStatement("insert into USRPET (PETCODE, USERID, PETNAME, PETCATE, PETKIND, PETBIRTH, PETGENDER) "
 						+ " values(?,?,?,?,?,?,?) ");
 
-		pstmt.setString(1, "p00000003");
+		pstmt.setString(1, "p00000005");
 		pstmt.setString(2, "kukumom1");
 		pstmt.setString(3, PETNAME);
 		pstmt.setString(4, PETCATE);

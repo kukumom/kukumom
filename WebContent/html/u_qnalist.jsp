@@ -9,9 +9,10 @@
 <link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
 <link rel="stylesheet" type="text/css" href="../css/u_style.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <%
 	try {
-		/*QnA*/
+		/*QnA list*/
 		Statement stmt1 = con.createStatement();
 		
 		String sql1 = "select B.hosname, C.petname, A.q_content, A.q_date from USRQNA A left join HOSINFO B on A.hoscode=B.hoscode left join USRPET C on A.petcode=C.petcode";
