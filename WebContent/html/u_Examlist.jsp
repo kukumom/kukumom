@@ -17,7 +17,7 @@
 		/*성장일기*/
 		Statement stmt1 = con.createStatement();
 		
-		String sql1 = "select A.E_DATE, B.HOSNAME, C.PETNAME, A.E_CONTENT FROM USREXAM A LEFT JOIN HOSINFO B ON A.HOSCODE=B.HOSCODE LEFT JOIN USRPET C ON A.PETCODE=C.PETCODE";
+		String sql1 = "select A.E_DATE, B.HOSNAME, C.PETNAME, A.E_CONTENT FROM USREXAM A LEFT JOIN HOSINFO B ON A.HOSCODE=B.HOSCODE LEFT JOIN USRPET C ON A.PETCODE=C.PETCODE ORDER BY E_DATE DESC";
 		ResultSet rs1 = null;
 		rs1 = stmt1.executeQuery(sql1);
 
@@ -51,7 +51,7 @@
 	  <li class='active sub'><a href="'#'">병원서비스</a>
 		<ul>
 		 <li class='sub'><a href="u_hossearch.jsp">병원검색</a></li>
-		 <li class='sub'><a href="u_Examlist.jsp">진료내역조회</a></li>
+		 <li class='sub'><a href="u_Examlist.jsp">방문내역조회</a></li>
 		 <li class="sub"><a href="u_qnaquary.jsp">1:1 문의하기</a></li>
 		 <li class='sub'><a href="u_qnalist.jsp">1:1 문의내역</a></li>
 		</ul>
@@ -90,21 +90,17 @@
 			
 
 				<p>
-					병원선택 : <select name="hosname">
-					<option></option>
-					<option></option>
-					<option></option>
-					<option></option>
-					<option></option>
+					병 원 명  : <select name="HOSNAME">
+					<option value="이윤세 동물 병원">이윤세 동물 병원</option>
+					<option value="한양 동물 메디컬 센터">한양 동물 메디컬 센터</option>
+					<option value="오렌지 동물 병원">오렌지 동물 병원</option>
 					</select>
-					     
+					&nbsp;&nbsp;&nbsp;&nbsp;
 					    	
-					애완동물선택 :  <select name="petname">
-					<option></option>
-					<option></option>
-					<option></option>
-					<option></option>
-					<option></option>
+					애 완 명  :  <select name="PETNAME">
+					<option value="멍멍이">멍멍이</option>
+					<option value="꾸꾸">꾸꾸</option>
+					<option value="야옹이">야옹이</option>
 					</select>
 						
 					

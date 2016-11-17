@@ -26,6 +26,7 @@
 	sql = "SELECT A.USERID, A.D_DATE, B.PETNAME, A.D_CONTENT, A.HGHT, A.WEIGHT FROM USRDIARY A JOIN USRPET B WHERE A.PETCODE=B.PETCODE";
 	/* String sql1 = "select * FROM USRPET WHERE USERID='kukumom1'"; */
 
+
 	  if (key_pet != null) {
          sql +=" AND A.PETCODE LIKE '%"+key_pet+"%'";
       }
@@ -105,7 +106,7 @@
 					<li class='active sub'><a href="'#'">병원서비스</a>
 						<ul>
 							<li class='sub'><a href="u_hossearch.jsp">병원검색</a></li>
-							<li class='sub'><a href="u_Examlist.jsp">진료내역조회</a></li>
+							<li class='sub'><a href="u_Examlist.jsp">방문내역조회</a></li>
 							<li class="sub"><a href="u_qnaquary.jsp">1:1 문의하기</a></li>
 							<li class='sub'><a href="u_qnalist.jsp">1:1 문의내역</a></li>
 						</ul></li>
@@ -125,7 +126,7 @@
 		                  <option value="p00000004">두유</option>
 		                  <option value="p00000003">꾸꾸</option>
 		               </select> 
-		               <input type="text" name="key_hos" placeholder="찾고자 하는 내용을 입력해주세요"> 
+		               <input type="text" name="key_hos" placeholder="내용을 입력해주세요"> 
 		               <input type="button" onclick="click_search_hos(this.form)" class="btn1"  value="검색">
 		               <input type="button" onclick="init_search(this.form)" class="btn1"  value="초기화">
 		            </form>
