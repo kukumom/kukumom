@@ -13,7 +13,16 @@
 <link rel="stylesheet" type="text/css" href="../css/search.css">
 <link rel="stylesheet" type="text/css" href="../css/u_style.css?ver=1">
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
+<style>
+.d{
+width: 100px;
+height: 35px;
+}
+.e{
+width: 200px;
+height: 30px;
+}
+</style>
 <%
 	try {
 		
@@ -120,14 +129,14 @@
 			<form name="listForm" id="diaryListForm">
 				<section>
 					<form name="search_form" method="get">
-		               <select name="key_pet" onchange="change_search_pet(this.form, this)">
+		               <select name="key_pet" class="d" onchange="change_search_pet(this.form, this)">
 		                  <option value="">선택</option>
 		                  <option value="p00000001">깜이</option>
 		                  <option value="p00000002">두유</option>
 		                  <option value="p00000003">솜이</option>
 		                  <option value="p00000004">야옹이</option>
 		               </select> 
-		               <input type="text" name="key_hos" placeholder="내용을 입력해주세요"> 
+		               <input type="text" class="e" name="key_hos" placeholder="내용을 입력해주세요"> 
 		               <input type="button" onclick="click_search_hos(this.form)" class="btn1"  value="검색">
 		               <input type="button" onclick="init_search(this.form)" class="btn1"  value="초기화">
 		            </form>

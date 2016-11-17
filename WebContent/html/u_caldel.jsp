@@ -3,32 +3,21 @@
 <%
 	if (con != null && !con.isClosed()) {
 		try {
-			String userid = request.getParameter("USERID");
-			
-			System.out.println(userid);
-			
+			String USERID = request.getParameter("USERID");
+			System.out.println(USERID);
 			PreparedStatement pstmt = null;
 			sql = "DELETE FROM USRSCHEDULE WHERE USERID= ? ";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, userid);
-			
+			pstmt.setString(1, USERID);
 			pstmt.executeUpdate();
-%>
-<script>
-alert("삭제 완료 하였습니다.");
-</script>
-<%
+			con.commit();
+
 		} catch (Exception e) {
+			out.println(" 데이터베이스 접속에 문제가 있습니다. <hr>");
 			out.println(e.getMessage());
 			e.printStackTrace();
-		} finally {
-			if (con != null && !con.isClosed()) {
-				con.close();
-			}
-		}
-		
+		}finally{
+	        out.print("<script>location.href='u_callist.jsp';</script>");
+	    }
 	}
-%>
-<script>
-location.href = 'u_callist.jsp';
-</script>
+	%>

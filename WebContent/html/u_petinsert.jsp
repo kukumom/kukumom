@@ -44,6 +44,7 @@
 		pstmt.setString(7, PETGENDER);
 
 		pstmt.executeUpdate();
+		conn.commit();
 %>
 <body>
 	<%

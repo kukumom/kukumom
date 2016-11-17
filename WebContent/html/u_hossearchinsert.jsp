@@ -9,19 +9,13 @@
 <title>펫 입력</title>
 </head>
 <%
-	/* String HOSNAME = request.getParameter("HOSNAME");
-	String PETNAME = request.getParameter("PETNAME"); */
-
-	String HOSNAME = request.getParameter("HOSNAME");
-	String HOSINFO = request.getParameter("HOSINFO");
-	String HOSADD = request.getParameter("HOSADD"); /*품종  */
-	String HOSTEL = request.getParameter("HOSTEL");
 	
-	/* System.out.format("PETNAME: %s\n", PETNAME);
-	System.out.format("PETCATE: %s\n", PETCATE);
-	System.out.format("PETKIND: %s\n", PETKIND);
-	System.out.format("PETBIRTH: %s\n", PETBIRTH);
-	System.out.format("PETGENDER: %s\n", PETGENDER); */
+	
+	String USERID = request.getParameter("USERID"); 
+	String HOSCODE = request.getParameter("a");
+	
+	
+	
 
 	Class.forName("com.mysql.jdbc.Driver");
 	Connection conn = null;
@@ -31,15 +25,18 @@
 
 	try {
 		conn = DriverManager.getConnection("jdbc:mysql://kukumom.c3hzxu2bf5no.ap-northeast-2.rds.amazonaws.com:33061/kukumom", "root", "!1Qwe123");
-		pstmt = conn.prepareStatement("insert into USMYHOS (USERID, HOSCODE) "
+		pstmt = conn.prepareStatement("insert into USRMYHOS (USERID, HOSCODE) "
 						+ " values(?,?) ");
 
-		pstmt.setString(1, "kukumom2");
-		pstmt.setString(2, "H000006");
+		pstmt.setString(1, "kukumom1");
+		pstmt.setString(2, "h00007");
 		
 
-		pstmt.executeUpdate();
-%>
+		pstmt.executeUpdate();%>
+		<script>
+		alert("저장되었습니다.");
+		</script>
+
 <body>
 	<%
 		} catch (Exception e) {
@@ -48,7 +45,7 @@
 			e.printStackTrace();
 
 		} finally {
-			out.print("<script>location.href='u_hossearchlist.jsp';</script>");
+			out.print("<script>location.href='u_hossearch.jsp';</script>");
 		}
 	%>
 

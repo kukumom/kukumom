@@ -12,26 +12,64 @@
 <link rel="stylesheet" type="text/css" href="../css/u_style.css">
 <link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://malsup.github.com/jquery.cycle2.js"></script>
 <%
 	try {
-		/*성장일기*/
+		
+		
+		String key_pet = request.getParameter("key_pet");
+		
 		Statement stmt1 = con.createStatement();
 		
-		String sql1 = "select A.E_DATE, B.HOSNAME, C.PETNAME, A.E_CONTENT FROM USREXAM A LEFT JOIN HOSINFO B ON A.HOSCODE=B.HOSCODE LEFT JOIN USRPET C ON A.PETCODE=C.PETCODE ORDER BY E_DATE DESC";
+		String sql1 = "select A.E_DATE, B.HOSNAME, C.PETNAME, A.E_CONTENT FROM USREXAM A LEFT JOIN HOSINFO B ON A.HOSCODE=B.HOSCODE LEFT JOIN USRPET C ON A.PETCODE=C.PETCODE ";
+		 if (key_pet != null) {
+	         sql1 +=" AND A.PETCODE LIKE '%"+key_pet+"%'";
+	      }
+		sql1 +="ORDER BY A.E_DATE DESC";
 		ResultSet rs1 = null;
 		rs1 = stmt1.executeQuery(sql1);
 
 %>
-
+<style>
+.d{
+width: 100px;
+height: 35px;
+}
+</style>
 </head>
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="http://malsup.github.com/jquery.cycle2.js"></script>
+
 <script type="text/javascript">
+
+	
+	
 	function move(url) {
 		location.href = url;
 	}
-</script>
+	
+	function change_search_pet(thisForm, thisElement) {
+      thisForm.submit();
+    }
+
+    function init_search (thisForm) {
+      thisForm.key_pet.value = "";
+      
+      thisForm.submit();
+    }
+
+   $(document).ready(function(){
+      var key_pet = "<%=key_pet%>";
+      
+      if (key_pet != "null") {
+         if (key_pet) {
+            document.search_form.key_pet.value = key_pet;
+         }
+	  }
+
+   });
+	</script>
+
 
 <body>
 	<div class="container" align="center">
@@ -62,51 +100,26 @@
    </div>
   </div>
 		<div class="cont">
-			<!-- <div class="cont-left">
-				입력
-				<table>
-					<tr>
-						<th>ID</th>
-						<td><input type="text" style="width: 100px;" /></td>
-						<td rowspan="2"><a href="#" class="logButton">Login</a></td>
-					</tr>
-					<tr>
-						<th>PW</th>
-						<td><input type="password" style="width: 100px;" /></td>
-					</tr>
-				</table>
-				버튼
-				<table>
-					<tr>
-						<td><a href="u_memcont.jsp" class="findButton">회원가입</a></td>
-						<td><a href="u_findid.jsp" class="findButton">ID찾기</a></td>
-						<td><a href="u_findpass.jsp" class="findButton">PW찾기</a></td>
-				</table>
-			</div>-->
-			<div class="cont-right">
-
-			<br>
-			<br>
 			
-
+			<div class="cont-right">
+			<form name="listForm" id="diaryListForm">
+			<br>
+			<br>
 				<p>
-					병 원 명  : <select name="HOSNAME">
-					<option value="h00001">이윤세 동물 병원</option>
-					<option value="h00002">평화와 생명동물병원</option>
-					<option value="h00003">한양 동물 메디컬 센터</option>
-					<option value="h00004">오렌지 동물 병원</option>
-					<option value="h00005">사랑병원</option>
-					</select>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					    	
-					애 완 명  :  <select name="PETNAME">
-					<option value="p00000001">깜이</option>
-					<option value="p00000002">두유</option>
-					<option value="p00000003">솜이</option>
-					<option value="p00000004">야옹이</option>
-					</select>
-						
-					
+					<section>
+					<form name="search_form" method="get">   	
+						<b>애 완 명  :</b>    
+						<select class="d" name="key_pet" onchange="change_search_pet(this.form, this)">
+							<option value="">선택</option>
+							<option value="p00000001">깜이</option>
+							<option value="p00000002">두유</option>
+							<option value="p00000003">솜이</option>
+							<option value="p00000004">야옹이</option>
+						</select>
+						<input type="button" onclick="init_search(this.form)" class="btn1"  value="초기화">
+					</form>	
+					</section>
+					</form>
 				</p>
 				<table border style="" class="table1">
 					<thead>
@@ -173,7 +186,7 @@
 						%>   
 					</tbody>
 
-
+				
 				</table>
 			</div>
 		</div>
@@ -196,8 +209,10 @@
 		}
 		
 	%> 
+	
 	<footer> </footer>
 	</div>
+	
 </body>
 
 </html>

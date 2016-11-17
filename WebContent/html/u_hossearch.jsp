@@ -12,7 +12,7 @@
 <title>병원서비스-검색</title>
 <link rel="stylesheet" type="text/css" href="../css/button.css">
 <link rel="stylesheet" type="text/css" href="../css/u_style.css">
-<link rel="stylesheet" type="text/css" href="../css/diary.css">
+<link rel="stylesheet" type="text/css" href="../css/diary.css?ver=2">
 <link rel="stylesheet" type="text/css" href="../css/table.css">
 <script>
 function Show(){
@@ -105,6 +105,7 @@ font-size: 20px;
 					<p>
 						<input type="checkbox" class="b" name="kind"> 지역별 :
 						<select name="city" id="local">
+						    <option value="">===================</option>
 						    <option value="지 역 별">지 역 별</option>
 							<option value="서 울 특 별 시">서 울 특 별 시</option>
 							<option value="경 기 도">경 기 도</option>
@@ -119,6 +120,7 @@ font-size: 20px;
 						
 						
 						<select name="borough" id="local">
+						    <option value="">====================</option>
 						    <option value="강 남 구">강 남 구</option>
 						    <option value="관 악 구">관 악 구</option>
 						    <option value="동 대 문 구">동 대 문 구</option>
@@ -145,16 +147,17 @@ font-size: 20px;
 				
 				
 				<span id=searchcont style="display:none;">
-				<div class="cont-bottom" >
+				
 				<hr/>
-				<form name="listForm" id="hossearchListForm">
+				<form name="reg01" action="u_hossearchinsert.jsp" method="get">
+				
 				<table border="1" class="table1">
 				<colgroup>
-						<col width="8%" />
-						<col width="15%" />
+						<col width="5%" />
+						<col width="18%" />
 						<col width="32%" />
-						<col width="23%" />
-						<col width="13%" />
+						<col width="28%" />
+						<col width="17%" />
 					</colgroup>
 					<thead>
 						<tr>
@@ -171,22 +174,32 @@ font-size: 20px;
 						/*병원검색 리스트*/
 						Statement stmt1 = con.createStatement();
 						
-						String sql1 = "select * from HOSINFO A left join USRMYHOS B on A.hoscode=B.hoscode";
-				
+						/* String sql1 = "select * from HOSINFO A left join USRMYHOS B on A.hoscode=B.hoscode"; */
+						String sql1 = "select B.userid,A.hoscode,A.hosname,A.hosinfo,A.hosadd,A.hostel from HOSINFO A left join USRMYHOS B on A.hoscode=B.hoscode";
 						ResultSet rs1 = null;
 						rs1 = stmt1.executeQuery(sql1);
-
+						
 					%>
 					<%
 						while (rs1.next()) {
 								out.print("<tr>");
 								
 					%>
-						<td><input type="radio" name="HOSCODE" vlaue="<%=rs1.getString("HOSCODE")%>"></td>					
+					
+					
+						<td><input type="radio" name="HOSCODE" name="<%=rs1.getString("HOSCODE")%>"></td>					
 						<td><%=rs1.getString("hosname")%></td>
 						<td><%=rs1.getString("hosinfo")%></td>		
 						<td><%=rs1.getString("hosadd")%></td>					    
-						<td><%=rs1.getString("hostel")%></td>
+						
+						<% String hostel=rs1.getString("hostel"); 
+						String a=hostel.substring(0,2);
+						String b=hostel.substring(3,7);
+						String c=hostel.substring(6);
+						/* System.out.println(a); */
+						%>
+							
+						<td><%=a+"-"+b+"-"+c%></td>
 						
 					<%
 						out.print("</tr>");
@@ -194,17 +207,16 @@ font-size: 20px;
 					%> 
 					</tbody>
 				</table>
-				</form>
+				
 				<p>
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="u_memhos.jsp" class="btn1" value="병원등록" onclick="병원이 등록되었습니다">병원등록</a>
 					
-						
+					<input type="submit" class="btn1" value="병원등록">
+					</form>	
+					
 				</p>
-				<form name="hossearch_del_form" id="hossearchDelForm" action="u_hossearchdel.jsp" method="get">
-			<input type="hidden" name="HOSCODE" id="HOSCODE_ID">
-		</form>
-			</div></span>
+				
+			</span>
 			</div>
 			</div>
 			 <%

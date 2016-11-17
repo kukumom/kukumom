@@ -1,6 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 
-
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.util.*,java.text.*"%>
 <%@page import="java.sql.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -37,7 +37,7 @@
 				                      " values(?,?,?,?,?,?,?,?) ");
 		/* pstmt = conn.prepareStatement("insert into USRSCHEDULE (USERID, CALSDATE,CALEDDATE,CALSTIME,CALEDTIME,CALCATE,CALCONT,CALAL) values('kukumon2','20160101','20160102','1255','1355','jin','yeyyeye~','10') "); */
 		
-		pstmt.setString(1, "kukumom2");
+		pstmt.setString(1, "kukumom1");
 		pstmt.setString(2, CALSDATE);
 		pstmt.setString(3, CALEDDATE);
 		pstmt.setString(4, CALSTIME);
@@ -48,19 +48,19 @@
 
 		pstmt.executeUpdate();
 		conn.commit();
-		
+	/* 	
 	} catch (SQLException e) {
-		/* out.println("<script> alert('노농'); hidtory.back(); </script>"); */
-		e.printStackTrace();
+		 out.println("<script> alert('노농'); hidtory.back(); </script>"); 
+		e.printStackTrace(); 
+		
+	*/
 %>
 <body>
 	<%
 	} catch (Exception e) {
-		
 		out.println(" 데이터베이스 접속에 문제가 있습니다. <hr>");
 		out.println(e.getMessage());
 		e.printStackTrace();
-
 	}finally{
         out.print("<script>location.href='u_callist.jsp';</script>");
     }

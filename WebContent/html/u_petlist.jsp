@@ -96,6 +96,7 @@
 			<div class="cont-right">
 
 				<h2>애완동물 목록</h2>
+				
 				<form name="listForm" id="petListForm">
 				<table class="table1">
 					<colgroup>
@@ -138,6 +139,7 @@
 									out.print("<tr>");
 						%>
 						<td><input type="radio" name="PETCODE" value="<%=rs1.getString("PETCODE")%>"></td>
+						
 						<td><%=rs1.getString("PETCATE")%></td>
 						<td><%=rs1.getString("PETKIND")%></td>
 						<td><%=rs1.getString("PETNAME")%></td>

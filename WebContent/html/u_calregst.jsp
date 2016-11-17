@@ -85,11 +85,11 @@
 	                  <tr>
 	                      <th>알림</th>
 	                      <td class="left">
-	                          <select>
-	                              <option value="알림없음" name="CALAL">알림없음</option>
-	                              <option value="10분전" name="CALAL">10분전</option>
-	                              <option value="1시간전" name="CALAL">1시간전</option>
-	                              <option value="하루전" name="CALAL">하루전</option>
+	                          <select name="CALAL">
+	                              <option value="알림없음" >알림없음</option>
+	                              <option value="10분전" >10분전</option>
+	                              <option value="1시간전" >1시간전</option>
+	                              <option value="하루전" >하루전</option>
 	                          </select>
 	                      </td>
 	                  </tr>

@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*,java.text.*"%>
 <%@page import="java.sql.*"%>
-<%@ include file="dbCon.jsp"%>
+<%-- <%@ include file="dbCon.jsp"%> --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,10 +12,20 @@
 <link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
 <%
-	try {
+		Connection con = null; // null로 초기화 한다.
+		try {
+				String url = "jdbc:mysql://kukumom.c3hzxu2bf5no.ap-northeast-2.rds.amazonaws.com:33061/kukumom"; // 사용하려는 데이터베이스명을 포함한 URL 기술
+				String id = "root"; // 사용자 계정
+				String pw = "!1Qwe123"; // 사용자 계정의 패스워드
+				
+
+				Class.forName("com.mysql.jdbc.Driver"); // 데이터베이스와 연동하기 위해 DriverManager에 등록한다.
+				con = DriverManager.getConnection(url, id, pw); // DriverManager 객체로부터 Connection 객체를 얻어온다.
+				
+				/* out.println("Database Connection Success."); */
 		Statement stmt2 = con.createStatement();
 		
-		String sql1 ="select USERID,CALSTIME,CALEDTIME,CALCATE,CALCONT from USRSCHEDULE order by CALSDATE desc";
+		String sql1 ="select USERID,CALSTIME,CALEDTIME,CALCATE,CALCONT,CALAL from USRSCHEDULE order by CALSTIME asc";
 	    ResultSet rs2 = null;
 		rs2 = stmt2.executeQuery(sql1);
 		
@@ -74,14 +84,15 @@
 			<div class="cont-right">
 				<br/><br/><br/>
 				<h3>2016-11-18</h3>
-				<form name="listForm" id="calListForm">
+				<!-- <form name="listForm" id="calListForm"> -->
 				<table class="table1">
 					<colgroup>
+							<col width="7%" />
 							<col width="10%" />
-							<col width="15%" />
-							<col width="15%" />
 							<col width="10%" />
+							<col width="8%" />
 							<col width="50%" />
+							<col width="15%" />
 						</colgroup>
 						<thead>
 							
@@ -91,12 +102,13 @@
 								<th>종료시간</th>
 								<th>구분</th>
 								<th>내용</th>
+								<th>알람</th>
 							</tr>
 						</thead>
 						<tbody>
 						
 						<%
-							while (rs.next()) {
+							while (rs2.next()) {
 									out.print("<tr>");
 						%>
 							<td><input type="radio" name="USERID" value="<%=rs2.getString("USERID")%>"></td>
@@ -104,6 +116,7 @@
 							<td><%=rs2.getString("CALEDTIME")%></td>
 							<td><%=rs2.getString("CALCATE")%></td>
 							<td><%=rs2.getString("CALCONT")%></td>
+							<td><%=rs2.getString("CALAL")%></td>
 						<%
 							out.print("</tr>");
 							}
@@ -111,16 +124,16 @@
 							
 						</tbody>
 					</table>
-				
+				</form>
 				<br>
 				<div align="center">
 					<a href="u_calregst.jsp" class="btn1">추가</a> 
 					<a href="#"	class="btn1" onclick="cal_del();">삭제</a>
 				</div>
-				</form>
-			<form name="cal_del_form" id="calDelForm" action="u_caldel.jsp" method="get">
-				<input type="hidden" name="USERID" id="USER_ID">
-			</form>		
+				
+			<!-- <form name="cal_del_form" id="calDelForm" action="u_caldel.jsp" method="get">
+				<input type="hidden" name="USERID" id="USERID_ID">
+			</form> -->		
 			</div>
 		</div>
 		
