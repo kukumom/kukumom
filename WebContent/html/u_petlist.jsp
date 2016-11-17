@@ -23,7 +23,7 @@
 		rs1 = stmt1.executeQuery(sql1);
 %>
 
-<div class="cont-right">
+
 <script language="javascript">
 	function pet_del() {
 		if (confirm("삭제하시겠습니까?")) {
@@ -39,7 +39,7 @@
 		}
 	}
 </script>
-</div>
+
 </head>
 
 <body>

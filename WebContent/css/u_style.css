@@ -244,11 +244,11 @@ body {
 /*하위메뉴 네모난부분*/
 .menu ul ul li a {
    width: 130px;
-   border-bottom: 1px solid #eeeeee;
+   border-bottom: 1px solid #aaa;
    padding: 10px 20px;
    font-size: 13px;
    color: #444444;
-   background: #cccccc;
+   background: #eee;
    -webkit-transition: all .35s ease;
    -moz-transition: all .35s ease;
    -ms-transition: all .35s ease;

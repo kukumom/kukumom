@@ -3,6 +3,7 @@
 <%@ page import="java.util.*,java.text.*"%>
 <%-- <%@page import="java.util.regex.Pattern"%> --%>
 <%@page import="java.sql.*"%>
+<%@ include file="dbCon.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,12 +12,25 @@
 <link rel="stylesheet" type="text/css" href="../css/u_style.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
+<%
+	try {
+		Statement stmt1 = con.createStatement();
+		
+		String sql1 ="SELECT USERID,CALSTIME,CALEDTIME,CALCATE,CALCONT FROM USRSCHEDULE ORDER BY CALSDATE DESC";
+	    ResultSet rs1 = null;
+		rs1 = stmt1.executeQuery(sql1);
+		
+		
+%>
+
 <script language="javascript">
+	
 	function cal_del() {
 		if (confirm("삭제하시겠습니까?")) {
-			var CALCONT = $('input[name=CALCONT]:checked', '#calListForm').val();
-			if (CALCONT) {
-				document.getElementById("CAL_CONT").value = CALCONT;
+			var USERID = $('input[name=USERID]:checked', '#calListForm').val();
+			
+			if (USERID) {
+				document.getElementById("USER_ID").value = CALCONT;
 				document.getElementById("calDelForm").submit();
 			} else {
 				alert("삭제할 펫을 선택해 주세요");
@@ -27,24 +41,6 @@
 	}
 </script>
 </head>
-
-<%
-	Connection conn = null; // null로 초기화 한다.
-	try {
-		String url = "jdbc:mysql://kukumom.c3hzxu2bf5no.ap-northeast-2.rds.amazonaws.com:33061/kukumom"; // 사용하려는 데이터베이스명을 포함한 URL 기술
-		String id = "root"; // 사용자 계정
-		String pw = "!1Qwe123"; // 사용자 계정의 패스워드
-		ResultSet rs = null;
-
-		Class.forName("com.mysql.jdbc.Driver"); // 데이터베이스와 연동하기 위해 DriverManager에 등록한다.
-		conn = DriverManager.getConnection(url, id, pw); // DriverManager 객체로부터 Connection 객체를 얻어온다.
-		/* out.println("제대로 연결되었습니다."); // 커넥션이 제대로 연결되면 수행된다. */
-		
-		String sql = "select calstime,caledtime,calcate,calcont from USRSCHEDULE order by calsdate desc";
-		Statement stmt = conn.createStatement();
-		
-		rs = stmt.executeQuery(sql);
-%>
 
 <body>
   <div class="container" align="center">
@@ -75,27 +71,7 @@
    </div>
   </div>
 		<div class="cont">
-			<!-- <div class="cont-left">
-				입력
-				<table>
-					<tr>
-						<th>ID</th>
-						<td><input type="text" style="width: 100px;" /></td>
-						<td rowspan="2"><a href="#" class="logButton">Login</a></td>
-					</tr>
-					<tr>
-						<th>PW</th>
-						<td><input type="password" style="width: 100px;" /></td>
-					</tr>
-				</table>
-				버튼
-				<table>
-					<tr>
-						<td><a href="u_memcont.jsp" class="findButton">회원가입</a></td>
-						<td><a href="u_findid.jsp" class="findButton">ID찾기</a></td>
-						<td><a href="u_findpass.jsp" class="findButton">PW찾기</a></td>
-				</table>
-			</div> -->
+			
 			<div class="cont-right">
 				<br/><br/><br/>
 				<h3>2016-11-18</h3>
@@ -119,16 +95,16 @@
 							</tr>
 						</thead>
 						<tbody>
+						
 							<%
 							while (rs.next()) {
 									out.print("<tr>");
 						%>
-							<td><input type="radio" name="CALCONT"></td>
-							<td><%=rs.getString("CALSTIME")%></td>
-							<td><%=rs.getString("CALEDTIME")%></td>
-							<td><%=rs.getString("CALCATE")%></td>
-							<td><%=rs.getString("CALCONT")%></td>
-
+							<td><input type="radio" name="USERID" value="<%=rs1.getString("USERID")%>"></td>
+							<td><%=rs1.getString("CALSTIME")%></td>
+							<td><%=rs1.getString("CALEDTIME")%></td>
+							<td><%=rs1.getString("CALCATE")%></td>
+							<td><%=rs1.getString("CALCONT")%></td>
 							<%
 							out.print("</tr>");
 							}
@@ -142,38 +118,30 @@
 					<a href="u_calregst.jsp" class="btn1">추가</a> 
 					<a href="#"	class="btn1" onclick="cal_del();">삭제</a>
 				</div>
-				
-				<%-- <% 
-				System.out.print("USERID");
-				System.out.print("CALSDATE");
-				System.out.print("CALSTIME");
-				System.out.print("CALCONT");
-				%> --%>
-				
 				</form>
+			<form name="cal_del_form" id="calDelForm" action="u_caldel.jsp" method="get">
+				<input type="hidden" name="USERID" id="USER_ID">
+			</form>	
+				
 			</div>
 		</div>
 		
-		<form name="cal_del_form" id="calDelForm" action="u_caldel.jsp" method="get">
-					<input type="hidden" name="CALSCONT" id="CAL_CONT">
-				</form>
+		
 		<div id="footer">Blog is powered by <a href="#"	onclick="window.open(this.href); 
 					return false" title="Daum 바로가기" style="text-decoration: none">건강하조</a>
 					 / Designed by <a href="#" title="Tistory 바로가기" style="text-decoration: none">꾸꾸맘</a>
 		</div>
 	</div>
 	<%
-			} catch (Exception e) {
-
-				out.println("Database Connection Something Problem. <hr>");
-
-				out.println(e.getMessage());
-
-				e.printStackTrace();
-
-			} finally {
-				conn.close();
-			}
+	} catch (Exception e) {
+        out.println("DB연결에 문제 발생 <hr>");
+        out.println(e.getMessage());
+        e.printStackTrace();
+    } finally {
+        if (con != null && !con.isClosed()) {
+           con.close();
+        }
+    }
 		%>
 </body>
 </html>
