@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	 <%@ include file="dbCon.jsp"%> 
-<!DOCTYPE html>
+<%@ page import="java.util.*,java.text.*"%>
+<%@page import="java.sql.*"%>
+<%@ include file="dbCon.jsp"%> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta charset="utf-8">
@@ -9,13 +11,14 @@
 <link rel="stylesheet" type="text/css" href="../css/table.css">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
 <link rel="stylesheet" type="text/css" href="../css/u_style.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
  <%
 	try {
-		/*성장일기*/
+		/*병원검색 리스트*/
 		Statement stmt1 = con.createStatement();
 		
-		String sql1 = "select hosname,hosinfo,hosadd,hostel from HOSINFO";
+		String sql1 = "select * from HOSINFO A left join USRMYHOS B on A.hoscode=B.hoscode";
 
 		ResultSet rs1 = null;
 		rs1 = stmt1.executeQuery(sql1);
@@ -74,13 +77,14 @@
 			</div>-->
 			<div class="cont-right">
 				<h2>병원 조회 리스트</h2>
+				<form name="listForm" id="hossearchListForm">
 				<table border="1" class="table1">
 				<colgroup>
 						<col width="8%" />
-						<col width="20%" />
-						<col width="27%" />
 						<col width="15%" />
-						<col width="30%" />
+						<col width="32%" />
+						<col width="23%" />
+						<col width="13%" />
 					</colgroup>
 					<thead>
 						<tr>
@@ -120,7 +124,7 @@
 									out.print("<tr>");
 									
 						%>
-						<td><input type="radio" vlaue="choice"></td>					
+						<td><input type="radio" name="HOSCODE" vlaue="<%=rs1.getString("HOSCODE")%>"></td>					
 						<td><%=rs1.getString("hosname")%></td>
 						<td><%=rs1.getString("hosinfo")%></td>		
 						<td><%=rs1.getString("hosadd")%></td>					    
@@ -132,10 +136,16 @@
 						%> 
 					</tbody>
 				</table>
+				</form>
 				<p>
-					&nbsp;&nbsp;&nbsp;&nbsp;<a href="u_hossearchlist.jsp"><input
-						type="button" name="hosregist" class="btn1" value="병원등록"></a>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="u_hossearchlist.jsp" class="btn1" value="병원등록" onclick="병원이 등록되었습니다.">병원등록</a>
+					<a href="u_memhos.jsp" class="btn1" value="내 병 원">내 병 원</a>	
+						
 				</p>
+				<form name="hossearch_del_form" id="hossearchDelForm" action="u_hossearchdel.jsp" method="get">
+			<input type="hidden" name="HOSCODE" id="HOSCODE_ID">
+		</form>
 			</div>
 			</div>
 			 <%

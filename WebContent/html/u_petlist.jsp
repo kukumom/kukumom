@@ -158,7 +158,7 @@
 		<form name="pet_del_form" id="petDelForm" action="u_petdel.jsp" method="get">
 			<input type="hidden" name="PETCODE" id="PETCODE_ID">
 		</form>
-			</div>
+		</div>
 		</div>
 		<%
 			} catch (Exception e) {
