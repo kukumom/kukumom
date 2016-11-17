@@ -108,10 +108,11 @@
             <h1>문의 목록</h1>
             <form name="search_form" method="get">
                <select name="key_pet" onchange="change_search_pet(this.form, this)">
-                  <option value="">선택</option>
-                  <option value="p00000001">멍멍이</option>
-                  <option value="p00000003">꾸꾸</option>
-                  <option value="p00000004">고양이이</option>
+                  <option value="PETCODE">선택</option>
+                  <option value="p00000001">깜이</option>
+                  <option value="p00000002">두유</option>
+                  <option value="p00000003">솜이</option>
+                  <option value="p00000004">야옹이</option>
                </select> 
                <input type="text" name="key_hos" placeholder="찾고자 하는 병원을 입력해주세요"> 
                <input type="button" onclick="click_search_hos(this.form)" value="검색">

@@ -8,6 +8,7 @@
 <title>성장일기 등록</title>
 </head>
 <%
+    String PETCODE = request.getParameter("PETCODE");
 	String D_DATE = request.getParameter("D_DATE");
 	String D_CONTENT = request.getParameter("D_CONTENT");
 	String UPROAD = request.getParameter("UPROAD");
@@ -30,7 +31,7 @@
 		/* pstmt = conn.prepareStatement("insert into USRSCHEDULE (USERID, CALSDATE,CALEDDATE,CALSTIME,CALEDTIME,CALCATE,CALCONT,CALAL) values('kukumon2','20160101','20160102','1255','1355','jin','yeyyeye~','10') "); */
 
 		pstmt.setString(1, "kukumom");
-		pstmt.setString(2, "p00000001");
+		pstmt.setString(2, PETCODE);
 		pstmt.setString(3, D_DATE);
 		pstmt.setString(4, D_CONTENT);
 		pstmt.setString(5, "SSS");

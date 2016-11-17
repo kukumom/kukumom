@@ -128,7 +128,7 @@
 
 				<p>
 					<input type="submit" value="저    장" class="btn1"/>
-					<input type="reset" value="취     소" class="btn1"/>
+					<a href="u_petlist.jsp"><input type="button" value="취     소" class="btn1"></a>
 				</p>
 				</form>
 			</div>

@@ -103,9 +103,10 @@
 					<tr>
 						<td><strong>애완명</strong></td>
 						<td><select name="PETNAME">
-								<option value="꾸꾸">꾸꾸</option>
-								<option value="두유">두유</option>
-								<option value="멍멍이">멍멍이</option>
+								<option value="p00000001">깜이</option>
+								<option value="p00000002">두유</option>
+								<option value="p00000003">솜이</option>
+								<option value="p00000004">야옹이</option>
 						</select></td>
 					</tr>
 					<tr>
