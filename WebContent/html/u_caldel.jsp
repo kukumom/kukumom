@@ -3,14 +3,14 @@
 <%
 	if (con != null && !con.isClosed()) {
 		try {
-			String calcont = request.getParameter("CALCONT");
+			String userid = request.getParameter("USERID");
 			
-			System.out.println(calcont);
+			System.out.println(userid);
 			
 			PreparedStatement pstmt = null;
-			sql = "DELETE FROM USRSCHEDULE WHERE  = ? ";
+			sql = "DELETE FROM USRSCHEDULE WHERE USERID= ? ";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, calcont);
+			pstmt.setString(1, userid);
 			
 			pstmt.executeUpdate();
 %>

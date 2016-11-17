@@ -16,14 +16,25 @@
 
 <%
 	try {
-		/*성장일기*/
-		Statement stmt1 = con.createStatement();
+		
+	String key_pet = request.getParameter("key_pet");
+    String key_hos = request.getParameter("key_hos");
+    
+	/*성장일기*/
+	Statement stmt1 = con.createStatement();
 
-		String sql1 = "SELECT A.userid, d_date, B.petname, A.d_content, A.hght, A.weight FROM USRDIARY A JOIN USRPET B WHERE A.petcode=B.petcode";
-		/* String sql1 = "select * FROM USRPET WHERE USERID='kukumom1'"; */
+	sql = "SELECT A.USERID, A.D_DATE, B.PETNAME, A.D_CONTENT, A.HGHT, A.WEIGHT FROM USRDIARY A JOIN USRPET B WHERE A.PETCODE=B.PETCODE";
+	/* String sql1 = "select * FROM USRPET WHERE USERID='kukumom1'"; */
 
-		ResultSet rs1 = null;
-		rs1 = stmt1.executeQuery(sql1);
+	  if (key_pet != null) {
+         sql +=" AND A.PETCODE LIKE '%"+key_pet+"%'";
+      }
+      if (key_hos != null) {
+         sql +=" AND A.D_CONTENT LIKE '%"+key_hos+"%'";
+      }
+      /* sql +="ORDER BY A.D_DATE DESC"; */
+      ResultSet rs1 = null;
+      rs1 = stmt1.executeQuery(sql);
 %>
 <script>
 	function dia_del() {
@@ -40,6 +51,40 @@
 			alert("삭제를 취소 했습니다.");
 		}
 	}
+
+	
+   function change_search_pet(thisForm, thisElement) {
+      thisForm.submit();
+   }
+   
+   function click_search_hos(thisForm, thisElement) {
+      thisForm.submit();
+   }
+   
+   function init_search (thisForm) {
+      thisForm.key_pet.value = "";
+      thisForm.key_hos.value = "";
+      thisForm.submit();
+   }
+   
+ 
+   
+   $(document).ready(function(){
+	      var key_pet = "<%=key_pet%>";
+	      var key_hos = "<%=key_hos%>";
+	      if (key_pet != "null") {
+	         if (key_pet) {
+	            document.search_form.key_pet.value = key_pet;
+	         }
+	}
+      
+      
+      if (key_hos != "null") {
+         if (key_hos) {
+            document.search_form.key_hos.value = key_hos;
+         }
+      }
+   });
 </script>
 </head>
 
@@ -73,14 +118,17 @@
 			<h2>지난 성장일기를 확인해보세요!</h2>
 			<form name="listForm" id="diaryListForm">
 				<section>
-					<select name="searchoice">
-						<option value="꾸꾸">꾸꾸</option>
-						<option value="두유">두유</option>
-						<option value="도치">도치</option>
-					</select> <input type="date" name="날짜"> <input type="text"
-						placeholder="내용을  입력해주세요!"> &nbsp;&nbsp; <input
-						type="button" class="btn1" value="검 색">
-
+					<form name="search_form" method="get">
+		               <select name="key_pet" onchange="change_search_pet(this.form, this)">
+		                  <option value="">선택</option>
+		                  <option value="p00000001">멍멍이</option>
+		                  <option value="p00000004">두유</option>
+		                  <option value="p00000003">꾸꾸</option>
+		               </select> 
+		               <input type="text" name="key_hos" placeholder="찾고자 하는 내용을 입력해주세요"> 
+		               <input type="button" onclick="click_search_hos(this.form)" class="btn1"  value="검색">
+		               <input type="button" onclick="init_search(this.form)" class="btn1"  value="초기화">
+		            </form>
 					<table border="1" class="table1">
 						<thead>
 							<tr>
@@ -94,49 +142,7 @@
 						</thead>
 
 						<tbody>
-							<!-- 
-							<tr>
-								<td><input type="checkbox" name="choice" value="choice"></td>
-								<td>2016.07.21</td>
-								<td>꾸꾸</td>
-								<td><a href="u_diarydetail.jsp">오늘은 꾸꾸 덕분에 많이 웃을 수 있는
-										하루인 듯.</a></td>
-								<td>10cm</td>
-								<td>2kg</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" name="choice" value="choice"></td>
-								<td>2016.07.13</td>
-								<td>꾸꾸</td>
-								<td>꾸꾸가 아픈 날 ㅠㅠ힘이 없어보인다</td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" name="choice" value="choice"></td>
-								<td>2016.07.08</td>
-								<td>두유</td>
-								<td>졸려보임. 잠을 못 잔듯 함.</td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" name="choice" value="choice"></td>
-								<td>2016.07.07</td>
-								<td>도치</td>
-								<td>배고프다고 징징대는 날</td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" name="choice" value="choice"></td>
-								<td>2016.07.04</td>
-								<td>꾸꾸</td>
-								<td>--ㅇㄹㄴㄹ</td>
-								<td>3cm</td>
-								<td>0.80kg</td>
-							</tr>
-							-->
+						
 
 							<%
 								while (rs1.next()) {
