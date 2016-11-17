@@ -12,7 +12,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>꾸꾸맘</title>
 <link rel="stylesheet" type="text/css" href="../css/u_home.css?ver=1">
-<link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
+<link rel="stylesheet" type="text/css" href="../css/table.css?ver=2">
 </head>
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -86,7 +86,7 @@ try {
 				<img src="../image/puppy04.png" width="100%" height="100%" style="padding-left: 15px;">
 			</div>
 			<div class="cont_2">
-				<h4>- 내 병원 -</h4>
+				<h3>- My Hospital -</h3>
 				<table class="table1" align="center" style="padding-left:2%;">
 					<colgroup>
 						<col width="50%" />
@@ -107,7 +107,7 @@ try {
 						 <%
 						 /*병원목록*/
 							Statement stmt2 = conn.createStatement();
-							String sql2 = "select a.hosname,a.hostel from HOSINFO a join USRMYHOS b where a.hoscode=b.hoscode and b.userid='kukumom2'";
+							String sql2 = "select a.hosname,a.hostel from HOSINFO a join USRMYHOS b where a.hoscode=b.hoscode and b.userid='kukumom1'";
 							ResultSet rs2 = null;
 							rs2 = stmt2.executeQuery(sql2);
 						 
@@ -115,30 +115,26 @@ try {
 								out.print("<tr>");
 						%>
 						<td><%=rs2.getString("hosname")%></td>
-						<td><%=rs2.getString("hostel")%></td>
+						<% String hostel=rs2.getString("hostel"); 
+						String a=hostel.substring(0,2);
+						String b=hostel.substring(3,7);
+						String c=hostel.substring(6);
+						/* System.out.println(a); */
+						%>
+							
+						<td><%=a+"-"+b+"-"+c%></td>
 						<%
 							out.print("</tr>");
 								}
 						%> 
-						<!-- <tr>
-							<td>샤이닝스타</td>
-							<td>02-1234-5678</td>
-						</tr>
-						<tr>
-							<td>미래병원</td>
-							<td>02-1234-0000</td>
-						</tr>
-						<tr>
-							<td>그랜드동물병원</td>
-							<td>02-1579-1633</td>
-						</tr> -->
+						
 					</tbody>
 				</table>
 			</div>
 
 
 			<div class="cont_3">
-				<h4>- 지난 일정 -</h4>
+				<h3>- My Schedule -</h3>
 				<table class="table1" align="center">
 					<colgroup>
 						<col width="30%" />
@@ -176,28 +172,19 @@ try {
 							out.print("</tr>");
 								}
 						%>
-						<!-- <tr>
-							<td>10:00 AM</td>
-							<td>병원</td>
-							<td><a href="#">꾸꾸 건강검진</a></td>
-						</tr>
-						<tr>
-							<td>14:00 PM</td>
-							<td>미용</td>
-							<td><a href="#">솜이 배냇털 정리</a></td>
-						</tr> -->
+						
 					</tbody>
 				</table>
 
 			</div>
 			<div class="cont_4">
-			<h4>- 지난 성장일기 -</h4>
+			<h3>- My Pet Diary -</h3>
 				<table class="table1" align="center">
 					<colgroup>
 						<col width="20%" />
-						<col width="60%" />
-						<col width="10%" />
-						<col width="10%" />
+						<col width="50%" />
+						<col width="15%" />
+						<col width="15%" />
 					</colgroup>
 					<thead>
 						<!-- <tr>
@@ -206,8 +193,8 @@ try {
 						<tr>
 							<th>일자</th>
 							<th>내용</th>
-							<th>키</th>
-							<th>몸무게</th>
+							<th>키(cm)</th>
+							<th>몸무게(kg)</th>
 						</tr>
 					</thead>
 					<tbody>

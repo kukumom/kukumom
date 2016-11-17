@@ -94,6 +94,7 @@ body {
    position: absolute;
    background: #ffffff;
    float: right;
+   font-size: 16px;
    display: inline-block;
    
 }
@@ -153,7 +154,7 @@ body {
 }
 
 .menu>ul>li>a {
-   font-size: 14px;
+   font-size: 18px;
    font-weight: bold;
    padding: 15px 30px;
    color: #000000;
@@ -246,7 +247,7 @@ body {
    width: 130px;
    border-bottom: 1px solid #aaa;
    padding: 10px 20px;
-   font-size: 13px;
+   font-size: 15px;
    color: #444444;
    background: #eee;
    -webkit-transition: all .35s ease;

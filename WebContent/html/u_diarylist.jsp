@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <title>성장일기 조회</title>
-<link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
+<link rel="stylesheet" type="text/css" href="../css/table.css?ver=3">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
 <link rel="stylesheet" type="text/css" href="../css/search.css">
 <link rel="stylesheet" type="text/css" href="../css/u_style.css?ver=1">
@@ -138,8 +138,8 @@
 								<th>날짜</th>
 								<th>애완명</th>
 								<th>내용</th>
-								<th>신장</th>
-								<th>체중</th>
+								<th>신장(cm)</th>
+								<th>체중(kg)</th>
 							</tr>
 						</thead>
 

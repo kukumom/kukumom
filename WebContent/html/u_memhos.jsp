@@ -145,7 +145,14 @@
 						<td><%=rs1.getString("HOSNAME")%></td>
 						<td><%=rs1.getString("HOSINFO")%></td>
 						<td><%=rs1.getString("HOSADD")%></td>
-						<td><%=rs1.getString("HOSTEL")%></td>
+						<% String hostel=rs1.getString("HOSTEL"); 
+						String a=hostel.substring(0,2);
+						String b=hostel.substring(3,7);
+						String c=hostel.substring(6);
+						/* System.out.println(a); */
+						%>
+							
+						<td><%=a+"-"+b+"-"+c%></td>
 						
 						<%
 							out.print("</tr>");
