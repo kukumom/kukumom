@@ -31,7 +31,7 @@
 	  <li class='active sub'><a href="'#'">병원서비스</a>
 		<ul>
 		 <li class='sub'><a href="u_hossearch.jsp">병원검색</a></li>
-		 <li class='sub'><a href="u_Examlist.jsp">진료내역조회</a></li>
+		 <li class='sub'><a href="u_Examlist.jsp">방문내역조회</a></li>
 		 <li class="sub"><a href="u_qnaquary.jsp">1:1 문의하기</a></li>
 		 <li class='sub'><a href="u_qnalist.jsp">1:1 문의내역</a></li>
 		</ul>

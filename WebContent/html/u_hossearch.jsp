@@ -33,7 +33,7 @@
 	  <li class='active sub'><a href="'#'">병원서비스</a>
 		<ul>
 		 <li class='sub'><a href="u_hossearch.jsp">병원검색</a></li>
-		 <li class='sub'><a href="u_Examlist.jsp">진료내역조회</a></li>
+		 <li class='sub'><a href="u_Examlist.jsp">방문내역조회</a></li>
 		 <li class="sub"><a href="u_qnaquary.jsp">1:1 문의하기</a></li>
 		 <li class='sub'><a href="u_qnalist.jsp">1:1 문의내역</a></li>
 		</ul>
@@ -70,27 +70,39 @@
 					<h2>병원 검색</h2>
 					<br> <br>
 					<p>
-						<!-- <input type="checkbox" name="kind"> --> 병원명 : <textarea name="text" rows="1" cols="26"></textarea>
+						<input type="checkbox" name="kind"> 병원명 : <textarea name="text" rows="1" cols="26"></textarea>
 						
 					</p>
 					<p>
-						<!-- <input type="checkbox" id="local" name="kind"> --> 지역별 : <select name="city">
+						<input type="checkbox" id="local" name="kind"> 지역별 : <select name="city">
 							
-						
-							<option value="1">서 울 특 별 시</option>
-							<option value="2">경 기 도</option>
-							<option value="3">인 천 광 역 시</option>
-							<option value="4">강 원 도</option>
-							<option value="5">제 주 도</option>
+						    <option value="지 역 별">지 역 별</option>
+							<option value="서 울 특 별 시">서 울 특 별 시</option>
+							<option value="경 기 도">경 기 도</option>
+							<option value="강  원  도">강 원 도</option>
+							<option value="충 청 도">충 청 도</option>
+							<option value="전 라 도">전 라 도</option>
+							<option value="대 구 광 역 시">대 구 광 역 시</option>
+							<option value="광 주 광 역 시">광 주 광 역 시</option>
+							<option value="인 천 광 역 시">인 천 광 역 시</option>
+							<option value="제 주 도">제 주 도</option>
 							</select> 
 						
 						
 						<select name="borough">
-							<option value="01">성 동 구</option>
-							<option value="02">중 구</option>
-							<option value="03">중 랑 구</option>
-							<option value="04">동 대 문 구</option>
-							<option value="05">은 평 구</option>
+						    <option value="강 남 구">강 남 구</option>
+						    <option value="관 악 구">관 악 구</option>
+						    <option value="동 대 문 구">동 대 문 구</option>
+						    <option value="마 포 구">마 포 구</option>
+						    <option value="서 대 문 구">서 대 문 구</option>
+						    <option value="서 초 구">서 초 구</option>						    
+							<option value="성 동 구">성 동 구</option>
+							<option value="송 파 구">송 파 구</option>
+							<option value="영 등 포 구">영 등 포 구</option>
+							<option value="은 평 구">은 평 구</option>
+							<option value="종 로 구">종 로 구</option>
+							<option value="중 구">중 구</option>
+							<option value="중 랑 구">중 랑 구</option>
 						</select>
 						
 					</p>
