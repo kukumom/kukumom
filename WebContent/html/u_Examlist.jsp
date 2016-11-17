@@ -91,16 +91,19 @@
 
 				<p>
 					병 원 명  : <select name="HOSNAME">
-					<option value="이윤세 동물 병원">이윤세 동물 병원</option>
-					<option value="한양 동물 메디컬 센터">한양 동물 메디컬 센터</option>
-					<option value="오렌지 동물 병원">오렌지 동물 병원</option>
+					<option value="h00001">이윤세 동물 병원</option>
+					<option value="h00002">평화와 생명동물병원</option>
+					<option value="h00003">한양 동물 메디컬 센터</option>
+					<option value="h00004">오렌지 동물 병원</option>
+					<option value="h00005">사랑병원</option>
 					</select>
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					    	
 					애 완 명  :  <select name="PETNAME">
-					<option value="멍멍이">멍멍이</option>
-					<option value="꾸꾸">꾸꾸</option>
-					<option value="야옹이">야옹이</option>
+					<option value="p00000001">깜이</option>
+					<option value="p00000002">두유</option>
+					<option value="p00000003">솜이</option>
+					<option value="p00000004">야옹이</option>
 					</select>
 						
 					
