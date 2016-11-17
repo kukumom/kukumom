@@ -47,11 +47,8 @@
 		pstmt.setString(8, CALAL);
 
 		pstmt.executeUpdate();
-		conn.commit();
 		
-	} catch (SQLException e) {
-		/* out.println("<script> alert('노농'); hidtory.back(); </script>"); */
-		e.printStackTrace();
+	
 %>
 <body>
 	<%
@@ -62,6 +59,7 @@
 		e.printStackTrace();
 
 	}finally{
+		conn.close();
         out.print("<script>location.href='u_callist.jsp';</script>");
     }
 	%>

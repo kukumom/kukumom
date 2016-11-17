@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ include file="dbCon.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -153,6 +154,8 @@ var monthName = new Array("1월", "2월", "3월", "4월", "5월", "6월", "7월"
 						<td><a href="u_findpass.jsp" class="findButton">PW찾기</a></td>
 				</table>
 			</div> -->
+			
+			
 			<div class="cont-right" style="background-color: white;">
 				<span ID=calendar STYLE="position: relative;">
 				 	<script>

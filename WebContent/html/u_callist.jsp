@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="../css/u_style.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
+
 <%
 	try {
 		Statement stmt1 = con.createStatement();
