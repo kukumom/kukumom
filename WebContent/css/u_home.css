@@ -203,6 +203,7 @@ body {
    position: absolute;
    background: #ffffff;
    float: right;
+   font-size: 16px;
    display: inline-block;
    
 }
@@ -249,6 +250,7 @@ body {
    position: relative;
    margin: 0;
    padding: 0;
+   font
 }
 
 .menu>ul>#menu-button {
@@ -260,9 +262,9 @@ body {
    font-family: nanum;
    text-decoration: none;
 }
-
+/*대메뉴 */
 .menu>ul>li>a {
-   font-size: 14px;
+   font-size: 18px;
    font-weight: bold;
    padding: 15px 30px;
    color: #000000;
@@ -322,6 +324,7 @@ body {
 .menu ul ul li {
    position: relative;
    text-align: center;
+   
 }
 
 .menu>ul>li:hover>ul {
@@ -355,7 +358,7 @@ body {
    width: 130px;
    border-bottom: 1px solid #aaa;
    padding: 10px 20px;
-   font-size: 13px;
+   font-size: 15px;
    color: #444444;
    background: #eee;
    -webkit-transition: all .35s ease;

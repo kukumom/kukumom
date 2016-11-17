@@ -61,7 +61,7 @@
 				</table>
 			</div>-->
 			<div class="cont-right">
-				<dii7v class="wrap effect8">
+				<div class="wrap effect8">
 					<h3>변경된 정보를 수정해주세요!</h3>
 					<br><br><br>
 					<table>

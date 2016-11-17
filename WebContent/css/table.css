@@ -37,7 +37,7 @@ a:hover {
   width: 90%;
   font-family:Arial, Helvetica, sans-serif;
   color:#666;
-  font-size:15px;
+  font-size:18px;
   text-shadow: 1px 1px 0px #fff;
   background:#eaebec;
   margin:20px;
@@ -56,14 +56,14 @@ a:hover {
   padding:15px;
   border-top:1px solid #fafafa;
   border-bottom:1px solid #e0e0e0;
-
+  text-align:center;
   background: #ededed;
   background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
   background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
   
 }
 .table1 th:first-child{
-  text-align: left;
+  text-align: center;
   padding-left:20px;
 }
 .table1 tr:first-child th:first-child{

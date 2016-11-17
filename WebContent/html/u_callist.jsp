@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*,java.text.*"%>
-<%-- <%@page import="java.util.regex.Pattern"%> --%>
 <%@page import="java.sql.*"%>
 <%@ include file="dbCon.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -14,11 +13,11 @@
 <link rel="stylesheet" type="text/css" href="../css/button.css">
 <%
 	try {
-		Statement stmt1 = con.createStatement();
+		Statement stmt2 = con.createStatement();
 		
-		String sql1 ="SELECT USERID,CALSTIME,CALEDTIME,CALCATE,CALCONT FROM USRSCHEDULE ORDER BY CALSDATE DESC";
-	    ResultSet rs1 = null;
-		rs1 = stmt1.executeQuery(sql1);
+		String sql1 ="select USERID,CALSTIME,CALEDTIME,CALCATE,CALCONT from USRSCHEDULE order by CALSDATE desc";
+	    ResultSet rs2 = null;
+		rs2 = stmt2.executeQuery(sql1);
 		
 		
 %>
@@ -38,7 +37,7 @@
 		} else {
 			alert("삭제를 취소 했습니다.");
 		}
-	}
+	} 
 </script>
 </head>
 
@@ -76,7 +75,7 @@
 				<br/><br/><br/>
 				<h3>2016-11-18</h3>
 				<form name="listForm" id="calListForm">
-				<table class="table1" align="center">
+				<table class="table1">
 					<colgroup>
 							<col width="10%" />
 							<col width="15%" />
@@ -100,12 +99,12 @@
 							while (rs.next()) {
 									out.print("<tr>");
 						%>
-							<td><input type="radio" name="USERID" value="<%=rs1.getString("USERID")%>"></td>
-							<td><%=rs1.getString("CALSTIME")%></td>
-							<td><%=rs1.getString("CALEDTIME")%></td>
-							<td><%=rs1.getString("CALCATE")%></td>
-							<td><%=rs1.getString("CALCONT")%></td>
-							<%
+							<td><input type="radio" name="USERID" value="<%=rs2.getString("USERID")%>"></td>
+							<td><%=rs2.getString("CALSTIME")%></td>
+							<td><%=rs2.getString("CALEDTIME")%></td>
+							<td><%=rs2.getString("CALCATE")%></td>
+							<td><%=rs2.getString("CALCONT")%></td>
+						<%
 							out.print("</tr>");
 							}
 						%>
@@ -121,8 +120,7 @@
 				</form>
 			<form name="cal_del_form" id="calDelForm" action="u_caldel.jsp" method="get">
 				<input type="hidden" name="USERID" id="USER_ID">
-			</form>	
-				
+			</form>		
 			</div>
 		</div>
 		
