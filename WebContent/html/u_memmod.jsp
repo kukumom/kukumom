@@ -7,7 +7,7 @@
 <title>꾸꾸맘</title>
 <link rel="stylesheet" type="text/css" href="../css/u_style.css">
 <link rel="stylesheet" text="text/css" href="../css/button.css">
-<link rel="stylesheet" text="text/css" href="../css/diary.css">
+<link rel="stylesheet" text="text/css" href="../css/diary.css?ver=1">
 </head>
 <body>
 	<center>

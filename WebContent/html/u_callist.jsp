@@ -96,7 +96,7 @@
 						</thead>
 						<tbody>
 						
-							<%
+						<%
 							while (rs.next()) {
 									out.print("<tr>");
 						%>

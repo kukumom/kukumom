@@ -81,7 +81,7 @@ var monthName = new Array("1월", "2월", "3월", "4월", "5월", "6월", "7월"
             if (dayCount == nowd) {
                 calStr += "<td align=left bgcolor='#DFE7DE'><font size='3'><b>" // 오늘 날짜일때 배경색 지정,글자 진하게
             } else {
-                calStr += "<td align=left><font size='3' >" // 오늘 날짜가 아닐때 배경색 지정
+                calStr += "<td align=left><font size='4'>" // 오늘 날짜가 아닐때 배경색 지정
             }
             calStr += "<a href='u_callist.jsp'>" //날짜에~~링크설정
             calStr += dayCount++ // 날짜

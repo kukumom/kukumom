@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="../css/table.css">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
 <link rel="stylesheet" type="text/css" href="../css/u_style.css">
-<link rel="stylesheet" type="text/css" href="../css/diary.css">
+<link rel="stylesheet" type="text/css" href="../css/diary.css?ver=1">
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
@@ -110,11 +110,11 @@
 					</tr>
 					<tr>
 						<td><strong>제목</strong></td>
-						<td><textarea name="Q_TITLE" rows="1" cols="50"></textarea></td>
+						<td><textarea name="Q_TITLE" rows="1" cols="100"></textarea></td>
 					</tr>
 					<tr>
 						<td><strong>내용</strong></td>
-						<td><textarea name="Q_CONTENT" rows="5" cols="50"></textarea></td>
+						<td><textarea name="Q_CONTENT" rows="30" cols="100"></textarea></td>
 					</tr>
 				</table>
 				<input type="submit" name="save" class="btn1" value="문의하기" onclick="alert('문의가 완료되었습니다.')">
