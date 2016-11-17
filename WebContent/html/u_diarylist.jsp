@@ -19,7 +19,7 @@
 		/*성장일기*/
 		Statement stmt1 = con.createStatement();
 
-		String sql1 = "SELECT A.userid, d_date, B.petname, A.d_content, A.hght, A.weight FROM USRDIARY A JOIN USRPET B WHERE A.petcode=B.petcode";
+		String sql1 = "SELECT A.userid, d_date, B.petname, A.d_content, A.hght, A.weight FROM USRDIARY A JOIN USRPET B WHERE A.petcode=B.petcode ORDER BY D_DATE DESC";
 		/* String sql1 = "select * FROM USRPET WHERE USERID='kukumom1'"; */
 
 		ResultSet rs1 = null;
