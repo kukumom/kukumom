@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../css/u_style.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/table.css?ver=1">
 <link rel="stylesheet" type="text/css" href="../css/button.css">
+
 <%
 		Connection con = null; // null로 초기화 한다.
 		try {

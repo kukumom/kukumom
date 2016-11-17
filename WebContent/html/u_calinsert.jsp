@@ -47,6 +47,7 @@
 		pstmt.setString(8, CALAL);
 
 		pstmt.executeUpdate();
+
 		conn.commit();
 	/* 	
 	} catch (SQLException e) {
@@ -54,18 +55,18 @@
 		e.printStackTrace(); 
 		
 	*/
-%>
-<body>
-	<%
+
+
 	} catch (Exception e) {
 		out.println(" 데이터베이스 접속에 문제가 있습니다. <hr>");
 		out.println(e.getMessage());
 		e.printStackTrace();
 	}finally{
+		conn.close();
         out.print("<script>location.href='u_callist.jsp';</script>");
     }
 	%>
 		
-		
+	<body>	
 </body>
 </html>
