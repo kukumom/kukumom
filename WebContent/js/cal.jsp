@@ -6,6 +6,8 @@
      var nowm = now.getMonth()
      var nowy = now.getFullYear()
 
+
+
      function showCalendar(day, month, year) {
          if ((year % 4 == 0 || year % 100 == 0) && (year % 400 == 0)) monthDays[1] = 29;
          else monthDays[1] = 28 //leap year test
