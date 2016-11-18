@@ -180,16 +180,28 @@ height: 30px;
 							type="button" name="modify" class="btn1" value="  수    정    "></a>
 						&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" onclick="dia_del();"
 							class="btn1">삭 제</a>
-						<!-- <input type="button" name="delete" class="btn1" value="    삭    제    " onclick="showConfirm();" /> -->
+						<!-- <input typ5e="button" name="delete" class="btn1" value="    삭    제    " onclick="showConfirm();" /> -->
 
 					</p>
 				</section>
+				
 			</form>
 			<form name="diary_del_form" id="diaryDelForm" action="u_diarydel.jsp" method="get">
 				<input type="hidden" name="USERID" id="USERID_ID">
 			</form>
+			
 		</div>
+		
 	</div>
+	<!-- <div id="footer">
+			카피라이트
+			 Blog is powered by <a href="#"
+				onclick="window.open(this.href); 
+					return false"
+				title="Daum 바로가기" style="text-decoration: none">건강하조</a> / Designed
+				by <a href="#" title="Tistory 바로가기" style="text-decoration: none">꾸꾸맘</a>
+			
+		</div> -->
 	<%
 		} catch (Exception e) {
 
@@ -205,5 +217,6 @@ height: 30px;
 			}
 		}
 	%>
+	
 </body>
 </html>

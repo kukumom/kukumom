@@ -91,32 +91,45 @@
 				<table align="center">
 					<tr>
 						<th>애완명 :</th>
-						<td><input type="text" name="PETNAME" value="멍멍이"></td>
+						<td><input type="text" name="PETNAME" ></td>
 					</tr>
 					<tr>
 						<th >동물 종류 :</th>
 						<td><select name="PETCATE">
-								<option value="개" selected="selected">개</option>
+								<option value="" >============</option>
+								<option value="개" >개</option>
 								<option value="고양이">고양이</option>
 								<option value="기타">기타</option>
 						</select></td>
 						
 						<th>동물 품종 :</th>
-						<td><select  name="PETKIND">
-								<option value="골든리트리버" selected="selected">골든리트리버</option>
-								<option value="치와와">치와와</option>
-								<option value="진돗개">진돗개</option>
-								<option value="말티즈">말티즈</option>
-								<option value="페르시안">페르시안</option>
-								<option value="고슴도치">고슴도치</option>
-								<option value="햄스터">햄스터</option>
-								<option value="도마뱀">도마뱀</option>
-								<option value="너구리">너구리</option>
+						<td><select name="PETKIND"  overflow:auto>
+							<option value="">=============</option>
+							<option value="골든 리트리버">골든 리트리버</option>
+							<option value="그레이트 데인">그레이트 데인</option>
+							<option value="그레이트 페레니즈">그레이트 페레니즈</option>
+							<option value="그레이 하운드">그레이 하운드</option>
+							<option value="닥스훈트">닥스훈트</option>
+							<option value="달마시안">달마시안</option>
+							<option value="댄디 딘몬트 테리어">댄디 딘몬트 테리어</option>
+							<option value="도베르만 피셔">도베르만 피셔</option>
+							<option value="독일 스피츠">독일 스피츠</option>
+							<option value="라사압소">라사압소</option>
+							<option value="라이카">라이카</option>
+							<option value="로트 바일러">로트 바일러</option>
+							<option value="마스티프">마스티프</option>
+							<option value="맨체스터 테리어">맨체스터 테리어</option>
+							<option value="미니어처 슈나우저">미니어처 슈나우저</option>
+							<option value="미니어처 핀셔">미니어처 핀셔</option>
+							<option value="버니즈 마운틴 도그">버니즈 마운틴 도그</option>
+							<option value="베들링턴 테리어">베들링턴 테리어</option>
+							<option value="보르조이">보르조이</option>
+							<option value="복서">복서</option>
 						</select></td>
 					</tr>
 					<tr>
 						<th>생년월일 :</th>
-						<td><input type="date" name="PETBIRTH" value="2016-11-18"></td>
+						<td><input type="date" name="PETBIRTH" ></td>
 					</tr>
 					<tr>
 						<th>성별 :</th>

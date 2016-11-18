@@ -121,10 +121,10 @@
             <table border="1" class="table1">
                <colgroup>
                   <!-- <col width="20"> -->
-                  <col width="200">
-                  <col width="150">
-                  <col width="">
-                  <col width="110">
+                  <col width="20%">
+                  <col width="10%">
+                  <col width="55%">
+                  <col width="15%">
                </colgroup>
                <thead>
                   <tr>
