@@ -16,16 +16,17 @@ body{
 	width: 500px;
 	height: 450px;
 	margin-left: 30%;
-	margin-top: 15%;
+	margin-top: 10%;
 	
 }
-#cont1{
+/* #cont1{
 	float:left;
 	padding-right:3%;
 	padding-left:5%;
-}
+} */
 #cont2{
 	float:left;
+	padding-left:30%;
 }
 
 .txtbox{
@@ -82,9 +83,11 @@ body{
 </head>
 <body>
 	<div id="container" align="center">
+	<br>
+	<br>
 	<image src="../image/logo.png" style="width:100px; height:100px;">
-	<h2>꾸꾸맘에 오신걸 환영합니다!</h2>
-		<div id="cont1">
+	<h2></h2>
+		<!-- <div id="cont1">
 			<h3>병원 로그인</h3>
 			<input type="text" class="txtbox" placeholder="아이디"/><br/>
 			<input type="text" class="txtbox" placeholder="비밀번호"/><br/>
@@ -92,9 +95,9 @@ body{
 			<a href="u_findpass.jsp" class="find">PW찾기</a>
 			<a href="u_memcont.jsp" class="find">회원가입</a><br/>
 			<a href="#" class="login">Login</a>
-		</div>
-		<div id="cont2">
-			<h3>보호자 로그인</h3>
+		</div> -->
+		<div id="cont2" align="center" >
+			<h3>로그인</h3>
 			<input type="text" class="txtbox" placeholder="아이디"/><br/>
 			<input type="text" class="txtbox" placeholder="비밀번호"/><br/>
 			<a href="u_findid.jsp" class="find">ID찾기</a>
