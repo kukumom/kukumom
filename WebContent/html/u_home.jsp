@@ -89,8 +89,8 @@ try {
 				<h3>- My Hospital -</h3>
 				<table class="table1" align="center" style="padding-left:2%;">
 					<colgroup>
-						<col width="50%" />
-						<col width="50%" />
+						<col width="60%" />
+						<col width="40%" />
 
 					</colgroup>
 					<thead>

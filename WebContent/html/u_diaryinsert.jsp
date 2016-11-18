@@ -31,7 +31,7 @@
 		/* pstmt = conn.prepareStatement("insert into USRSCHEDULE (USERID, CALSDATE,CALEDDATE,CALSTIME,CALEDTIME,CALCATE,CALCONT,CALAL) values('kukumon2','20160101','20160102','1255','1355','jin','yeyyeye~','10') "); */
 
 		pstmt.setString(1, "kukumom");
-		pstmt.setString(2, PETCODE);
+		pstmt.setString(2, "p00000002");
 		pstmt.setString(3, D_DATE);
 		pstmt.setString(4, D_CONTENT);
 		pstmt.setString(5, "SSS");
